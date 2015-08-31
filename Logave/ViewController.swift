@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        println(self.sayhello("Andryuha!"))
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +21,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func sayhello(myName: String) -> String {
+        println("Hello,"+myName)
+        
+        return "Die motherfucker"
+    }
 
 }
 
