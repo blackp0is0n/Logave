@@ -14,6 +14,7 @@
 		FAA0BBFD1B9474FA00A36590 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA0BBFC1B9474FA00A36590 /* Images.xcassets */; };
 		FAA0BC001B9474FA00A36590 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA0BBFE1B9474FA00A36590 /* LaunchScreen.xib */; };
 		FAA0BC0C1B9474FA00A36590 /* LogaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0BC0B1B9474FA00A36590 /* LogaveTests.swift */; };
+		FAA0BC161B94970200A36590 /* SecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0BC151B94970200A36590 /* SecondController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		FAA0BC051B9474FA00A36590 /* LogaveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogaveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA0BC0A1B9474FA00A36590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAA0BC0B1B9474FA00A36590 /* LogaveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogaveTests.swift; sourceTree = "<group>"; };
+		FAA0BC151B94970200A36590 /* SecondController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				FAA0BBF21B9474F900A36590 /* AppDelegate.swift */,
 				FAA0BBF71B9474F900A36590 /* ViewController.swift */,
+				FAA0BC151B94970200A36590 /* SecondController.swift */,
 				FAA0BBF91B9474FA00A36590 /* Main.storyboard */,
 				FAA0BBFC1B9474FA00A36590 /* Images.xcassets */,
 				FAA0BBFE1B9474FA00A36590 /* LaunchScreen.xib */,
@@ -164,6 +167,7 @@
 				TargetAttributes = {
 					FAA0BBEC1B9474F900A36590 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = S6T4VJ437P;
 					};
 					FAA0BC041B9474FA00A36590 = {
 						CreatedOnToolsVersion = 6.4;
@@ -216,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAA0BBF81B9474F900A36590 /* ViewController.swift in Sources */,
+				FAA0BC161B94970200A36590 /* SecondController.swift in Sources */,
 				FAA0BBF31B9474F900A36590 /* AppDelegate.swift in Sources */,
 				FAA0BBF61B9474F900A36590 /* Logave.xcdatamodeld in Sources */,
 			);
@@ -346,6 +351,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Logave/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -356,6 +362,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Logave/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

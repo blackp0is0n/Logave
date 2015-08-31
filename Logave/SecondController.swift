@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SecondController.swift
 //  Logave
 //
 //  Created by Alex on 31.08.15.
@@ -9,30 +9,23 @@
 import UIKit
 
 
-class ViewController: UIViewController {
-
+class SecondController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         println(self.sayhello("Andryuha!"))
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     func sayhello(myName: String) -> String {
         println("Hello,"+myName)
         
         return "Die motherfucker"
     }
-
-    @IBAction func toNewController(sender: AnyObject) {
-        self.callSecond()
-    }
-    func callSecond(){
-        self.performSegueWithIdentifier("LogingIn", sender: nil)
-    }
+    
 }
-
