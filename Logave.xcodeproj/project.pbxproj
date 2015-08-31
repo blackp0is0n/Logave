@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FAA0BBF31B9474F900A36590 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0BBF21B9474F900A36590 /* AppDelegate.swift */; };
+		FAA0BBF61B9474F900A36590 /* Logave.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAA0BBF41B9474F900A36590 /* Logave.xcdatamodeld */; };
+		FAA0BBF81B9474F900A36590 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0BBF71B9474F900A36590 /* ViewController.swift */; };
+		FAA0BBFB1B9474FA00A36590 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA0BBF91B9474FA00A36590 /* Main.storyboard */; };
+		FAA0BBFD1B9474FA00A36590 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA0BBFC1B9474FA00A36590 /* Images.xcassets */; };
+		FAA0BC001B9474FA00A36590 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA0BBFE1B9474FA00A36590 /* LaunchScreen.xib */; };
+		FAA0BC0C1B9474FA00A36590 /* LogaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0BC0B1B9474FA00A36590 /* LogaveTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FAA0BC061B9474FA00A36590 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAA0BBE51B9474F900A36590 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAA0BBEC1B9474F900A36590;
+			remoteInfo = Logave;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FAA0BBED1B9474F900A36590 /* Logave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logave.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAA0BBF11B9474F900A36590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAA0BBF21B9474F900A36590 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FAA0BBF51B9474F900A36590 /* Logave.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logave.xcdatamodel; sourceTree = "<group>"; };
+		FAA0BBF71B9474F900A36590 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FAA0BBFA1B9474FA00A36590 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FAA0BBFC1B9474FA00A36590 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FAA0BBFF1B9474FA00A36590 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FAA0BC051B9474FA00A36590 /* LogaveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogaveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAA0BC0A1B9474FA00A36590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAA0BC0B1B9474FA00A36590 /* LogaveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogaveTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FAA0BBEA1B9474F900A36590 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAA0BC021B9474FA00A36590 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FAA0BBE41B9474F900A36590 = {
+			isa = PBXGroup;
+			children = (
+				FAA0BBEF1B9474F900A36590 /* Logave */,
+				FAA0BC081B9474FA00A36590 /* LogaveTests */,
+				FAA0BBEE1B9474F900A36590 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FAA0BBEE1B9474F900A36590 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAA0BBED1B9474F900A36590 /* Logave.app */,
+				FAA0BC051B9474FA00A36590 /* LogaveTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAA0BBEF1B9474F900A36590 /* Logave */ = {
+			isa = PBXGroup;
+			children = (
+				FAA0BBF21B9474F900A36590 /* AppDelegate.swift */,
+				FAA0BBF71B9474F900A36590 /* ViewController.swift */,
+				FAA0BBF91B9474FA00A36590 /* Main.storyboard */,
+				FAA0BBFC1B9474FA00A36590 /* Images.xcassets */,
+				FAA0BBFE1B9474FA00A36590 /* LaunchScreen.xib */,
+				FAA0BBF41B9474F900A36590 /* Logave.xcdatamodeld */,
+				FAA0BBF01B9474F900A36590 /* Supporting Files */,
+			);
+			path = Logave;
+			sourceTree = "<group>";
+		};
+		FAA0BBF01B9474F900A36590 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAA0BBF11B9474F900A36590 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FAA0BC081B9474FA00A36590 /* LogaveTests */ = {
+			isa = PBXGroup;
+			children = (
+				FAA0BC0B1B9474FA00A36590 /* LogaveTests.swift */,
+				FAA0BC091B9474FA00A36590 /* Supporting Files */,
+			);
+			path = LogaveTests;
+			sourceTree = "<group>";
+		};
+		FAA0BC091B9474FA00A36590 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAA0BC0A1B9474FA00A36590 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FAA0BBEC1B9474F900A36590 /* Logave */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAA0BC0F1B9474FA00A36590 /* Build configuration list for PBXNativeTarget "Logave" */;
+			buildPhases = (
+				FAA0BBE91B9474F900A36590 /* Sources */,
+				FAA0BBEA1B9474F900A36590 /* Frameworks */,
+				FAA0BBEB1B9474F900A36590 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Logave;
+			productName = Logave;
+			productReference = FAA0BBED1B9474F900A36590 /* Logave.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FAA0BC041B9474FA00A36590 /* LogaveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAA0BC121B9474FA00A36590 /* Build configuration list for PBXNativeTarget "LogaveTests" */;
+			buildPhases = (
+				FAA0BC011B9474FA00A36590 /* Sources */,
+				FAA0BC021B9474FA00A36590 /* Frameworks */,
+				FAA0BC031B9474FA00A36590 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAA0BC071B9474FA00A36590 /* PBXTargetDependency */,
+			);
+			name = LogaveTests;
+			productName = LogaveTests;
+			productReference = FAA0BC051B9474FA00A36590 /* LogaveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FAA0BBE51B9474F900A36590 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = Alex;
+				TargetAttributes = {
+					FAA0BBEC1B9474F900A36590 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					FAA0BC041B9474FA00A36590 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = FAA0BBEC1B9474F900A36590;
+					};
+				};
+			};
+			buildConfigurationList = FAA0BBE81B9474F900A36590 /* Build configuration list for PBXProject "Logave" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FAA0BBE41B9474F900A36590;
+			productRefGroup = FAA0BBEE1B9474F900A36590 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FAA0BBEC1B9474F900A36590 /* Logave */,
+				FAA0BC041B9474FA00A36590 /* LogaveTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FAA0BBEB1B9474F900A36590 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAA0BBFB1B9474FA00A36590 /* Main.storyboard in Resources */,
+				FAA0BC001B9474FA00A36590 /* LaunchScreen.xib in Resources */,
+				FAA0BBFD1B9474FA00A36590 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAA0BC031B9474FA00A36590 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FAA0BBE91B9474F900A36590 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAA0BBF81B9474F900A36590 /* ViewController.swift in Sources */,
+				FAA0BBF31B9474F900A36590 /* AppDelegate.swift in Sources */,
+				FAA0BBF61B9474F900A36590 /* Logave.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAA0BC011B9474FA00A36590 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAA0BC0C1B9474FA00A36590 /* LogaveTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAA0BC071B9474FA00A36590 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAA0BBEC1B9474F900A36590 /* Logave */;
+			targetProxy = FAA0BC061B9474FA00A36590 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FAA0BBF91B9474FA00A36590 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAA0BBFA1B9474FA00A36590 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FAA0BBFE1B9474FA00A36590 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAA0BBFF1B9474FA00A36590 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FAA0BC0D1B9474FA00A36590 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FAA0BC0E1B9474FA00A36590 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FAA0BC101B9474FA00A36590 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Logave/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FAA0BC111B9474FA00A36590 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Logave/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FAA0BC131B9474FA00A36590 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LogaveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Logave.app/Logave";
+			};
+			name = Debug;
+		};
+		FAA0BC141B9474FA00A36590 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LogaveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Logave.app/Logave";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FAA0BBE81B9474F900A36590 /* Build configuration list for PBXProject "Logave" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAA0BC0D1B9474FA00A36590 /* Debug */,
+				FAA0BC0E1B9474FA00A36590 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAA0BC0F1B9474FA00A36590 /* Build configuration list for PBXNativeTarget "Logave" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAA0BC101B9474FA00A36590 /* Debug */,
+				FAA0BC111B9474FA00A36590 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FAA0BC121B9474FA00A36590 /* Build configuration list for PBXNativeTarget "LogaveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAA0BC131B9474FA00A36590 /* Debug */,
+				FAA0BC141B9474FA00A36590 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FAA0BBF41B9474F900A36590 /* Logave.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FAA0BBF51B9474F900A36590 /* Logave.xcdatamodel */,
+			);
+			currentVersion = FAA0BBF51B9474F900A36590 /* Logave.xcdatamodel */;
+			path = Logave.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FAA0BBE51B9474F900A36590 /* Project object */;
+}
