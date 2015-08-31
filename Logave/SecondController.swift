@@ -14,7 +14,7 @@ class SecondController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        println(self.sayhello("Andryuha!"))
+        println(self.sayhello("Sanko!"))
     }
     
     override func didReceiveMemoryWarning() {
