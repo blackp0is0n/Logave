@@ -11,10 +11,33 @@ import CoreData
 
 class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
 
-    var counter:Int32 = 0
+    var counter:Int = 0
     
     @IBOutlet weak var testText: UITextView!
     
+    @IBAction func minus(sender: AnyObject) {
+        
+        var error: NSError? = nil
+        
+        var fReq = NSFetchRequest(entityName: "MyEntity")
+        var result = self.managedObjectContext!.executeFetchRequest(fReq, error:&error)
+        
+        var myCounter:Int = 0
+        
+        if result != nil {
+            for resultItem in result! {
+                NSLog("Deleted Family for")
+                if myCounter == self.counter-1 {
+                    self.managedObjectContext!.deleteObject(resultItem as! NSManagedObject)
+                }
+                myCounter++
+            }
+        } else {
+            NSLog("Is empty")
+        }
+        self.updateDates()
+        self.saveContext()
+    }
     
     func updateDates(){
         var context = self.managedObjectContext
@@ -25,7 +48,10 @@ class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
         
         var result = self.managedObjectContext!.executeFetchRequest(fReq, error:&error)
         
+        testText.text = ""
         
+        self.counter = result!.count
+        var myI:Int = 0
         for resultItem in result! {
             var Item:NSDate = resultItem.valueForKey("message") as! NSDate
             NSLog("Fetched item: \(Item) ")
@@ -34,8 +60,8 @@ class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
             dateFormatter.dateFormat = "yyyy-MM-dd 'at' h:mm a" // superset of OP's format
             let str = dateFormatter.stringFromDate(Item)
             
-            testText.text = testText.text + str + "(("+String(self.counter) + "))" + "\n"
-            self.counter++
+            testText.text = testText.text + str + "(("+String(myI) + "))" + "\n"
+            myI++
         }
     }
     override func viewDidLoad() {
