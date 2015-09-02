@@ -25,10 +25,17 @@
                                     <action selector="toNewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cVC-HI-Nqn"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="one" translatesAutoresizingMaskIntoConstraints="NO" id="Api-ht-8VU">
+                                <rect key="frame" x="70" y="20" width="214" height="109"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="testText" destination="Api-ht-8VU" id="PBq-1s-jLj"/>
                         <segue destination="SAI-Nh-7ZG" kind="show" identifier="LogingIn" id="kSE-zs-exf"/>
                     </connections>
                 </viewController>
