@@ -28,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA4D94441B98A01700D9F7BE /* Logave1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logave1.xcdatamodel; sourceTree = "<group>"; };
+		FA4D94451B98A4D800D9F7BE /* Logave2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logave2.xcdatamodel; sourceTree = "<group>"; };
 		FAA0BBED1B9474F900A36590 /* Logave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA0BBF11B9474F900A36590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAA0BBF21B9474F900A36590 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 				FAA0BC111B9474FA00A36590 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FAA0BC121B9474FA00A36590 /* Build configuration list for PBXNativeTarget "LogaveTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +433,7 @@
 				FAA0BC141B9474FA00A36590 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -437,9 +441,11 @@
 		FAA0BBF41B9474F900A36590 /* Logave.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				FA4D94451B98A4D800D9F7BE /* Logave2.xcdatamodel */,
+				FA4D94441B98A01700D9F7BE /* Logave1.xcdatamodel */,
 				FAA0BBF51B9474F900A36590 /* Logave.xcdatamodel */,
 			);
-			currentVersion = FAA0BBF51B9474F900A36590 /* Logave.xcdatamodel */;
+			currentVersion = FA4D94451B98A4D800D9F7BE /* Logave2.xcdatamodel */;
 			path = Logave.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

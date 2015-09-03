@@ -13,13 +13,16 @@ class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
 
     var counter:Int = 0
     
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var sNameField: UITextField!
+    
     @IBOutlet weak var testText: UITextView!
     
     @IBAction func minus(sender: AnyObject) {
         
         var error: NSError? = nil
         
-        var fReq = NSFetchRequest(entityName: "MyEntity")
+        var fReq = NSFetchRequest(entityName: "User")
         var result = self.managedObjectContext!.executeFetchRequest(fReq, error:&error)
         
         var myCounter:Int = 0
@@ -42,7 +45,7 @@ class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
     func updateDates(){
         var context = self.managedObjectContext
         
-        var fReq: NSFetchRequest = NSFetchRequest(entityName: "MyEntity")
+        var fReq: NSFetchRequest = NSFetchRequest(entityName: "User")
         
         var error: NSError? = nil
         
@@ -53,14 +56,15 @@ class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
         self.counter = result!.count
         var myI:Int = 0
         for resultItem in result! {
-            var Item:NSDate = resultItem.valueForKey("message") as! NSDate
-            NSLog("Fetched item: \(Item) ")
+            var name:String = resultItem.valueForKey("name") as! String
+            var sName:String = resultItem.valueForKey("sName") as! String
+            var key:String = resultItem.valueForKey("key") as! String
+            var keyDate:String = resultItem.valueForKey("keyDate") as! String
+            var email:String = resultItem.valueForKey("email") as! String
+            NSLog("Fetched item: \(name) ")
             
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd 'at' h:mm a" // superset of OP's format
-            let str = dateFormatter.stringFromDate(Item)
             
-            testText.text = testText.text + str + "(("+String(myI) + "))" + "\n"
+            testText.text = testText.text + name + "(("+sName + "))" + "\n"
             myI++
         }
     }
@@ -102,14 +106,14 @@ class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
         
         let fetchRequest = NSFetchRequest()
         // Edit the entity name as appropriate.
-        let entity = NSEntityDescription.entityForName("MyEntity", inManagedObjectContext: self.managedObjectContext!)
+        let entity = NSEntityDescription.entityForName("User", inManagedObjectContext: self.managedObjectContext!)
         fetchRequest.entity = entity
         
         // Set the batch size to a suitable number.
         fetchRequest.fetchBatchSize = 20
         
         // Edit the sort key as appropriate.
-        let sortDescriptor = NSSortDescriptor(key: "message", ascending: false)
+        let sortDescriptor = NSSortDescriptor(key: "sName", ascending: false)
         let sortDescriptors = [sortDescriptor]
         
         fetchRequest.sortDescriptors = [sortDescriptor]
@@ -138,7 +142,13 @@ class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
         
         // If appropriate, configure the new managed object.
         // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-        newManagedObject.setValue(NSDate(), forKey: "message")
+        newManagedObject.setValue(nameField.text, forKey: "name")
+        newManagedObject.setValue(sNameField.text, forKey: "sName")
+        newManagedObject.setValue("today", forKey: "keyDate")
+        newManagedObject.setValue("newKey", forKey: "key")
+        newManagedObject.setValue("sashasivakov@mail.ru", forKey: "email")
+        newManagedObject.setValue(NSDate(), forKey: "beta")
+        newManagedObject.setValue("2", forKey: "id")
         
         // Save the context.
         var error: NSError? = nil
@@ -169,7 +179,12 @@ class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
         let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("Logave.sqlite")
         var error: NSError? = nil
         var failureReason = "There was an error creating or loading the application's saved data."
-        if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {
+        
+        let mOptions = [NSMigratePersistentStoresAutomaticallyOption: true,
+            NSInferMappingModelAutomaticallyOption: true]
+        
+        
+        if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: mOptions, error: &error) == nil {
             coordinator = nil
             // Report any error we got.
             var dict = [String: AnyObject]()

@@ -43,6 +43,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ghz-aI-czX">
+                                <rect key="frame" x="35" y="21" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="teS-yr-T9a">
+                                <rect key="frame" x="35" y="72" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -66,6 +76,8 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="nameField" destination="Ghz-aI-czX" id="wFZ-mn-oZ8"/>
+                        <outlet property="sNameField" destination="teS-yr-T9a" id="NPU-41-zdu"/>
                         <outlet property="testText" destination="Api-ht-8VU" id="PBq-1s-jLj"/>
                         <segue destination="SAI-Nh-7ZG" kind="presentation" identifier="LogingIn" id="kSE-zs-exf"/>
                     </connections>
