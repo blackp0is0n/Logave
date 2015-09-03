@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owl-wb-KVM">
-                                <rect key="frame" x="16" y="20" width="35" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owl-wb-KVM">
+                                <rect key="frame" x="283" y="20" width="35" height="30"/>
                                 <state key="normal" title="Push">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -25,14 +25,8 @@
                                     <action selector="toNewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cVC-HI-Nqn"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Api-ht-8VU">
-                                <rect key="frame" x="70" y="20" width="215" height="346"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dW-jw-jY0">
-                                <rect key="frame" x="11" y="52" width="44" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dW-jw-jY0">
+                                <rect key="frame" x="278" y="51" width="44" height="30"/>
                                 <state key="normal" title="Delete">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -40,17 +34,45 @@
                                     <action selector="minus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dZ5-WF-H7d"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Api-ht-8VU">
+                                <rect key="frame" x="193" y="127" width="215" height="346"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="215" id="Ery-aU-Bh9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="1dW-jw-jY0" secondAttribute="centerY" constant="234" id="25m-y4-NRG"/>
+                            <constraint firstAttribute="centerY" secondItem="Api-ht-8VU" secondAttribute="centerY" id="Bi5-xo-xsD"/>
+                            <constraint firstAttribute="centerY" secondItem="owl-wb-KVM" secondAttribute="centerY" constant="265" id="CIw-Qt-CPr"/>
+                            <constraint firstAttribute="centerY" secondItem="owl-wb-KVM" secondAttribute="centerY" constant="265" id="Jkx-9A-KR2"/>
+                            <constraint firstItem="Api-ht-8VU" firstAttribute="top" secondItem="1dW-jw-jY0" secondAttribute="bottom" constant="46" id="PTQ-xL-aGP"/>
+                            <constraint firstAttribute="centerY" secondItem="owl-wb-KVM" secondAttribute="centerY" constant="265" id="Y38-2y-Jqu"/>
+                            <constraint firstAttribute="centerY" secondItem="owl-wb-KVM" secondAttribute="centerY" constant="265" id="alf-Fg-GoS"/>
+                            <constraint firstItem="owl-wb-KVM" firstAttribute="centerX" secondItem="1dW-jw-jY0" secondAttribute="centerX" id="fiA-Mv-7L0"/>
+                            <constraint firstAttribute="centerX" secondItem="Api-ht-8VU" secondAttribute="centerX" constant="-0.5" id="oWu-ZB-U8u"/>
+                            <constraint firstAttribute="centerX" secondItem="1dW-jw-jY0" secondAttribute="centerX" id="vn9-DX-1gL"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="CIw-Qt-CPr"/>
+                                <exclude reference="Y38-2y-Jqu"/>
+                                <exclude reference="alf-Fg-GoS"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="testText" destination="Api-ht-8VU" id="PBq-1s-jLj"/>
-                        <segue destination="SAI-Nh-7ZG" kind="show" identifier="LogingIn" id="kSE-zs-exf"/>
+                        <segue destination="SAI-Nh-7ZG" kind="presentation" identifier="LogingIn" id="kSE-zs-exf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-876" y="-89"/>
+            <point key="canvasLocation" x="-876" y="-88.999999999999986"/>
         </scene>
         <!--Second Controller-->
         <scene sceneID="0Bc-BB-qBJ">
@@ -76,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4m7-cy-z8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-70" y="-89"/>
+            <point key="canvasLocation" x="-70" y="-88.999999999999986"/>
         </scene>
     </scenes>
 </document>

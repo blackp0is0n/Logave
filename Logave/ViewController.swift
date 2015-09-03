@@ -88,7 +88,7 @@ class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
         self.callSecond()
     }
     func callSecond(){
-        self.performSegueWithIdentifier("LogingIn", sender: nil)
+        //self.performSegueWithIdentifier("LogingIn", sender: nil)
         self.insertNewObject()
         self.updateDates()
     }
