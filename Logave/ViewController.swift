@@ -26,7 +26,7 @@ class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
         
         if result != nil {
             for resultItem in result! {
-                NSLog("Deleted Family for")
+                NSLog("Deleted date")
                 if myCounter == self.counter-1 {
                     self.managedObjectContext!.deleteObject(resultItem as! NSManagedObject)
                 }
@@ -88,7 +88,7 @@ class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
         self.callSecond()
     }
     func callSecond(){
-        //self.performSegueWithIdentifier("LogingIn", sender: nil)
+        self.performSegueWithIdentifier("LogingIn", sender: nil)
         self.insertNewObject()
         self.updateDates()
     }
