@@ -16,6 +16,9 @@ class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var sNameField: UITextField!
     
+    @IBAction func makeNavContr(sender: AnyObject) {
+        self.performSegueWithIdentifier("showNavigation", sender: nil)
+    }
     @IBOutlet weak var testText: UITextView!
     
     @IBAction func minus(sender: AnyObject) {

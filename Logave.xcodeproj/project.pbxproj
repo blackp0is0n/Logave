@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA3753551B9B793E00BE7150 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3753541B9B793E00BE7150 /* LoginController.swift */; };
+		FA773BA51B9C366B001A5CA5 /* NewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA773BA41B9C366B001A5CA5 /* NewController.swift */; };
+		FA773BA71B9C42B3001A5CA5 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA773BA61B9C42B3001A5CA5 /* CustomCell.swift */; };
 		FAA0BBF31B9474F900A36590 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0BBF21B9474F900A36590 /* AppDelegate.swift */; };
 		FAA0BBF61B9474F900A36590 /* Logave.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAA0BBF41B9474F900A36590 /* Logave.xcdatamodeld */; };
 		FAA0BBF81B9474F900A36590 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0BBF71B9474F900A36590 /* ViewController.swift */; };
@@ -28,8 +31,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA3753541B9B793E00BE7150 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		FA4D94441B98A01700D9F7BE /* Logave1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logave1.xcdatamodel; sourceTree = "<group>"; };
 		FA4D94451B98A4D800D9F7BE /* Logave2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logave2.xcdatamodel; sourceTree = "<group>"; };
+		FA773BA41B9C366B001A5CA5 /* NewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewController.swift; sourceTree = "<group>"; };
+		FA773BA61B9C42B3001A5CA5 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		FAA0BBED1B9474F900A36590 /* Logave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Logave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA0BBF11B9474F900A36590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAA0BBF21B9474F900A36590 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +48,7 @@
 		FAA0BC0A1B9474FA00A36590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAA0BC0B1B9474FA00A36590 /* LogaveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogaveTests.swift; sourceTree = "<group>"; };
 		FAA0BC151B94970200A36590 /* SecondController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
+		FAAE56831B9B572B00285770 /* Logave3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logave3.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +93,9 @@
 				FAA0BBF21B9474F900A36590 /* AppDelegate.swift */,
 				FAA0BBF71B9474F900A36590 /* ViewController.swift */,
 				FAA0BC151B94970200A36590 /* SecondController.swift */,
+				FA773BA41B9C366B001A5CA5 /* NewController.swift */,
+				FA3753541B9B793E00BE7150 /* LoginController.swift */,
+				FA773BA61B9C42B3001A5CA5 /* CustomCell.swift */,
 				FAA0BBF91B9474FA00A36590 /* Main.storyboard */,
 				FAA0BBFC1B9474FA00A36590 /* Images.xcassets */,
 				FAA0BBFE1B9474FA00A36590 /* LaunchScreen.xib */,
@@ -225,6 +235,9 @@
 				FAA0BC161B94970200A36590 /* SecondController.swift in Sources */,
 				FAA0BBF31B9474F900A36590 /* AppDelegate.swift in Sources */,
 				FAA0BBF61B9474F900A36590 /* Logave.xcdatamodeld in Sources */,
+				FA773BA51B9C366B001A5CA5 /* NewController.swift in Sources */,
+				FA773BA71B9C42B3001A5CA5 /* CustomCell.swift in Sources */,
+				FA3753551B9B793E00BE7150 /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +454,7 @@
 		FAA0BBF41B9474F900A36590 /* Logave.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				FAAE56831B9B572B00285770 /* Logave3.xcdatamodel */,
 				FA4D94451B98A4D800D9F7BE /* Logave2.xcdatamodel */,
 				FA4D94441B98A01700D9F7BE /* Logave1.xcdatamodel */,
 				FAA0BBF51B9474F900A36590 /* Logave.xcdatamodel */,
