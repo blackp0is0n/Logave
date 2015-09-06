@@ -14,6 +14,8 @@ class LoginController:UITableViewController {
     var myUserName:UITextField? = nil
     var myPassWord:UITextField? = nil
     
+    var data: NSMutableData = NSMutableData()
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -26,8 +28,14 @@ class LoginController:UITableViewController {
     @IBAction func GoUser(sender: AnyObject) {
         var passwrd:String? = self.myPassWord?.text
         var usrnm:String? = self.myUserName?.text
-        let alertController = UIAlertController(title: "New user", message: "User:" + usrnm!+"Password:"+passwrd!, preferredStyle:UIAlertControllerStyle.ActionSheet)
+        
+        let alertController = UIAlertController(title: "New user", message: "User:" + usrnm!+"Password:"+passwrd!.md5(), preferredStyle:UIAlertControllerStyle.Alert)
+        
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
         self.presentViewController(alertController,animated:true,completion:nil)
+        
+        myUserName?.resignFirstResponder()
+        myPassWord?.resignFirstResponder()
         
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -35,7 +43,7 @@ class LoginController:UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Login", forIndexPath: indexPath) as! CustomCell
         if indexPath.row == 0 {
             self.myUserName = cell.userCell
-            self.myUserName?.placeholder = "Username or email"
+            self.myUserName?.placeholder = "Email"
         } else {
             self.myPassWord = cell.userCell
             self.myPassWord?.placeholder = "Password"

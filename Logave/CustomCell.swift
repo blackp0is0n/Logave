@@ -12,4 +12,12 @@ import UIKit
 class CustomCell:UITableViewCell{
     
     @IBOutlet weak var userCell: UITextField!
+    @IBAction func endOfEditing(sender: AnyObject) {
+        sender.resignFirstResponder()
+    }
+    
+    @IBAction func hideKeyboard(sender: AnyObject) {
+        sender.resignFirstResponder()
+    }
+    
 }

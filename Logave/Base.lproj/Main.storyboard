@@ -137,9 +137,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PKD-Lr-8ZE">
-                                            <rect key="frame" x="8" y="7" width="97" height="30"/>
+                                            <rect key="frame" x="8" y="7" width="584" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <action selector="endOfEditing:" destination="O6Q-w2-TQu" eventType="editingDidEnd" id="aeP-1T-Bgi"/>
+                                                <action selector="hideKeyboard:" destination="O6Q-w2-TQu" eventType="editingDidEndOnExit" id="IJS-Ms-hVJ"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -172,6 +176,7 @@
         <scene sceneID="wAy-T1-Kt3">
             <objects>
                 <navigationController id="hw9-di-krV" customClass="NewController" customModule="Logave" customModuleProvider="target" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ULD-lB-0AK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
