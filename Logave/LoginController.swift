@@ -70,8 +70,8 @@ class LoginController:UITableViewController {
         if jsonError == nil {
             if let serverData: AnyObject = decodedJson["data"] {
                 if let data: AnyObject = serverData["data"] {
-                    if let user: AnyObject = data["user"]{
-                        var key:String = user["key"] as! String
+                    if let user: AnyObject? = data["user"]{
+                        var key:String = user!["key"] as! String
                         println("------")
                         println(user)
                         println("------")
