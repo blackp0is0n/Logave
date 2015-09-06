@@ -29,10 +29,6 @@ class LoginController:UITableViewController {
         var passwrd:String? = self.myPassWord?.text
         var usrnm:String? = self.myUserName?.text
         
-        let alertController = UIAlertController(title: "New user", message: "User:" + usrnm!+"Password:"+passwrd!.md5(), preferredStyle:UIAlertControllerStyle.Alert)
-        
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-        self.presentViewController(alertController,animated:true,completion:nil)
         
         myUserName?.resignFirstResponder()
         myPassWord?.resignFirstResponder()
@@ -56,11 +52,15 @@ class LoginController:UITableViewController {
         self.data.appendData(data)
     }
     
-    func connection(connection: NSURLConnection!, didFailWithError error:NSError! ){
-        let alertController = UIAlertController(title: "Issue",message:"Check your internet connection", preferredStyle:UIAlertControllerStyle.Alert)
+    func showAlert(title: String,message: String){
+        let alertController = UIAlertController(title: title,message:message, preferredStyle:UIAlertControllerStyle.Alert)
         
         alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default,handler: nil))
         self.presentViewController(alertController,animated:true,completion:nil)
+    }
+    
+    func connection(connection: NSURLConnection!, didFailWithError error:NSError! ){
+        showAlert("Issue",message: "Check your internet connection")
     }
     func connectionDidFinishLoading(connection: NSURLConnection!) {
         var datastring = NSString(data:self.data, encoding:NSUTF8StringEncoding) as! String
@@ -70,6 +70,10 @@ class LoginController:UITableViewController {
         if jsonError == nil {
             if let serverData: AnyObject = decodedJson["data"] {
                 if let data: AnyObject = serverData["data"] {
+                    if let sData:String  = data as? String{
+                        showAlert(sData, message: "Type email and password again")
+                        return
+                    }
                     if let user: AnyObject? = data["user"]{
                         var key:String = user!["key"] as! String
                         println("------")
@@ -77,7 +81,9 @@ class LoginController:UITableViewController {
                         println("------")
                         println(key)
                         println("------")
+                        showAlert("OOps", message: key)
                     }
+                
                 }
             }
         }
