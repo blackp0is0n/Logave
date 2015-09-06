@@ -129,7 +129,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="NgT-um-nZu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell tag="200" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Login" id="O6Q-w2-TQu" customClass="CustomCell" customModule="Logave" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -139,7 +139,7 @@
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PKD-Lr-8ZE">
                                             <rect key="frame" x="8" y="7" width="584" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL"/>
                                             <connections>
                                                 <action selector="endOfEditing:" destination="O6Q-w2-TQu" eventType="editingDidEnd" id="aeP-1T-Bgi"/>
                                                 <action selector="hideKeyboard:" destination="O6Q-w2-TQu" eventType="editingDidEndOnExit" id="IJS-Ms-hVJ"/>

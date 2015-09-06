@@ -37,16 +37,68 @@ class LoginController:UITableViewController {
         myUserName?.resignFirstResponder()
         myPassWord?.resignFirstResponder()
         
+        let urlPath: String = "http://api.logave.com/user/login?device=c21592b180d10e601f2080111fc657de&email="
+        
+        let pather:String = urlPath + String(format: "\(usrnm!)&password=\(passwrd!.md5())")
+
+        println(pather)
+        self.data = NSMutableData()
+        var url: NSURL = NSURL(string: pather)!
+        var request: NSURLRequest = NSURLRequest(URL: url)
+        var connection: NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: true)!
+        connection.start()
+        
     }
+    
+    
+    
+    func connection(connection: NSURLConnection!, didReceiveData data: NSData!) {
+        self.data.appendData(data)
+    }
+    
+    func connection(connection: NSURLConnection!, didFailWithError error:NSError! ){
+        let alertController = UIAlertController(title: "Issue",message:"Check your internet connection", preferredStyle:UIAlertControllerStyle.Alert)
+        
+        alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default,handler: nil))
+        self.presentViewController(alertController,animated:true,completion:nil)
+    }
+    func connectionDidFinishLoading(connection: NSURLConnection!) {
+        var datastring = NSString(data:self.data, encoding:NSUTF8StringEncoding) as! String
+        
+        var jsonError: NSError?
+        let decodedJson = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &jsonError) as! Dictionary<String, AnyObject>
+        if jsonError == nil {
+            if let serverData: AnyObject = decodedJson["data"] {
+                if let data: AnyObject = serverData["data"] {
+                    if let user: AnyObject = data["user"]{
+                        var key:String = user["key"] as! String
+                        println("------")
+                        println(user)
+                        println("------")
+                        println(key)
+                        println("------")
+                    }
+                }
+            }
+        }
+        
+        println(datastring)
+    }
+    
+    
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         NSLog("%d", indexPath.row)
         let cell = tableView.dequeueReusableCellWithIdentifier("Login", forIndexPath: indexPath) as! CustomCell
         if indexPath.row == 0 {
             self.myUserName = cell.userCell
             self.myUserName?.placeholder = "Email"
+            self.myUserName?.text = "cr@vork.com"
         } else {
             self.myPassWord = cell.userCell
+            self.myPassWord?.secureTextEntry = true
             self.myPassWord?.placeholder = "Password"
+            self.myPassWord?.text = "12345"
         }
         return cell
     }
