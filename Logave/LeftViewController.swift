@@ -37,23 +37,11 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.separatorColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1.0)
+        self.tableView?.separatorColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1.0)
         
-        var storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let swiftViewController = storyboard.instantiateViewControllerWithIdentifier("SwiftViewController") as! SwiftViewController
-        self.swiftViewController = UINavigationController(rootViewController: swiftViewController)
+        //self.nonMenuViewController = UINavigationController(rootViewController: nonMenuController)
         
-        let javaViewController = storyboard.instantiateViewControllerWithIdentifier("JavaViewController") as! JavaViewController
-        self.javaViewController = UINavigationController(rootViewController: javaViewController)
-        
-        let goViewController = storyboard.instantiateViewControllerWithIdentifier("GoViewController") as! GoViewController
-        self.goViewController = UINavigationController(rootViewController: goViewController)
-        
-        let nonMenuController = storyboard.instantiateViewControllerWithIdentifier("NonMenuController") as! NonMenuController
-        nonMenuController.delegate = self
-        self.nonMenuViewController = UINavigationController(rootViewController: nonMenuController)
-        
-        self.tableView.registerCellClass(BaseTableViewCell.self)
+        //self.tableView.registerCellClass(UITableViewCell)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -65,7 +53,7 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: BaseTableViewCell = BaseTableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: BaseTableViewCell.identifier)
+        let cell: UITableViewCell = UITableViewCell()
         cell.backgroundColor = UIColor(red: 64/255, green: 170/255, blue: 239/255, alpha: 1.0)
         cell.textLabel?.font = UIFont.italicSystemFontOfSize(18)
         cell.textLabel?.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
@@ -82,18 +70,18 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
     func changeViewController(menu: LeftMenu) {
         switch menu {
         case .Main:
-            self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
+            self.slideMenuController()?.closeLeft()
         case .Swift:
-            self.slideMenuController()?.changeMainViewController(self.swiftViewController, close: true)
+            self.slideMenuController()?.closeLeft()
             break
         case .Java:
-            self.slideMenuController()?.changeMainViewController(self.javaViewController, close: true)
+            self.slideMenuController()?.closeLeft()
             break
         case .Go:
-            self.slideMenuController()?.changeMainViewController(self.goViewController, close: true)
+            self.slideMenuController()?.closeLeft()
             break
         case .NonMenu:
-            self.slideMenuController()?.changeMainViewController(self.nonMenuViewController, close: true)
+            self.slideMenuController()?.closeLeft()
             break
         default:
             break

@@ -16,6 +16,7 @@ class LoginController:UITableViewController {
     
     var data: NSMutableData = NSMutableData()
     
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -82,13 +83,31 @@ class LoginController:UITableViewController {
                         println(key)
                         println("------")
                         showAlert("OOps", message: key)
+                        
+                        
+                        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        
+                        let mainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController") as! MainViewController
+                        let leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController") as! LeftViewController
+                        
+                        let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
+                        
+                        leftViewController.mainViewController = nvc
+                        
+                        let slideMenuController = SlideMenuController(mainViewController:nvc, leftMenuViewController: leftViewController)
+                        slideMenuController.closeLeft()
+                        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                        var myWindow = appDelegate.window
+                        myWindow?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
+                        myWindow?.rootViewController = slideMenuController
+                        myWindow?.makeKeyAndVisible()
                     }
                 
                 }
             }
         }
         
-        println(datastring)
+        //println(datastring)
     }
     
     
