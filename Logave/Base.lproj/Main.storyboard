@@ -225,7 +225,7 @@
         <!--Registration-->
         <scene sceneID="qyR-uD-NAG">
             <objects>
-                <tableViewController id="n9A-Oo-1Ue" customClass="LoginController" customModule="Logave" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="n9A-Oo-1Ue" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="YWN-Zq-AAX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -318,9 +318,6 @@
                     <navigationItem key="navigationItem" title="Registration" id="5TG-t5-0DM">
                         <barButtonItem key="rightBarButtonItem" title="Sign Up" style="done" id="4Hd-12-nYV">
                             <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="GoUser:" destination="n9A-Oo-1Ue" id="07e-Yq-Why"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
