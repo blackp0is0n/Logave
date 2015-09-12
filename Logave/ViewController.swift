@@ -19,6 +19,8 @@ class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
     @IBAction func makeNavContr(sender: AnyObject) {
         self.performSegueWithIdentifier("showNavigation", sender: nil)
     }
+    
+    
     @IBOutlet weak var testText: UITextView!
     
     @IBAction func minus(sender: AnyObject) {
@@ -46,7 +48,6 @@ class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
     }
     
     func updateDates(){
-        var context = self.managedObjectContext
         
         var fReq: NSFetchRequest = NSFetchRequest(entityName: "User")
         
