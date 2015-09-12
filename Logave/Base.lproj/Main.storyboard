@@ -1,90 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hw9-di-krV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hw9-di-krV">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
-        <scene sceneID="2YA-h5-40d">
-            <objects>
-                <viewController storyboardIdentifier="MainViewController" id="N4T-FQ-0L1" customClass="MainViewController" customModule="Logave" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vsX-Ux-JQ8"/>
-                        <viewControllerLayoutGuide type="bottom" id="wXa-fV-lAY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Otc-zh-d6T">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w7K-En-0CD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1588" y="-149"/>
-        </scene>
-        <!--Left View Controller-->
-        <scene sceneID="4Pv-jy-WDk">
-            <objects>
-                <viewController storyboardIdentifier="LeftViewController" id="MrK-SA-evj" customClass="LeftViewController" customModule="Logave" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ywp-94-2O0"/>
-                        <viewControllerLayoutGuide type="bottom" id="DZV-FW-oFQ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="V6h-rt-9w4">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lks-YN-7XK">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="600" id="djg-L7-D4e"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="djg-L7-D4e"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="MrK-SA-evj" id="OLE-Ld-f63"/>
-                                    <outlet property="delegate" destination="MrK-SA-evj" id="rdV-Iu-UFU"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="lks-YN-7XK" firstAttribute="bottom" secondItem="DZV-FW-oFQ" secondAttribute="top" id="5es-iJ-RXQ"/>
-                            <constraint firstItem="lks-YN-7XK" firstAttribute="leading" secondItem="V6h-rt-9w4" secondAttribute="leading" id="Gnr-vx-Qss"/>
-                            <constraint firstAttribute="trailing" secondItem="lks-YN-7XK" secondAttribute="trailing" id="Gsd-cq-BzX"/>
-                            <constraint firstItem="lks-YN-7XK" firstAttribute="top" secondItem="V6h-rt-9w4" secondAttribute="top" id="w6x-Mb-8sx"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="lks-YN-7XK" id="2cR-9r-kWp"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lBi-6s-ugT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2283" y="-105"/>
-        </scene>
-        <!--Logave-->
+        <!--Authorization-->
         <scene sceneID="ZxW-6N-fa4">
             <objects>
                 <tableViewController id="2c4-tO-a9Y" customClass="LoginController" customModule="Logave" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="NgT-um-nZu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell tag="200" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Login" id="O6Q-w2-TQu" customClass="CustomCell" customModule="Logave" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="114" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O6Q-w2-TQu" id="8D6-en-EAV">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PKD-Lr-8ZE">
                                             <rect key="frame" x="8" y="7" width="584" height="30"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL"/>
                                             <connections>
@@ -93,7 +33,9 @@
                                             </connections>
                                         </textField>
                                     </subviews>
+                                    <animations/>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <connections>
                                     <outlet property="userCell" destination="PKD-Lr-8ZE" id="FIY-u4-7nR"/>
                                 </connections>
@@ -106,7 +48,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Logave" id="eA4-Hb-d0m">
+                    <navigationItem key="navigationItem" title="Authorization" id="eA4-Hb-d0m">
                         <barButtonItem key="rightBarButtonItem" title="GO!" style="done" id="VoG-7Q-HV4">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -118,7 +60,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhp-r0-pxC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1502" y="570.99999999999989"/>
+            <point key="canvasLocation" x="-1580" y="-115"/>
         </scene>
         <!--New Controller-->
         <scene sceneID="wAy-T1-Kt3">
@@ -128,6 +70,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ULD-lB-0AK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="2c4-tO-a9Y" kind="relationship" relationship="rootViewController" id="eCD-hn-tNm"/>
@@ -135,7 +78,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QcZ-dr-oHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2277" y="664.99999999999989"/>
+            <point key="canvasLocation" x="-2264" y="-115"/>
         </scene>
     </scenes>
 </document>
