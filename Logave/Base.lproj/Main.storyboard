@@ -233,8 +233,33 @@
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell tag="200" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="register.Username" id="eLb-vf-iei" customClass="CustomCell" customModule="Logave" customModuleProvider="target">
+                            <tableViewCell tag="200" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="register.Email" id="Hvg-M9-aeW" customClass="CustomCell" customModule="Logave" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="114" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hvg-M9-aeW" id="SRW-PM-KW6">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X3m-cW-IIX">
+                                            <rect key="frame" x="13" y="7" width="575" height="30"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL"/>
+                                            <connections>
+                                                <action selector="endOfEditing:" destination="Hvg-M9-aeW" eventType="editingDidEnd" id="c49-7a-fT6"/>
+                                                <action selector="hideKeyboard:" destination="Hvg-M9-aeW" eventType="editingDidEndOnExit" id="2WR-e8-vk8"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="userCell" destination="X3m-cW-IIX" id="Xgq-bJ-X9O"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell tag="200" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="register.Username" id="eLb-vf-iei" customClass="CustomCell" customModule="Logave" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="158" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eLb-vf-iei" id="MrG-od-jW2">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -259,7 +284,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell tag="200" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="register.Password" id="GKC-zt-BM3" customClass="CustomCell" customModule="Logave" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="158" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="202" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GKC-zt-BM3" id="VBv-9E-sC2">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -281,31 +306,6 @@
                                 <animations/>
                                 <connections>
                                     <outlet property="userCell" destination="NAU-g8-PoB" id="lIc-SN-OYT"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell tag="200" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="register.Email" id="Hvg-M9-aeW" customClass="CustomCell" customModule="Logave" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="202" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hvg-M9-aeW" id="SRW-PM-KW6">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X3m-cW-IIX">
-                                            <rect key="frame" x="13" y="7" width="575" height="30"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL"/>
-                                            <connections>
-                                                <action selector="endOfEditing:" destination="Hvg-M9-aeW" eventType="editingDidEnd" id="c49-7a-fT6"/>
-                                                <action selector="hideKeyboard:" destination="Hvg-M9-aeW" eventType="editingDidEndOnExit" id="2WR-e8-vk8"/>
-                                            </connections>
-                                        </textField>
-                                    </subviews>
-                                    <animations/>
-                                </tableViewCellContentView>
-                                <animations/>
-                                <connections>
-                                    <outlet property="userCell" destination="X3m-cW-IIX" id="Xgq-bJ-X9O"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
