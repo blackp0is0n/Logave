@@ -85,7 +85,7 @@ class LoginController:UITableViewController {
                         showAlert("OOps", message: key)
                         
                         
-                        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        /*var storyboard = UIStoryboard(name: "Main", bundle: nil)
                         
                         let mainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController") as! MainViewController
                         let leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController") as! LeftViewController
@@ -100,7 +100,7 @@ class LoginController:UITableViewController {
                         var myWindow = appDelegate.window
                         myWindow?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
                         myWindow?.rootViewController = slideMenuController
-                        myWindow?.makeKeyAndVisible()
+                        myWindow?.makeKeyAndVisible()*/
                     }
                 
                 }
