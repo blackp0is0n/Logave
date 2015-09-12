@@ -130,17 +130,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lks-YN-7XK">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lks-YN-7XK">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="djg-L7-D4e"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="djg-L7-D4e"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="MrK-SA-evj" id="OLE-Ld-f63"/>
+                                    <outlet property="delegate" destination="MrK-SA-evj" id="rdV-Iu-UFU"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lks-YN-7XK" firstAttribute="bottom" secondItem="DZV-FW-oFQ" secondAttribute="top" id="5es-iJ-RXQ"/>
+                            <constraint firstItem="lks-YN-7XK" firstAttribute="leading" secondItem="V6h-rt-9w4" secondAttribute="leading" id="Gnr-vx-Qss"/>
+                            <constraint firstAttribute="trailing" secondItem="lks-YN-7XK" secondAttribute="trailing" id="Gsd-cq-BzX"/>
+                            <constraint firstItem="lks-YN-7XK" firstAttribute="top" secondItem="V6h-rt-9w4" secondAttribute="top" id="w6x-Mb-8sx"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="lks-YN-7XK" id="2cR-9r-kWp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lBi-6s-ugT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-942" y="-107"/>
+            <point key="canvasLocation" x="-963" y="-213"/>
         </scene>
         <!--Logave-->
         <scene sceneID="ZxW-6N-fa4">
