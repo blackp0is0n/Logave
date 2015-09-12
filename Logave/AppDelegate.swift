@@ -18,22 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        var storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let mainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController") as! MainViewController
-        let leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController") as! LeftViewController
-        
-        let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
-        
-        leftViewController.mainViewController = nvc
-        
-        let slideMenuController = SlideMenuController(mainViewController:nvc, leftMenuViewController: leftViewController)
-        slideMenuController.closeLeft()
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        var myWindow = appDelegate.window
-        myWindow?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
-        myWindow?.rootViewController = slideMenuController
-        myWindow?.makeKeyAndVisible()
         
         return true
     }
