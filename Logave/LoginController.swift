@@ -112,7 +112,7 @@ class LoginController:UITableViewController {
     
     
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    /*override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         NSLog("%d", indexPath.row)
         let cell = tableView.dequeueReusableCellWithIdentifier("Login", forIndexPath: indexPath) as! CustomCell
         if indexPath.row == 0 {
@@ -131,6 +131,6 @@ class LoginController:UITableViewController {
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
-    }
+    }*/
     
 }
