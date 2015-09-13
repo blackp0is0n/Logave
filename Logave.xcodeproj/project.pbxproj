@@ -13,7 +13,6 @@
 		FA6B57411BA348C8006EBCE5 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B573F1BA348C8006EBCE5 /* LeftViewController.swift */; };
 		FA6B57421BA348C8006EBCE5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B57401BA348C8006EBCE5 /* MainViewController.swift */; };
 		FA6B57451BA34F95006EBCE5 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B57441BA34F95006EBCE5 /* UIViewControllerExtension.swift */; };
-		FA773BA71B9C42B3001A5CA5 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA773BA61B9C42B3001A5CA5 /* CustomCell.swift */; };
 		FA8A2E701BA4A1980084A49B /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A2E6F1BA4A1980084A49B /* CoreDataController.swift */; };
 		FA8A2E731BA4A4E80084A49B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A2E721BA4A4E80084A49B /* User.swift */; };
 		FA8A2E751BA4A5050084A49B /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A2E741BA4A5050084A49B /* Task.swift */; };
@@ -47,7 +46,6 @@
 		FA6B573F1BA348C8006EBCE5 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		FA6B57401BA348C8006EBCE5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FA6B57441BA34F95006EBCE5 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
-		FA773BA61B9C42B3001A5CA5 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		FA773BA81B9C57D1001A5CA5 /* Logave3plus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logave3plus.xcdatamodel; sourceTree = "<group>"; };
 		FA8A2E6F1BA4A1980084A49B /* CoreDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		FA8A2E721BA4A4E80084A49B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 				FA6B573C1BA3462B006EBCE5 /* Support Classes */,
 				FAA0BBF21B9474F900A36590 /* AppDelegate.swift */,
 				FA3753541B9B793E00BE7150 /* LoginController.swift */,
-				FA773BA61B9C42B3001A5CA5 /* CustomCell.swift */,
 				FAA0BBF91B9474FA00A36590 /* Main.storyboard */,
 				FAA0BBFC1B9474FA00A36590 /* Images.xcassets */,
 				FAA0BBFE1B9474FA00A36590 /* LaunchScreen.xib */,
@@ -292,7 +289,6 @@
 				FA8A2E791BA4A7A50084A49B /* JsonParserHelper.swift in Sources */,
 				FA6B57451BA34F95006EBCE5 /* UIViewControllerExtension.swift in Sources */,
 				FA8A2E771BA4A5250084A49B /* Message.swift in Sources */,
-				FA773BA71B9C42B3001A5CA5 /* CustomCell.swift in Sources */,
 				FA3753551B9B793E00BE7150 /* LoginController.swift in Sources */,
 				FA8A2E731BA4A4E80084A49B /* User.swift in Sources */,
 			);

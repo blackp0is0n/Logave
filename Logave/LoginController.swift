@@ -10,9 +10,8 @@ import Foundation
 import UIKit
 
 class LoginController:UITableViewController {
-    
-    var myUserName:UITextField? = nil
-    var myPassWord:UITextField? = nil
+    @IBOutlet weak var authUsername: UITextField!
+    @IBOutlet weak var authPassword: UITextField!
     
     var data: NSMutableData = NSMutableData()
     
@@ -26,17 +25,16 @@ class LoginController:UITableViewController {
         return 2
     }
     
-    @IBAction func GoUser(sender: AnyObject) {
-        let passwrd:String? = self.myPassWord?.text
-        let usrnm:String? = self.myUserName?.text
-        
-        
-        myUserName?.resignFirstResponder()
-        myPassWord?.resignFirstResponder()
+    @IBAction func authUser(sender: AnyObject) {
+        let username:String? = authUsername.text
+        let password:String? = authPassword.text
+
+        authUsername?.resignFirstResponder()
+        authPassword?.resignFirstResponder()
         
         let urlPath: String = "http://api.logave.com/user/login?device=c21592b180d10e601f2080111fc657de&email="
         
-        let pather:String = urlPath + String(format: "\(usrnm!)&password=\(passwrd!.md5())")
+        let pather:String = urlPath + String(format: "\(username!)&password=\(password!.md5())")
 
         print(pather)
         self.data = NSMutableData()
@@ -81,7 +79,8 @@ class LoginController:UITableViewController {
                         print("------")
                         print(key)
                         print("------")
-                        showAlert("OOps", message: key)
+                        performSegueWithIdentifier("successfulAuthSegue", sender: nil)
+                        //showAlert("OOps", message: key)
                         
                         
                         /*var storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -106,29 +105,5 @@ class LoginController:UITableViewController {
             }
         
         //println(datastring)
-    }
-    
-    
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        NSLog("%d", indexPath.row)
-        let cell = tableView.dequeueReusableCellWithIdentifier("login.Username", forIndexPath: indexPath) as! CustomCell
-        if indexPath.row == 0 {
-            self.myUserName = cell.userCell
-            self.myUserName?.placeholder = "Email"
-            self.myUserName?.text = "cr@vork.com"
-        } else {
-            self.myPassWord = cell.userCell
-            self.myPassWord?.secureTextEntry = true
-            self.myPassWord?.placeholder = "Password"
-            self.myPassWord?.text = "12345"
-        }
-        return cell
-    }
-    
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    
+    }    
 }

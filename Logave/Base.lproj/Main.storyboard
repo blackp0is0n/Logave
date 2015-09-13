@@ -9,73 +9,62 @@
         <scene sceneID="ZxW-6N-fa4">
             <objects>
                 <tableViewController id="2c4-tO-a9Y" customClass="LoginController" customModule="Logave" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="NgT-um-nZu">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="NgT-um-nZu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                        <prototypes>
-                            <tableViewCell tag="200" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="login.Username" id="O6Q-w2-TQu" customClass="CustomCell" customModule="Logave" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="114" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O6Q-w2-TQu" id="8D6-en-EAV">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PKD-Lr-8ZE">
-                                            <rect key="frame" x="13" y="7" width="575" height="30"/>
+                        <sections>
+                            <tableViewSection id="Wyx-qR-26H">
+                                <cells>
+                                    <tableViewCell tag="200" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="login.Username" id="O6Q-w2-TQu">
+                                        <rect key="frame" x="0.0" y="99" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O6Q-w2-TQu" id="8D6-en-EAV">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="cr@vork.com" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PKD-Lr-8ZE">
+                                                    <rect key="frame" x="13" y="7" width="575" height="30"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                                </textField>
+                                            </subviews>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL"/>
-                                            <connections>
-                                                <action selector="endOfEditing:" destination="O6Q-w2-TQu" eventType="editingDidEnd" id="aeP-1T-Bgi"/>
-                                                <action selector="hideKeyboard:" destination="O6Q-w2-TQu" eventType="editingDidEndOnExit" id="IJS-Ms-hVJ"/>
-                                            </connections>
-                                        </textField>
-                                    </subviews>
-                                    <animations/>
-                                </tableViewCellContentView>
-                                <animations/>
-                                <connections>
-                                    <outlet property="userCell" destination="PKD-Lr-8ZE" id="FIY-u4-7nR"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell tag="200" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="login.Password" id="H5q-ME-8YP" customClass="CustomCell" customModule="Logave" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="158" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H5q-ME-8YP" id="a1e-Xf-hFP">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ww-DP-scj">
-                                            <rect key="frame" x="13" y="7" width="499" height="30"/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                    <tableViewCell tag="200" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="login.Password" id="H5q-ME-8YP">
+                                        <rect key="frame" x="0.0" y="143" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H5q-ME-8YP" id="a1e-Xf-hFP">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12345" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ww-DP-scj">
+                                                    <rect key="frame" x="13" y="7" width="499" height="30"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" returnKeyType="done" secureTextEntry="YES"/>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3M-ev-fZW">
+                                                    <rect key="frame" x="532" y="7" width="50" height="30"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="tintColor" red="0.0" green="0.70238148707692316" blue="0.70238148707692316" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="Zabyli?">
+                                                        <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL"/>
-                                            <connections>
-                                                <action selector="endOfEditing:" destination="H5q-ME-8YP" eventType="editingDidEnd" id="ghw-dR-iLz"/>
-                                                <action selector="hideKeyboard:" destination="H5q-ME-8YP" eventType="editingDidEndOnExit" id="Yvr-Eu-y3n"/>
-                                            </connections>
-                                        </textField>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3M-ev-fZW">
-                                            <rect key="frame" x="532" y="7" width="50" height="30"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="tintColor" red="0.0" green="0.70238148707692316" blue="0.70238148707692316" alpha="1" colorSpace="calibratedRGB"/>
-                                            <state key="normal" title="Zabyli?">
-                                                <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                        </button>
-                                    </subviews>
-                                    <animations/>
-                                </tableViewCellContentView>
-                                <animations/>
-                                <connections>
-                                    <outlet property="userCell" destination="5ww-DP-scj" id="iB3-vz-shz"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <sections/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="2c4-tO-a9Y" id="Qm1-vi-dRf"/>
                             <outlet property="delegate" destination="2c4-tO-a9Y" id="wRg-Nd-KbL"/>
@@ -86,11 +75,16 @@
                         <barButtonItem key="rightBarButtonItem" title="Sign In" style="done" id="VoG-7Q-HV4">
                             <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="GoUser:" destination="2c4-tO-a9Y" id="hUb-YS-Wx4"/>
+                                <action selector="authUser:" destination="2c4-tO-a9Y" id="Yps-lP-gKi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="authPassword" destination="5ww-DP-scj" id="NYq-Pp-yD0"/>
+                        <outlet property="authUsername" destination="PKD-Lr-8ZE" id="l0n-ce-dFI"/>
+                        <segue destination="xwm-7i-GVk" kind="show" identifier="successfulAuthSegue" id="GwV-Rj-2eU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhp-r0-pxC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -322,9 +316,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <segue destination="60a-iI-qj4" kind="show" id="7MQ-ky-s64"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXL-T3-vTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -347,7 +338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cth-AP-twU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1249" y="387"/>
+            <point key="canvasLocation" x="-647" y="453"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="UEv-yn-Waz">
@@ -379,7 +370,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pwv-fD-x8M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-429" y="-274"/>
+            <point key="canvasLocation" x="93" y="-297"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1ZI-eF-sn4">
@@ -396,12 +387,38 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CNO-Cy-rQO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1249" y="-274"/>
+            <point key="canvasLocation" x="-647" y="-297"/>
         </scene>
-        <!--Split View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="MAT-w7-rxX">
+            <objects>
+                <navigationController id="xwm-7i-GVk" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WnE-oY-REu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="barTintColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="60a-iI-qj4" kind="relationship" relationship="rootViewController" id="LpR-4d-YZB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kIW-xc-gIA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2066" y="-297"/>
+        </scene>
+        <!--Logave-->
         <scene sceneID="pJn-WI-K2b">
             <objects>
                 <splitViewController id="60a-iI-qj4" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Logave" id="ZJh-iw-cZJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="geU-H4-Q0H">
+                            <color key="tintColor" red="0.0" green="0.55148237180000004" blue="0.097995965290000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="DVH-Rn-G4Z" kind="relationship" relationship="masterViewController" id="4Ro-Ie-WiS"/>
                         <segue destination="3ok-ii-e7b" kind="relationship" relationship="detailViewController" id="Ev7-Ho-Un8"/>
@@ -409,7 +426,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hU-sf-aJ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2053" y="393"/>
+            <point key="canvasLocation" x="-1373" y="-297"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AJo-Hv-MT8">
