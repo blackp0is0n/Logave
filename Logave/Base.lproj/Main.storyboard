@@ -337,7 +337,7 @@
                                 <rect key="frame" x="123" y="407" width="354" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FnA-eR-bij">
@@ -497,27 +497,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hph-Rs-POy">
+                                <rect key="frame" x="300" y="64" width="300" height="536"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="536" id="8Yd-ko-CRd">
+                                        <variation key="widthClass=compact" constant="300"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="300" id="LQ8-ji-FX2">
+                                        <variation key="widthClass=compact" constant="400"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="QiT-hz-L8V"/>
+                                </constraints>
+                            </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E36-eN-8IU">
                                 <rect key="frame" x="0.0" y="64" width="300" height="536"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="VYc-EY-eIF"/>
-                                    <constraint firstAttribute="height" constant="536" id="WSp-Bz-7gs"/>
-                                    <constraint firstAttribute="width" constant="300" id="pZI-tB-58Y"/>
+                                    <constraint firstAttribute="height" constant="536" id="WSp-Bz-7gs">
+                                        <variation key="widthClass=compact" constant="237"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="300" id="pZI-tB-58Y">
+                                        <variation key="widthClass=compact" constant="400"/>
+                                    </constraint>
                                 </constraints>
                                 <connections>
                                     <segue destination="6DZ-fP-NLI" kind="embed" identifier="" id="c48-gH-hAO"/>
                                 </connections>
                             </containerView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hph-Rs-POy">
-                                <rect key="frame" x="300" y="64" width="300" height="536"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="536" id="8Yd-ko-CRd"/>
-                                    <constraint firstAttribute="width" constant="300" id="LQ8-ji-FX2"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="QiT-hz-L8V"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -525,7 +533,9 @@
                             <constraint firstItem="E36-eN-8IU" firstAttribute="top" secondItem="Uuf-16-SZO" secondAttribute="top" constant="64" id="7Jr-3z-gKg"/>
                             <constraint firstAttribute="trailing" secondItem="Hph-Rs-POy" secondAttribute="trailing" id="HNJ-Hp-NP3"/>
                             <constraint firstItem="E36-eN-8IU" firstAttribute="leading" secondItem="Uuf-16-SZO" secondAttribute="leading" id="bae-kG-vqg"/>
-                            <constraint firstItem="Hph-Rs-POy" firstAttribute="top" secondItem="Uuf-16-SZO" secondAttribute="top" constant="64" id="hU9-KU-k64"/>
+                            <constraint firstItem="Hph-Rs-POy" firstAttribute="top" secondItem="Uuf-16-SZO" secondAttribute="top" constant="64" id="hU9-KU-k64">
+                                <variation key="widthClass=compact" constant="300"/>
+                            </constraint>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -533,7 +543,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kon-B5-9on" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-647" y="437"/>
+            <point key="canvasLocation" x="-648" y="464"/>
         </scene>
         <!-- Messages-->
         <scene sceneID="kjM-Ak-nRP">
@@ -647,7 +657,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="83" y="437"/>
+            <point key="canvasLocation" x="82.5" y="464"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1ZI-eF-sn4">
@@ -731,7 +741,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="300" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Client" id="YHI-m7-z82">
                                 <cells>
@@ -747,7 +757,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="John Appleseed" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OgV-ze-baq">
@@ -775,7 +785,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="+1 (234) 567-89-01" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vQn-Q5-2RZ">
@@ -803,7 +813,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Sample Str, 228 Bld" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FxQ-X4-SZu">
@@ -831,7 +841,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="37.331751, -122.029573" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pcA-kr-d24">
@@ -863,7 +873,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="#123456" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I1k-qB-m51">
@@ -879,11 +889,11 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="JjZ-Vq-puh" detailTextLabel="ffe-Kn-rmL" style="IBUITableViewCellStyleValue1" id="ZgB-Mv-egM">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="JjZ-Vq-puh" detailTextLabel="ffe-Kn-rmL" style="IBUITableViewCellStyleValue1" id="ZgB-Mv-egM">
                                         <rect key="frame" x="0.0" y="321" width="300" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZgB-Mv-egM" id="LSn-gD-9fY">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="267" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Manager ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JjZ-Vq-puh">
@@ -891,11 +901,11 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="#456789" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ffe-Kn-rmL">
-                                                    <rect key="frame" x="221" y="13" width="64" height="18"/>
+                                                    <rect key="frame" x="201" y="13" width="64" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -919,7 +929,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="#789123" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WCN-gl-3l7">
@@ -951,7 +961,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="October 13, 2015" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Uan-YY-o2C">
@@ -978,12 +988,16 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BFh-Ah-WeB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-466" y="1151"/>
+            <point key="canvasLocation" x="-648" y="1349.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5bg-ie-Bml">
             <objects>
                 <viewController id="6DZ-fP-NLI" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xzX-hj-6Ex"/>
+                        <viewControllerLayoutGuide type="bottom" id="dsb-CZ-YFl"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pYm-wy-K4i">
                         <rect key="frame" x="0.0" y="0.0" width="300" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1005,7 +1019,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="6000 km" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2ez-zX-AHv">
@@ -1026,6 +1040,9 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="237"/>
+                                </variation>
                             </tableView>
                         </subviews>
                         <animations/>
@@ -1034,7 +1051,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="INe-l3-vhD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-835" y="1151"/>
+            <point key="canvasLocation" x="-648" y="996.5"/>
         </scene>
     </scenes>
 </document>
