@@ -10,6 +10,7 @@ import Foundation
 
 
 class User{
+    var email:String? = nil
     var key:String? = nil
     var keyDate:String? = nil
     var name:String? = nil

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14F27" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F27" minimumToolsVersion="Automatic">
+    <entity name="Message" syncable="YES"/>
     <entity name="Task" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="coordinates" optional="YES" attributeType="String" syncable="YES"/>
@@ -14,8 +15,8 @@
         <attribute name="taskDate" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <entity name="User" syncable="YES">
-        <attribute name="beta" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expDate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="keyDate" optional="YES" attributeType="String" syncable="YES"/>
@@ -23,7 +24,8 @@
         <attribute name="sName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="150"/>
         <element name="Task" positionX="-63" positionY="36" width="128" height="210"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Message" positionX="-63" positionY="90" width="128" height="45"/>
     </elements>
 </model>
