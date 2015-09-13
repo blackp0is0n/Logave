@@ -14,6 +14,25 @@ class CoreDataController{
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     func testFunc(){
+
+    }
+    func setUser(user:User?){
+        removeMessages()
+        removeTasks()
+        removeUser()
+        
+        let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: appDelegate.managedObjectContext!)
+        
+        newManagedObject.setValue(user?.name, forKey: "name")
+        newManagedObject.setValue(user?.sName, forKey: "sName")
+        newManagedObject.setValue(user?.keyDate, forKey: "keyDate")
+        newManagedObject.setValue(user?.key, forKey: "key")
+        newManagedObject.setValue(user?.name, forKey: "email")
+        newManagedObject.setValue(user?.expDate, forKey: "expDate")
+        appDelegate.saveContext()
+    }
+    
+    func getUser() -> User?{
         let fReq: NSFetchRequest = NSFetchRequest(entityName: "User")
         
         
@@ -21,25 +40,19 @@ class CoreDataController{
         do {
             result = try appDelegate.managedObjectContext!.executeFetchRequest(fReq)
         } catch let error1 as NSError {
-            print("\(error1.description)\n")
+            print("Core Data Error!\(error1.description)\n")
             result = nil
         }
+        let user:User = User()
         for resultItem in result! {
-            let name:String = resultItem.valueForKey("name") as! String
-            //var sName:String = resultItem.valueForKey("sName") as! String
-            //var key:String = resultItem.valueForKey("key") as! String
-            //var keyDate:String = resultItem.valueForKey("keyDate") as! String
-            //var email:String = resultItem.valueForKey("email") as! String
-            NSLog("Fetched item: \(name) ")
+            user.name = resultItem.valueForKey("name") as? String
+            user.sName = resultItem.valueForKey("sName") as? String
+            user.key = resultItem.valueForKey("key") as? String
+            user.keyDate = resultItem.valueForKey("keyDate") as? String
+            user.email = resultItem.valueForKey("email") as? String
+            break
         }
-    }
-    func setUser(user:User?){
-        
-    }
-    
-    func getUser() -> User?{
-        
-        return nil
+        return user
     }
     
     func getMessages() -> [Message?]{
@@ -48,5 +61,31 @@ class CoreDataController{
     
     func getTasks() -> [Task?]{
         return []
+    }
+    
+    func removeUser(){
+        
+        let fReq = NSFetchRequest(entityName: "User")
+        
+        var result: [AnyObject]?
+        do {
+            result = try appDelegate.managedObjectContext!.executeFetchRequest(fReq)
+        } catch let error1 as NSError {
+            print("Core Data Error!\(error1.description)\n")
+            result = nil
+        }
+        
+        for resultItem in result! {
+                appDelegate.managedObjectContext!.deleteObject(resultItem as! NSManagedObject)
+            }
+
+    }
+    
+    func removeTasks(){
+        
+    }
+    
+    func removeMessages(){
+        
     }
 }
