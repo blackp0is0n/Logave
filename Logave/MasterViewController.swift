@@ -8,6 +8,6 @@
 
 import UIKit
 
-class MasterViewController:UITableViewController{
+class MasterViewController:UIViewController{
     
 }
