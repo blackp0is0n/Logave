@@ -226,7 +226,7 @@
 				TargetAttributes = {
 					FAA0BBEC1B9474F900A36590 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = S6T4VJ437P;
+						DevelopmentTeam = UKBLVPAR54;
 					};
 					FAA0BC041B9474FA00A36590 = {
 						CreatedOnToolsVersion = 6.4;
@@ -424,7 +424,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Logave/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Logave.$(PRODUCT_BUNDLE_IDENTIFIER)";
+				PRODUCT_BUNDLE_IDENTIFIER = SnowSoft.Logave;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Logave-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -439,7 +439,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Logave/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Logave.$(PRODUCT_BUNDLE_IDENTIFIER)";
+				PRODUCT_BUNDLE_IDENTIFIER = SnowSoft.Logave;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Logave-Bridging-Header.h";
 			};
