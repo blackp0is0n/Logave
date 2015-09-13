@@ -10,5 +10,9 @@ import Foundation
 
 
 class User{
-    
+    var key:String? = nil
+    var keyDate:String? = nil
+    var name:String? = nil
+    var sName:String? = nil
+    var expDate:String? = nil
 }
