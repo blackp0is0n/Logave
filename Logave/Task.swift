@@ -13,7 +13,7 @@ class Task{
     var managerId:Int? = nil
     var courierId:Int? = nil
     var address:String? = nil
-    var coordinates:[String?] = []
+    var coordinates:[Double?] = []
     var descpription:String? = nil
     var name:String? = nil
     var sName:String? = nil
