@@ -27,8 +27,8 @@ class LoginController:UITableViewController {
     }
     
     @IBAction func GoUser(sender: AnyObject) {
-        var passwrd:String? = self.myPassWord?.text
-        var usrnm:String? = self.myUserName?.text
+        let passwrd:String? = self.myPassWord?.text
+        let usrnm:String? = self.myUserName?.text
         
         
         myUserName?.resignFirstResponder()
@@ -38,11 +38,11 @@ class LoginController:UITableViewController {
         
         let pather:String = urlPath + String(format: "\(usrnm!)&password=\(passwrd!.md5())")
 
-        println(pather)
+        print(pather)
         self.data = NSMutableData()
-        var url: NSURL = NSURL(string: pather)!
-        var request: NSURLRequest = NSURLRequest(URL: url)
-        var connection: NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: true)!
+        let url: NSURL = NSURL(string: pather)!
+        let request: NSURLRequest = NSURLRequest(URL: url)
+        let connection: NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: true)!
         connection.start()
         
     }
@@ -64,11 +64,10 @@ class LoginController:UITableViewController {
         showAlert("Issue",message: "Check your internet connection")
     }
     func connectionDidFinishLoading(connection: NSURLConnection!) {
-        var datastring = NSString(data:self.data, encoding:NSUTF8StringEncoding) as! String
+        //var datastring = NSString(data:self.data, encoding:NSUTF8StringEncoding) as! String
         
-        var jsonError: NSError?
-        let decodedJson = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &jsonError) as! Dictionary<String, AnyObject>
-        if jsonError == nil {
+
+        let decodedJson = (try! NSJSONSerialization.JSONObjectWithData(data, options: [])) as! Dictionary<String, AnyObject>
             if let serverData: AnyObject = decodedJson["data"] {
                 if let data: AnyObject = serverData["data"] {
                     if let sData:String  = data as? String{
@@ -76,12 +75,12 @@ class LoginController:UITableViewController {
                         return
                     }
                     if let user: AnyObject? = data["user"]{
-                        var key:String = user!["key"] as! String
-                        println("------")
-                        println(user)
-                        println("------")
-                        println(key)
-                        println("------")
+                        let key:String = user!["key"] as! String
+                        print("------")
+                        print(user)
+                        print("------")
+                        print(key)
+                        print("------")
                         showAlert("OOps", message: key)
                         
                         
@@ -105,7 +104,6 @@ class LoginController:UITableViewController {
                 
                 }
             }
-        }
         
         //println(datastring)
     }

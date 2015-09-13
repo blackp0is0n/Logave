@@ -31,7 +31,7 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
     var goViewController: UIViewController!
     var nonMenuViewController: UIViewController!
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
    
@@ -82,8 +82,6 @@ class LeftViewController : UIViewController, LeftMenuProtocol {
             break
         case .NonMenu:
             self.slideMenuController()?.closeLeft()
-            break
-        default:
             break
         }
     }

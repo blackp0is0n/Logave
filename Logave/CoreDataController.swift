@@ -14,17 +14,22 @@ class CoreDataController{
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     func testFunc(){
-        var fReq: NSFetchRequest = NSFetchRequest(entityName: "User")
+        let fReq: NSFetchRequest = NSFetchRequest(entityName: "User")
         
-        var error: NSError? = nil
         
-        var result = appDelegate.managedObjectContext!.executeFetchRequest(fReq, error:&error)
+        var result: [AnyObject]?
+        do {
+            result = try appDelegate.managedObjectContext!.executeFetchRequest(fReq)
+        } catch let error1 as NSError {
+            print("\(error1.description)\n")
+            result = nil
+        }
         for resultItem in result! {
-            var name:String = resultItem.valueForKey("name") as! String
-            var sName:String = resultItem.valueForKey("sName") as! String
-            var key:String = resultItem.valueForKey("key") as! String
-            var keyDate:String = resultItem.valueForKey("keyDate") as! String
-            var email:String = resultItem.valueForKey("email") as! String
+            let name:String = resultItem.valueForKey("name") as! String
+            //var sName:String = resultItem.valueForKey("sName") as! String
+            //var key:String = resultItem.valueForKey("key") as! String
+            //var keyDate:String = resultItem.valueForKey("keyDate") as! String
+            //var email:String = resultItem.valueForKey("email") as! String
             NSLog("Fetched item: \(name) ")
         }
     }
