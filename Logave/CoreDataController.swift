@@ -16,7 +16,9 @@ class CoreDataController{
     func testFunc(){
 
     }
-    func setUser(user:User?){
+    
+    
+    func setUser(user:User?){//remove all users from database and adding new user
         removeMessages()
         removeTasks()
         removeUser()
@@ -32,7 +34,7 @@ class CoreDataController{
         appDelegate.saveContext()
     }
     
-    func getUser() -> User?{
+    func getUser() -> User?{//getting existing user from database
         let fReq: NSFetchRequest = NSFetchRequest(entityName: "User")
         
         
@@ -55,17 +57,82 @@ class CoreDataController{
         return user
     }
     
-    func getMessages() -> [Message?]{
+    
+    
+    func getMessages() -> [Message?]{//Must be completed!!!!!!!!!
+        let fReq: NSFetchRequest = NSFetchRequest(entityName: "Message")
+        
+        //var messages = [Message?]()
+        var result: [AnyObject]?
+        do {
+            result = try appDelegate.managedObjectContext!.executeFetchRequest(fReq)
+        } catch let error1 as NSError {
+            print("Core Data Error!\(error1.description)\n")
+            result = nil
+        }
+        let user:User = User()
+        for resultItem in result! {
+            user.name = resultItem.valueForKey("name") as? String
+            user.sName = resultItem.valueForKey("sName") as? String
+            user.key = resultItem.valueForKey("key") as? String
+            user.keyDate = resultItem.valueForKey("keyDate") as? String
+            user.email = resultItem.valueForKey("email") as? String
+            break
+        }
         return []
     }
+    
+    
     
     func getTasks() -> [Task?]{
+        let fReq: NSFetchRequest = NSFetchRequest(entityName: "Task")
+        
+        //var messages = [Message?]()
+        var result: [AnyObject]?
+        do {
+            result = try appDelegate.managedObjectContext!.executeFetchRequest(fReq)
+        } catch let error1 as NSError {
+            print("Core Data Error!\(error1.description)\n")
+            result = nil
+        }
+        let task:Task = Task()
+        for resultItem in result! {
+            task.id = resultItem.valueForKey("id") as? Int32
+            task.managerId = resultItem.valueForKey("manager_id") as? Int32
+            task.courierId = resultItem.valueForKey("courier_id") as? Int32
+            task.name = resultItem.valueForKey("reciever_name") as? String
+            task.sName = resultItem.valueForKey("reeciever_sname") as? String
+            task.phone = resultItem.valueForKey("reciever_phone") as? String
+            task.descpription = resultItem.valueForKey("task_description") as? String
+            task.active = resultItem.valueForKey("isActive") as? Bool
+            task.address = resultItem.valueForKey("address") as? String
+            break
+        }
         return []
     }
     
-    func removeUser(){
+
+    func removeUser(){//remove all users in a database
         
-        let fReq = NSFetchRequest(entityName: "User")
+        removeAllEntities("User")
+
+    }
+    
+    
+    
+    func removeTasks(){
+        removeAllEntities("Task")
+    }
+    
+    
+    
+    func removeMessages(){
+        removeAllEntities("Message")
+    }
+    
+    
+    func removeAllEntities(entity:String?){
+        let fReq = NSFetchRequest(entityName: entity!)
         
         var result: [AnyObject]?
         do {
@@ -76,16 +143,7 @@ class CoreDataController{
         }
         
         for resultItem in result! {
-                appDelegate.managedObjectContext!.deleteObject(resultItem as! NSManagedObject)
-            }
-
-    }
-    
-    func removeTasks(){
-        
-    }
-    
-    func removeMessages(){
-        
+            appDelegate.managedObjectContext!.deleteObject(resultItem as! NSManagedObject)
+        }
     }
 }
