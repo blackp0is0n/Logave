@@ -9,5 +9,11 @@
 import UIKit
 
 class SideViewController: UITableViewController{
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    @IBAction func touch(sender: AnyObject) {
+        let masterTest = appDelegate.masterViewController
+        masterTest?.change()
+    }
+    @IBOutlet weak var touchTasks: UIButton!
     
 }

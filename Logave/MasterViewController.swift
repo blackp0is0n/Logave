@@ -9,5 +9,18 @@
 import UIKit
 
 class MasterViewController:UIViewController{
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        appDelegate.masterViewController = self
+        
+        NSLog("appDelegate patched")
+    }
+    
+    func change(){
+        performSegueWithIdentifier("showTasks", sender: self)
+    }
     
 }
