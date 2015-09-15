@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		662A36CA1BA8D64100B91A09 /* DetailedOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662A36C91BA8D64100B91A09 /* DetailedOrderViewController.swift */; };
 		664D8B121BA8887B00384E7C /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664D8B111BA8887B00384E7C /* OrdersViewController.swift */; };
 		666555091BA8699F009D0197 /* MessagingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666555081BA8699F009D0197 /* MessagingController.swift */; };
-		667330FF1BA58E9E00793558 /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667330FE1BA58E9E00793558 /* SideViewController.swift */; };
-		667331011BA590E700793558 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667331001BA590E700793558 /* MasterViewController.swift */; };
 		FA2706191B9C60690079894E /* SwiftMD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2706181B9C60690079894E /* SwiftMD5.swift */; };
 		FA3753551B9B793E00BE7150 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3753541B9B793E00BE7150 /* LoginController.swift */; };
 		FA8A2E701BA4A1980084A49B /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A2E6F1BA4A1980084A49B /* CoreDataController.swift */; };
@@ -37,10 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		662A36C91BA8D64100B91A09 /* DetailedOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedOrderViewController.swift; sourceTree = "<group>"; };
 		664D8B111BA8887B00384E7C /* OrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		666555081BA8699F009D0197 /* MessagingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingController.swift; sourceTree = "<group>"; };
-		667330FE1BA58E9E00793558 /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
-		667331001BA590E700793558 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		FA2706181B9C60690079894E /* SwiftMD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftMD5.swift; path = ../SwiftMD5.swift; sourceTree = "<group>"; };
 		FA27061C1B9C623B0079894E /* Logave-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Logave-Bridging-Header.h"; sourceTree = "<group>"; };
 		FA3753541B9B793E00BE7150 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -137,10 +135,9 @@
 				FA6B573C1BA3462B006EBCE5 /* Support Classes */,
 				FAA0BBF21B9474F900A36590 /* AppDelegate.swift */,
 				FA3753541B9B793E00BE7150 /* LoginController.swift */,
-				667330FE1BA58E9E00793558 /* SideViewController.swift */,
-				667331001BA590E700793558 /* MasterViewController.swift */,
 				666555081BA8699F009D0197 /* MessagingController.swift */,
 				664D8B111BA8887B00384E7C /* OrdersViewController.swift */,
+				662A36C91BA8D64100B91A09 /* DetailedOrderViewController.swift */,
 				FAA0BBF91B9474FA00A36590 /* Main.storyboard */,
 				FAA0BBFC1B9474FA00A36590 /* Images.xcassets */,
 				FAA0BBFE1B9474FA00A36590 /* LaunchScreen.xib */,
@@ -281,16 +278,15 @@
 				FAA0BBF31B9474F900A36590 /* AppDelegate.swift in Sources */,
 				FA8A2E701BA4A1980084A49B /* CoreDataController.swift in Sources */,
 				FA8A2E751BA4A5050084A49B /* Task.swift in Sources */,
-				667331011BA590E700793558 /* MasterViewController.swift in Sources */,
 				FAA0BBF61B9474F900A36590 /* Logave.xcdatamodeld in Sources */,
 				FA2706191B9C60690079894E /* SwiftMD5.swift in Sources */,
+				662A36CA1BA8D64100B91A09 /* DetailedOrderViewController.swift in Sources */,
 				FA8A2E791BA4A7A50084A49B /* JsonParserHelper.swift in Sources */,
 				FA8A2E771BA4A5250084A49B /* Message.swift in Sources */,
 				FA3753551B9B793E00BE7150 /* LoginController.swift in Sources */,
 				664D8B121BA8887B00384E7C /* OrdersViewController.swift in Sources */,
 				FA8A2E731BA4A4E80084A49B /* User.swift in Sources */,
 				666555091BA8699F009D0197 /* MessagingController.swift in Sources */,
-				667330FF1BA58E9E00793558 /* SideViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
