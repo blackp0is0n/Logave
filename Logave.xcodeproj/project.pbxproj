@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -222,7 +222,7 @@
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
-				ORGANIZATIONNAME = Alex;
+				ORGANIZATIONNAME = Logave;
 				TargetAttributes = {
 					FAA0BBEC1B9474F900A36590 = {
 						CreatedOnToolsVersion = 6.4;
@@ -235,7 +235,7 @@
 				};
 			};
 			buildConfigurationList = FAA0BBE81B9474F900A36590 /* Build configuration list for PBXProject "Logave" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
