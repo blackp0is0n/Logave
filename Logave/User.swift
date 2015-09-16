@@ -16,4 +16,5 @@ class User{
     var name:String? = nil
     var sName:String? = nil
     var expDate:String? = nil
+    var id:Int32? = nil
 }

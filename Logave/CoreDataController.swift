@@ -95,8 +95,9 @@ class CoreDataController{
             print("Core Data Error!\(error1.description)\n")
             result = nil
         }
-        let task:Task = Task()
+        var tasks = [Task?]()
         for resultItem in result! {
+            let task = Task()
             task.id = resultItem.valueForKey("id") as? Int32
             task.managerId = resultItem.valueForKey("manager_id") as? Int32
             task.courierId = resultItem.valueForKey("courier_id") as? Int32
@@ -106,9 +107,10 @@ class CoreDataController{
             task.descpription = resultItem.valueForKey("task_description") as? String
             task.active = resultItem.valueForKey("isActive") as? Bool
             task.address = resultItem.valueForKey("address") as? String
+            tasks.append(task)
             break
         }
-        return []
+        return tasks
     }
     
 
