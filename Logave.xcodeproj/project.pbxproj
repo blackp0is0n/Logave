@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		662A36CA1BA8D64100B91A09 /* DetailedOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662A36C91BA8D64100B91A09 /* DetailedOrderViewController.swift */; };
 		664D8B121BA8887B00384E7C /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664D8B111BA8887B00384E7C /* OrdersViewController.swift */; };
+		66614ACB1BA9C86A00D68C05 /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66614ACA1BA9C86A00D68C05 /* ConversationsController.swift */; };
 		666555091BA8699F009D0197 /* MessagingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666555081BA8699F009D0197 /* MessagingController.swift */; };
 		FA2706191B9C60690079894E /* SwiftMD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2706181B9C60690079894E /* SwiftMD5.swift */; };
 		FA3753551B9B793E00BE7150 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3753541B9B793E00BE7150 /* LoginController.swift */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		662A36C91BA8D64100B91A09 /* DetailedOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedOrderViewController.swift; sourceTree = "<group>"; };
 		664D8B111BA8887B00384E7C /* OrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
+		66614ACA1BA9C86A00D68C05 /* ConversationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
 		666555081BA8699F009D0197 /* MessagingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingController.swift; sourceTree = "<group>"; };
 		FA2706181B9C60690079894E /* SwiftMD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftMD5.swift; path = ../SwiftMD5.swift; sourceTree = "<group>"; };
 		FA27061C1B9C623B0079894E /* Logave-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Logave-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				FAA0BBF21B9474F900A36590 /* AppDelegate.swift */,
 				FA3753541B9B793E00BE7150 /* LoginController.swift */,
 				666555081BA8699F009D0197 /* MessagingController.swift */,
+				66614ACA1BA9C86A00D68C05 /* ConversationsController.swift */,
 				664D8B111BA8887B00384E7C /* OrdersViewController.swift */,
 				662A36C91BA8D64100B91A09 /* DetailedOrderViewController.swift */,
 				FAA0BBF91B9474FA00A36590 /* Main.storyboard */,
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66614ACB1BA9C86A00D68C05 /* ConversationsController.swift in Sources */,
 				FAA0BBF31B9474F900A36590 /* AppDelegate.swift in Sources */,
 				FA8A2E701BA4A1980084A49B /* CoreDataController.swift in Sources */,
 				FA8A2E751BA4A5050084A49B /* Task.swift in Sources */,

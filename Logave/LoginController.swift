@@ -44,9 +44,7 @@ class LoginController:UITableViewController {
         connection.start()
         
     }
-    
-    
-    
+
     func connection(connection: NSURLConnection!, didReceiveData data: NSData!) {
         self.data.appendData(data)
     }
@@ -62,48 +60,23 @@ class LoginController:UITableViewController {
         showAlert("Issue",message: "Check your internet connection")
     }
     func connectionDidFinishLoading(connection: NSURLConnection!) {
-        //var datastring = NSString(data:self.data, encoding:NSUTF8StringEncoding) as! String
-        
-
         let decodedJson = (try! NSJSONSerialization.JSONObjectWithData(data, options: [])) as! Dictionary<String, AnyObject>
-            if let serverData: AnyObject = decodedJson["data"] {
-                if let data: AnyObject = serverData["data"] {
-                    if let sData:String  = data as? String{
-                        showAlert(sData, message: "Type email and password again")
-                        return
-                    }
-                    if let user: AnyObject? = data["user"]{
-                        let key:String = user!["key"] as! String
-                        print("------")
-                        print(user)
-                        print("------")
-                        print(key)
-                        print("------")
-                        performSegueWithIdentifier("successfulAuthSegue", sender: nil)
-                        //showAlert("OOps", message: key)
-                        
-                        
-                        /*var storyboard = UIStoryboard(name: "Main", bundle: nil)
-                        
-                        let mainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController") as! MainViewController
-                        let leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController") as! LeftViewController
-                        
-                        let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
-                        
-                        leftViewController.mainViewController = nvc
-                        
-                        let slideMenuController = SlideMenuController(mainViewController:nvc, leftMenuViewController: leftViewController)
-                        slideMenuController.closeLeft()
-                        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                        var myWindow = appDelegate.window
-                        myWindow?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
-                        myWindow?.rootViewController = slideMenuController
-                        myWindow?.makeKeyAndVisible()*/
-                    }
-                
+        if let serverData: AnyObject = decodedJson["data"] {
+            if let data: AnyObject = serverData["data"] {
+                if let sData:String  = data as? String{
+                    showAlert(sData, message: "Type email and password again")
+                    return
+                }
+                if let user: AnyObject? = data["user"]{
+                    let key:String = user!["key"] as! String
+                    print("------")
+                    print(user)
+                    print("------")
+                    print(key)
+                    print("------")
+                    performSegueWithIdentifier("successfulAuthSegue", sender: nil)
                 }
             }
-        
-        //println(datastring)
+        }
     }    
 }

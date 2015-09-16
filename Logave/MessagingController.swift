@@ -37,8 +37,4 @@ class MessagingController:UITableViewController{
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: (NSIndexPath!)) {
         self.performSegueWithIdentifier("showConversation", sender: self)
     }
-    
-    override func viewDidLoad() {
-       super.viewDidLoad()
-    }
 }
