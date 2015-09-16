@@ -10,11 +10,11 @@ import Foundation
 
 
 class User{
-    var email:String? = nil
-    var key:String? = nil
-    var keyDate:String? = nil
-    var name:String? = nil
-    var sName:String? = nil
-    var expDate:String? = nil
-    var id:Int32? = nil
+    var email:String = ""
+    var key:String = ""
+    var keyDate:String = ""
+    var name:String = ""
+    var sName:String = ""
+    var expDate:String = ""
+    var id:String = ""
 }

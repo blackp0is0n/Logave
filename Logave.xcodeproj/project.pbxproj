@@ -13,6 +13,7 @@
 		666555091BA8699F009D0197 /* MessagingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666555081BA8699F009D0197 /* MessagingController.swift */; };
 		FA2706191B9C60690079894E /* SwiftMD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2706181B9C60690079894E /* SwiftMD5.swift */; };
 		FA3753551B9B793E00BE7150 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3753541B9B793E00BE7150 /* LoginController.swift */; };
+		FA4094C81BA9D32200667582 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4094C71BA9D32200667582 /* MenuController.swift */; settings = {ASSET_TAGS = (); }; };
 		FA8A2E701BA4A1980084A49B /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A2E6F1BA4A1980084A49B /* CoreDataController.swift */; };
 		FA8A2E731BA4A4E80084A49B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A2E721BA4A4E80084A49B /* User.swift */; };
 		FA8A2E751BA4A5050084A49B /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A2E741BA4A5050084A49B /* Task.swift */; };
@@ -44,6 +45,7 @@
 		FA2706181B9C60690079894E /* SwiftMD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftMD5.swift; path = ../SwiftMD5.swift; sourceTree = "<group>"; };
 		FA27061C1B9C623B0079894E /* Logave-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Logave-Bridging-Header.h"; sourceTree = "<group>"; };
 		FA3753541B9B793E00BE7150 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		FA4094C71BA9D32200667582 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		FA4D94441B98A01700D9F7BE /* Logave1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logave1.xcdatamodel; sourceTree = "<group>"; };
 		FA4D94451B98A4D800D9F7BE /* Logave2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logave2.xcdatamodel; sourceTree = "<group>"; };
 		FA773BA81B9C57D1001A5CA5 /* Logave3plus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logave3plus.xcdatamodel; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				FA6B573C1BA3462B006EBCE5 /* Support Classes */,
 				FAA0BBF21B9474F900A36590 /* AppDelegate.swift */,
 				FA3753541B9B793E00BE7150 /* LoginController.swift */,
+				FA4094C71BA9D32200667582 /* MenuController.swift */,
 				666555081BA8699F009D0197 /* MessagingController.swift */,
 				66614ACA1BA9C86A00D68C05 /* ConversationsController.swift */,
 				664D8B111BA8887B00384E7C /* OrdersViewController.swift */,
@@ -286,6 +289,7 @@
 				FA2706191B9C60690079894E /* SwiftMD5.swift in Sources */,
 				662A36CA1BA8D64100B91A09 /* DetailedOrderViewController.swift in Sources */,
 				FA8A2E791BA4A7A50084A49B /* JsonParserHelper.swift in Sources */,
+				FA4094C81BA9D32200667582 /* MenuController.swift in Sources */,
 				FA8A2E771BA4A5250084A49B /* Message.swift in Sources */,
 				FA3753551B9B793E00BE7150 /* LoginController.swift in Sources */,
 				664D8B121BA8887B00384E7C /* OrdersViewController.swift in Sources */,
@@ -525,7 +529,7 @@
 				FA4D94441B98A01700D9F7BE /* Logave1.xcdatamodel */,
 				FAA0BBF51B9474F900A36590 /* Logave.xcdatamodel */,
 			);
-			currentVersion = FA4D94451B98A4D800D9F7BE /* Logave2.xcdatamodel */;
+			currentVersion = FA773BA81B9C57D1001A5CA5 /* Logave3plus.xcdatamodel */;
 			path = Logave.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -14,7 +14,7 @@ class CoreDataController{
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     func testFunc(){
-
+        
     }
     
     
@@ -31,6 +31,7 @@ class CoreDataController{
         newManagedObject.setValue(user?.key, forKey: "key")
         newManagedObject.setValue(user?.name, forKey: "email")
         newManagedObject.setValue(user?.expDate, forKey: "expDate")
+        newManagedObject.setValue(String(user?.id), forKey: "id")
         appDelegate.saveContext()
     }
     
@@ -45,13 +46,16 @@ class CoreDataController{
             print("Core Data Error!\(error1.description)\n")
             result = nil
         }
-        let user:User = User()
+        let user:User? = User()
         for resultItem in result! {
-            user.name = resultItem.valueForKey("name") as? String
-            user.sName = resultItem.valueForKey("sName") as? String
-            user.key = resultItem.valueForKey("key") as? String
-            user.keyDate = resultItem.valueForKey("keyDate") as? String
-            user.email = resultItem.valueForKey("email") as? String
+            user?.name = resultItem.valueForKey("name") as! String
+            user?.sName = resultItem.valueForKey("sName") as! String
+            user?.key = resultItem.valueForKey("key") as! String
+            user?.keyDate = resultItem.valueForKey("keyDate") as! String
+            user?.email = resultItem.valueForKey("email") as! String
+            let stringer =  resultItem.valueForKey("id") as! String
+            user?.id = stringer
+            NSLog(stringer)
             break
         }
         return user
@@ -72,11 +76,11 @@ class CoreDataController{
         }
         let user:User = User()
         for resultItem in result! {
-            user.name = resultItem.valueForKey("name") as? String
-            user.sName = resultItem.valueForKey("sName") as? String
-            user.key = resultItem.valueForKey("key") as? String
-            user.keyDate = resultItem.valueForKey("keyDate") as? String
-            user.email = resultItem.valueForKey("email") as? String
+            user.name = resultItem.valueForKey("name") as! String
+            user.sName = resultItem.valueForKey("sName") as! String
+            user.key = resultItem.valueForKey("key") as! String
+            user.keyDate = resultItem.valueForKey("keyDate") as! String
+            user.email = resultItem.valueForKey("email") as! String
             break
         }
         return []
@@ -102,7 +106,7 @@ class CoreDataController{
             task.managerId = resultItem.valueForKey("manager_id") as? Int32
             task.courierId = resultItem.valueForKey("courier_id") as? Int32
             task.name = resultItem.valueForKey("reciever_name") as? String
-            task.sName = resultItem.valueForKey("reeciever_sname") as? String
+            task.sName = resultItem.valueForKey("reciever_sname") as? String
             task.phone = resultItem.valueForKey("reciever_phone") as? String
             task.descpription = resultItem.valueForKey("task_description") as? String
             task.active = resultItem.valueForKey("isActive") as? Bool
@@ -113,11 +117,11 @@ class CoreDataController{
         return tasks
     }
     
-
+    
     func removeUser(){//remove all users in a database
         
         removeAllEntities("User")
-
+        
     }
     
     

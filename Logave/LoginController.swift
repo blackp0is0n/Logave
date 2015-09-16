@@ -28,23 +28,24 @@ class LoginController:UITableViewController {
     @IBAction func authUser(sender: AnyObject) {
         let username:String? = authUsername.text
         let password:String? = authPassword.text
-
+        
         authUsername?.resignFirstResponder()
         authPassword?.resignFirstResponder()
         
         let urlPath: String = "http://api.logave.com/user/login?device=c21592b180d10e601f2080111fc657de&email="
         
         let pather:String = urlPath + String(format: "\(username!)&password=\(password!.md5())")
-
+        
         print(pather)
         self.data = NSMutableData()
         let url: NSURL = NSURL(string: pather)!
         let request: NSURLRequest = NSURLRequest(URL: url)
         let connection: NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: true)!
         connection.start()
-        
     }
-
+    
+    
+    
     func connection(connection: NSURLConnection!, didReceiveData data: NSData!) {
         self.data.appendData(data)
     }
@@ -59,24 +60,18 @@ class LoginController:UITableViewController {
     func connection(connection: NSURLConnection!, didFailWithError error:NSError! ){
         showAlert("Issue",message: "Check your internet connection")
     }
+    
     func connectionDidFinishLoading(connection: NSURLConnection!) {
-        let decodedJson = (try! NSJSONSerialization.JSONObjectWithData(data, options: [])) as! Dictionary<String, AnyObject>
-        if let serverData: AnyObject = decodedJson["data"] {
-            if let data: AnyObject = serverData["data"] {
-                if let sData:String  = data as? String{
-                    showAlert(sData, message: "Type email and password again")
-                    return
-                }
-                if let user: AnyObject? = data["user"]{
-                    let key:String = user!["key"] as! String
-                    print("------")
-                    print(user)
-                    print("------")
-                    print(key)
-                    print("------")
-                    performSegueWithIdentifier("successfulAuthSegue", sender: nil)
-                }
-            }
+        let user:User? = JsonParserHelper.getUserFromData(data)
+        if user != nil{
+            print(user!.name + " " + user!.sName + " " + user!.id)
+            let coreDataTest = CoreDataController()
+            coreDataTest.setUser(user)
+            
+            performSegueWithIdentifier("successfulAuthSegue", sender: self)
+        } else {
+            showAlert("Issue", message: "Authorization error")
         }
+        
     }    
 }
