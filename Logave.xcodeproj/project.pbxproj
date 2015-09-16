@@ -19,6 +19,7 @@
 		66AB9A3D1BAA0B9500298EB9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AB9A3C1BAA0B9500298EB9 /* MapKit.framework */; };
 		66AB9A3F1BAA0B9F00298EB9 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AB9A3E1BAA0B9F00298EB9 /* NotificationCenter.framework */; };
 		66AB9A411BAA0CBE00298EB9 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AB9A401BAA0CBE00298EB9 /* MapController.swift */; };
+		66EECA0F1BAA35C9005EDAAE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EECA0E1BAA35C9005EDAAE /* SettingsViewController.swift */; };
 		FA2706191B9C60690079894E /* SwiftMD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2706181B9C60690079894E /* SwiftMD5.swift */; };
 		FA3753551B9B793E00BE7150 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3753541B9B793E00BE7150 /* LoginController.swift */; };
 		FA4094C81BA9D32200667582 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4094C71BA9D32200667582 /* MenuController.swift */; };
@@ -58,6 +59,7 @@
 		66AB9A3C1BAA0B9500298EB9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		66AB9A3E1BAA0B9F00298EB9 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		66AB9A401BAA0CBE00298EB9 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		66EECA0E1BAA35C9005EDAAE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FA2706181B9C60690079894E /* SwiftMD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftMD5.swift; path = ../SwiftMD5.swift; sourceTree = "<group>"; };
 		FA27061C1B9C623B0079894E /* Logave-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Logave-Bridging-Header.h"; sourceTree = "<group>"; };
 		FA3753541B9B793E00BE7150 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				FAA0BBF21B9474F900A36590 /* AppDelegate.swift */,
 				FA3753541B9B793E00BE7150 /* LoginController.swift */,
 				FA4094C71BA9D32200667582 /* MenuController.swift */,
+				66EECA0E1BAA35C9005EDAAE /* SettingsViewController.swift */,
 				66AB9A401BAA0CBE00298EB9 /* MapController.swift */,
 				666555081BA8699F009D0197 /* MessagingController.swift */,
 				66614ACA1BA9C86A00D68C05 /* ConversationsController.swift */,
@@ -319,6 +322,7 @@
 				FAA0BBF61B9474F900A36590 /* Logave.xcdatamodeld in Sources */,
 				FA2706191B9C60690079894E /* SwiftMD5.swift in Sources */,
 				662A36CA1BA8D64100B91A09 /* DetailedOrderViewController.swift in Sources */,
+				66EECA0F1BAA35C9005EDAAE /* SettingsViewController.swift in Sources */,
 				FA8A2E791BA4A7A50084A49B /* JsonParserHelper.swift in Sources */,
 				FA4094C81BA9D32200667582 /* MenuController.swift in Sources */,
 				FA8A2E771BA4A5250084A49B /* Message.swift in Sources */,
