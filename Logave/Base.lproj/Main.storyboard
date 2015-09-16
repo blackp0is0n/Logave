@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GiB-Zv-qSf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9046" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GiB-Zv-qSf">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
     </dependencies>
     <scenes>
         <!--Authorization-->
@@ -352,7 +351,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNJ-1y-bQZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2091" y="-1473"/>
+            <point key="canvasLocation" x="-2091" y="-1545"/>
         </scene>
         <!--Logave-->
         <scene sceneID="UEv-yn-Waz">
@@ -458,7 +457,7 @@
             <objects>
                 <tableViewController id="BEL-HD-Ug2" customClass="OrdersViewController" customModule="Logave" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ATS-OI-eof">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -681,7 +680,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="User" id="XgD-eZ-aTt">
                         <barButtonItem key="backBarButtonItem" title="Messages" id="ceV-Mx-RRP"/>
-                        <barButtonItem key="rightBarButtonItem" title="userpic" style="plain" id="6tc-iL-w1N">
+                        <barButtonItem key="rightBarButtonItem" title="userpic" id="6tc-iL-w1N">
                             <color key="tintColor" red="0.0" green="0.55148237180000004" blue="0.097995965290000001" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -720,7 +719,7 @@
             <objects>
                 <tableViewController id="RHV-HX-fKL" customClass="DetailedOrderViewController" customModule="Logave" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="kDO-N3-IG2">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1027,20 +1026,35 @@
         <!--Order-->
         <scene sceneID="yRX-Y1-8zI">
             <objects>
-                <viewController id="CCe-Er-aZe" sceneMemberID="viewController">
+                <viewController id="CCe-Er-aZe" customClass="MapController" customModule="Logave" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zTF-I0-t24"/>
                         <viewControllerLayoutGuide type="bottom" id="qHD-AJ-Shj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KsU-Wb-e9W">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sqJ-mk-bOd">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                            </mapView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sqJ-mk-bOd" firstAttribute="leading" secondItem="KsU-Wb-e9W" secondAttribute="leading" id="0G5-HJ-hSc"/>
+                            <constraint firstAttribute="bottom" secondItem="sqJ-mk-bOd" secondAttribute="bottom" id="5yS-io-AAr"/>
+                            <constraint firstAttribute="trailing" secondItem="sqJ-mk-bOd" secondAttribute="trailing" id="ByY-wJ-fQa"/>
+                            <constraint firstItem="sqJ-mk-bOd" firstAttribute="top" secondItem="KsU-Wb-e9W" secondAttribute="top" id="jhh-NY-yoF"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Order" id="yPB-xK-6Ip">
                         <barButtonItem key="backBarButtonItem" title="Back" id="rMY-Wc-o1Y"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="sqJ-mk-bOd" id="buh-Ol-k6A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2U0-AB-kTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1202,13 +1216,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="LVG-1H-sTI">
-                                <cells/>
-                            </tableViewSection>
                             <tableViewSection id="lAy-4W-QCK">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="KIK-gb-r1f" style="IBUITableViewCellStyleDefault" id="MXL-Va-xtr">
-                                        <rect key="frame" x="0.0" y="528" width="350" height="45"/>
+                                        <rect key="frame" x="0.0" y="500" width="350" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MXL-Va-xtr" id="R0y-lK-4Xi">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="44"/>
@@ -1276,6 +1287,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uOB-53-HMr"/>
+        <segue reference="k8H-mG-WTA"/>
     </inferredMetricsTieBreakers>
 </document>
