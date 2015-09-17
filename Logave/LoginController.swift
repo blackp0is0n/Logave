@@ -68,9 +68,9 @@ class LoginController:UITableViewController {
             let coreDataTest = CoreDataController()
             coreDataTest.setUser(user)
             
-            performSegueWithIdentifier("successfulAuthSegue", sender: self)
+            performSegueWithIdentifier("authCompleted", sender: self)
         } else {
-            showAlert("Issue", message: "Authorization error")
+            showAlert("Error", message: "Re-Check Your Credentials")
         }
         
     }    

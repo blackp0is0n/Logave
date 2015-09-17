@@ -15,10 +15,10 @@ class MenuController:UIViewController {
         let coreDataTest = CoreDataController()
         let user = coreDataTest.getUser()
         
-        if user?.name != ""{
+        /*if user?.name != ""{
             performSegueWithIdentifier("showMenu", sender: self)
         } else {
-            performSegueWithIdentifier("showAuthMenu", sender: self)
-        }
+            performSegueWithIdentifier("showAuth", sender: self)
+        }*/
     }
 }

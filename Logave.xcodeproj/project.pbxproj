@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		662307D91BAAE544002D3F6F /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662307D81BAAE544002D3F6F /* SideMenuController.swift */; };
 		662A36CA1BA8D64100B91A09 /* DetailedOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662A36C91BA8D64100B91A09 /* DetailedOrderViewController.swift */; };
 		664D8B121BA8887B00384E7C /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664D8B111BA8887B00384E7C /* OrdersViewController.swift */; };
 		66614ACB1BA9C86A00D68C05 /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66614ACA1BA9C86A00D68C05 /* ConversationsController.swift */; };
@@ -47,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		662307D41BAAE3F2002D3F6F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		662307D81BAAE544002D3F6F /* SideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 		662A36C91BA8D64100B91A09 /* DetailedOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedOrderViewController.swift; sourceTree = "<group>"; };
 		664D8B111BA8887B00384E7C /* OrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		66614ACA1BA9C86A00D68C05 /* ConversationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
@@ -140,6 +143,7 @@
 		FAA0BBE41B9474F900A36590 = {
 			isa = PBXGroup;
 			children = (
+				662307D41BAAE3F2002D3F6F /* MessageUI.framework */,
 				66AB9A3E1BAA0B9F00298EB9 /* NotificationCenter.framework */,
 				66AB9A3C1BAA0B9500298EB9 /* MapKit.framework */,
 				66AB9A381BAA0B8900298EB9 /* Contacts.framework */,
@@ -177,6 +181,7 @@
 				666555081BA8699F009D0197 /* MessagingController.swift */,
 				66614ACA1BA9C86A00D68C05 /* ConversationsController.swift */,
 				664D8B111BA8887B00384E7C /* OrdersViewController.swift */,
+				662307D81BAAE544002D3F6F /* SideMenuController.swift */,
 				662A36C91BA8D64100B91A09 /* DetailedOrderViewController.swift */,
 				FAA0BBF91B9474FA00A36590 /* Main.storyboard */,
 				FAA0BBFC1B9474FA00A36590 /* Images.xcassets */,
@@ -315,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				662307D91BAAE544002D3F6F /* SideMenuController.swift in Sources */,
 				66614ACB1BA9C86A00D68C05 /* ConversationsController.swift in Sources */,
 				FAA0BBF31B9474F900A36590 /* AppDelegate.swift in Sources */,
 				FA8A2E701BA4A1980084A49B /* CoreDataController.swift in Sources */,
