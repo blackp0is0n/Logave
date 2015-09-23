@@ -8,9 +8,20 @@
 
 import UIKit
 
-class OrdersViewController:UITableViewController{
+class OrdersViewController:UITableViewController, slideViewTransitionManagerDelegate{
     let orders = ["Apples","Trash Bins","Windows","Penguins"]
     let distantions = ["150m","350m","1km","800m"]
+    
+    var slideTransitionManager = SlideTransitionManager()
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let menuTableViewController = segue.destinationViewController as! SideMenuController
+        menuTableViewController.transitioningDelegate = self.slideTransitionManager
+    }
+    
+    func dismiss() {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return orders.count

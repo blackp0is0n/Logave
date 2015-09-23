@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		662307D91BAAE544002D3F6F /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662307D81BAAE544002D3F6F /* SideMenuController.swift */; };
+		662307FF1BAB273A002D3F6F /* SlideViewTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662307FE1BAB273A002D3F6F /* SlideViewTransitionManager.swift */; };
 		662A36CA1BA8D64100B91A09 /* DetailedOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662A36C91BA8D64100B91A09 /* DetailedOrderViewController.swift */; };
 		664D8B121BA8887B00384E7C /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664D8B111BA8887B00384E7C /* OrdersViewController.swift */; };
 		66614ACB1BA9C86A00D68C05 /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66614ACA1BA9C86A00D68C05 /* ConversationsController.swift */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		662307D41BAAE3F2002D3F6F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		662307D81BAAE544002D3F6F /* SideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
+		662307FE1BAB273A002D3F6F /* SlideViewTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewTransitionManager.swift; sourceTree = "<group>"; };
 		662A36C91BA8D64100B91A09 /* DetailedOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedOrderViewController.swift; sourceTree = "<group>"; };
 		664D8B111BA8887B00384E7C /* OrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		66614ACA1BA9C86A00D68C05 /* ConversationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
@@ -178,10 +180,11 @@
 				FA4094C71BA9D32200667582 /* MenuController.swift */,
 				66EECA0E1BAA35C9005EDAAE /* SettingsViewController.swift */,
 				66AB9A401BAA0CBE00298EB9 /* MapController.swift */,
-				666555081BA8699F009D0197 /* MessagingController.swift */,
 				66614ACA1BA9C86A00D68C05 /* ConversationsController.swift */,
+				666555081BA8699F009D0197 /* MessagingController.swift */,
 				664D8B111BA8887B00384E7C /* OrdersViewController.swift */,
 				662307D81BAAE544002D3F6F /* SideMenuController.swift */,
+				662307FE1BAB273A002D3F6F /* SlideViewTransitionManager.swift */,
 				662A36C91BA8D64100B91A09 /* DetailedOrderViewController.swift */,
 				FAA0BBF91B9474FA00A36590 /* Main.storyboard */,
 				FAA0BBFC1B9474FA00A36590 /* Images.xcassets */,
@@ -337,6 +340,7 @@
 				FA8A2E731BA4A4E80084A49B /* User.swift in Sources */,
 				66AB9A411BAA0CBE00298EB9 /* MapController.swift in Sources */,
 				666555091BA8699F009D0197 /* MessagingController.swift in Sources */,
+				662307FF1BAB273A002D3F6F /* SlideViewTransitionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

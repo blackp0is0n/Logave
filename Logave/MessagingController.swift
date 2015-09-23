@@ -16,9 +16,21 @@ class ConversationCell:UITableViewCell{
     @IBOutlet weak var lastMessageTime: UILabel!
 }
 
-class MessagingController:UITableViewController{
+class MessagingController:UITableViewController, slideViewTransitionManagerDelegate{
     
-    let conversations = ["John Appleseed","Alexander Sifakoff","Big Boss","ZOG"]
+    var slideTransitionManager = SlideTransitionManager()
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let menuTableViewController = segue.destinationViewController as! SideMenuController
+        menuTableViewController.currentItem = self.title!
+        menuTableViewController.transitioningDelegate = self.slideTransitionManager
+    }
+    
+    func dismiss() {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    let conversations = ["John Appleseed","Alexander Sifuck0ff","Big Boss","ZOG"]
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return conversations.count
