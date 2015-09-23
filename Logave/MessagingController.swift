@@ -21,9 +21,10 @@ class MessagingController:UITableViewController, slideViewTransitionManagerDeleg
     var slideTransitionManager = SlideTransitionManager()
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let menuTableViewController = segue.destinationViewController as! SideMenuController
-        menuTableViewController.currentItem = self.title!
-        menuTableViewController.transitioningDelegate = self.slideTransitionManager
+        if segue.identifier == "showMenu" {
+            let menuTableViewController = segue.destinationViewController as! SideMenuController
+            menuTableViewController.transitioningDelegate = self.slideTransitionManager
+        }
     }
     
     func dismiss() {

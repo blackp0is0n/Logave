@@ -15,8 +15,10 @@ class OrdersViewController:UITableViewController, slideViewTransitionManagerDele
     var slideTransitionManager = SlideTransitionManager()
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let menuTableViewController = segue.destinationViewController as! SideMenuController
-        menuTableViewController.transitioningDelegate = self.slideTransitionManager
+        if segue.identifier == "showMenu" {
+            let menuTableViewController = segue.destinationViewController as! SideMenuController
+            menuTableViewController.transitioningDelegate = self.slideTransitionManager
+        }
     }
     
     func dismiss() {
