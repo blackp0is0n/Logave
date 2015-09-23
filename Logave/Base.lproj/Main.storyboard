@@ -491,7 +491,7 @@
         <!--Navigation Controller-->
         <scene sceneID="d1S-KI-qka">
             <objects>
-                <navigationController id="9pb-qf-U7M" sceneMemberID="viewController">
+                <navigationController modalTransitionStyle="crossDissolve" id="9pb-qf-U7M" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uSX-7m-g5M">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1063,7 +1063,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2U0-AB-kTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="506" y="-1597"/>
+            <point key="canvasLocation" x="494" y="-1597"/>
         </scene>
         <!--Settings-->
         <scene sceneID="xRW-ZY-Pab">
@@ -1313,7 +1313,7 @@
         <!--Navigation Controller-->
         <scene sceneID="FP1-P7-yvf">
             <objects>
-                <navigationController id="858-7q-KsM" sceneMemberID="viewController">
+                <navigationController modalTransitionStyle="crossDissolve" id="858-7q-KsM" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eHd-Ej-ABG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

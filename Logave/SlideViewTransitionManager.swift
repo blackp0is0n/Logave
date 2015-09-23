@@ -31,7 +31,7 @@ class SlideTransitionManager: NSObject, UIViewControllerAnimatedTransitioning, U
         
         // Set up the transform for sliding
         let container = transitionContext.containerView()
-        let moveRight = CGAffineTransformMakeTranslation(300, 0)
+        let moveRight = CGAffineTransformMakeTranslation(150, 0)
         let moveLeft = CGAffineTransformMakeTranslation(-50, 0)
         
         // Add both views to the container view
