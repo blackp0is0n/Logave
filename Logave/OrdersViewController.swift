@@ -42,4 +42,11 @@ class OrdersViewController:UITableViewController, slideViewTransitionManagerDele
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: (NSIndexPath!)) {
         self.performSegueWithIdentifier("showOrderDetails", sender: self)
     }
+    
+    override func viewDidLoad() {
+        if (UIDevice.currentDevice().model == "iPad") {
+            performSegueWithIdentifier("showMenu", sender: nil)
+        }
+        super.viewDidLoad()
+    }
 }

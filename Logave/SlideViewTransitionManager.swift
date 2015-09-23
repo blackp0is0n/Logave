@@ -9,11 +9,12 @@
 
 import UIKit
 
-@objc protocol slideViewTransitionManagerDelegate {
+protocol slideViewTransitionManagerDelegate {
     func dismiss()
 }
 
 class SlideTransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
+    
     var duration = 0.5
     var isPresenting = false
     
@@ -31,7 +32,16 @@ class SlideTransitionManager: NSObject, UIViewControllerAnimatedTransitioning, U
         
         // Set up the transform for sliding
         let container = transitionContext.containerView()
-        let moveRight = CGAffineTransformMakeTranslation(150, 0)
+        
+        let moveRight: CGAffineTransform
+        
+        if (UIDevice.currentDevice().model == "iPhone") {
+            moveRight = CGAffineTransformMakeTranslation(150, 0)
+        }
+        else{
+            moveRight = CGAffineTransformMakeTranslation(300, 0)
+        }
+        
         let moveLeft = CGAffineTransformMakeTranslation(-50, 0)
         
         // Add both views to the container view
