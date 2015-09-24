@@ -11,6 +11,10 @@ import UIKit
 class SettingsViewController:UITableViewController{
     @IBOutlet weak var touchIDCell: UITableViewCell!
     
+    @IBAction func closeSettings(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         let switchDisclosure = UISwitch()
         touchIDCell.accessoryView = switchDisclosure

@@ -15,22 +15,19 @@ protocol slideViewTransitionManagerDelegate {
 
 class SlideTransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
     
-    var duration = 0.5
     var isPresenting = false
-    
     var snapshot:UIView?
+    
+    var duration = 0.5
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return duration
     }
     
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        
-        // Get reference to our fromView, toView and the container view
         let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey)!
         let toView = transitionContext.viewForKey(UITransitionContextToViewKey)!
-        
-        // Set up the transform for sliding
+
         let container = transitionContext.containerView()
         
         let moveRight: CGAffineTransform
@@ -43,27 +40,22 @@ class SlideTransitionManager: NSObject, UIViewControllerAnimatedTransitioning, U
         }
         
         let moveLeft = CGAffineTransformMakeTranslation(-50, 0)
-        
-        // Add both views to the container view
+
         if isPresenting {
             toView.transform = moveLeft
             snapshot = fromView.snapshotViewAfterScreenUpdates(true)
             container!.addSubview(toView)
             container!.addSubview(snapshot!)
         }
-        
-        // Perform the animation
-        UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.3, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-            
+
+        UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.3, options: UIViewAnimationOptions.CurveEaseOut, animations: {
             if self.isPresenting {
                 self.snapshot?.transform = moveRight
                 toView.transform = CGAffineTransformIdentity
             } else {
                 self.snapshot?.transform = CGAffineTransformIdentity
                 fromView.transform = moveLeft
-            }
-            
-            
+                }
             }, completion: { finished in
                 
                 transitionContext.completeTransition(true)
@@ -71,13 +63,11 @@ class SlideTransitionManager: NSObject, UIViewControllerAnimatedTransitioning, U
                     self.snapshot?.removeFromSuperview()
                 }
         })
-        
     }
     
     
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
-        isPresenting = false
+        isPresenting = true
         return self
     }
     

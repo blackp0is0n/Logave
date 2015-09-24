@@ -9,6 +9,8 @@
 import UIKit
 
 class OrdersViewController:UITableViewController, slideViewTransitionManagerDelegate{
+    @IBOutlet var table: UITableView!
+    
     let orders = ["Apples","Trash Bins","Windows","Penguins"]
     let distantions = ["150m","350m","1km","800m"]
     
