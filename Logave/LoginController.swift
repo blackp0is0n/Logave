@@ -65,11 +65,27 @@ class LoginController:UITableViewController {
             print(user!.name + " " + user!.sName + " " + user!.id)
             let coreDataTest = CoreDataController()
             coreDataTest.setUser(user)
-            
-            performSegueWithIdentifier("authCompleted", sender: self)
+            authCompleted()
+            //performSegueWithIdentifier("authCompleted", sender: self)
         } else {
             showAlert("Error", message: "Re-Check Your Credentials")
         }
         
-    }    
+    }
+    
+    func authCompleted(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let mainViewController = storyboard.instantiateViewControllerWithIdentifier("MapNavController")
+        let leftViewController = storyboard.instantiateViewControllerWithIdentifier("settingsView")
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        
+        let slideMenuController = SlideMenuController(mainViewController:mainViewController, leftMenuViewController: leftViewController)
+        slideMenuController.automaticallyAdjustsScrollViewInsets = true
+        appDelegate.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
+        appDelegate.window?.rootViewController = slideMenuController
+        appDelegate.window?.makeKeyAndVisible()
+    }
 }
