@@ -44,8 +44,6 @@ class LoginController:UITableViewController {
         connection.start()
     }
     
-    
-    
     func connection(connection: NSURLConnection!, didReceiveData data: NSData!) {
         self.data.appendData(data)
     }
