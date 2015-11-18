@@ -457,6 +457,9 @@
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <segue destination="RHV-HX-fKL" kind="show" identifier="showOrderDetails" id="Zur-UT-oLx"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -472,7 +475,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="table" destination="ATS-OI-eof" id="Uzk-py-FXv"/>
-                        <segue destination="RHV-HX-fKL" kind="show" identifier="showOrderDetails" id="jPN-Kc-1lw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r1t-Qm-3ed" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -580,7 +582,7 @@
                                     <outlet property="lastMessageTime" destination="JfI-aj-vsU" id="ZJs-ea-hnU"/>
                                     <outlet property="recepientLabel" destination="flr-WY-Twf" id="qOb-Ex-4qe"/>
                                     <outlet property="recepientPicture" destination="edu-9U-9B0" id="fWN-AX-YKS"/>
-                                    <segue destination="riH-18-iUS" kind="presentation" identifier="showConversation" modalPresentationStyle="currentContext" id="fwU-nQ-LAp"/>
+                                    <segue destination="riH-18-iUS" kind="show" identifier="showConversation" id="fwU-nQ-LAp"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1275,7 +1277,7 @@
         <image name="menu" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jPN-Kc-1lw"/>
+        <segue reference="Zur-UT-oLx"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>
