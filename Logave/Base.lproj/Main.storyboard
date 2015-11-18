@@ -330,7 +330,7 @@
         <!--Menu-->
         <scene sceneID="UEv-yn-Waz">
             <objects>
-                <tableViewController storyboardIdentifier="settingsView" title="Menu" modalTransitionStyle="crossDissolve" modalPresentationStyle="currentContext" clearsSelectionOnViewWillAppear="NO" id="W3j-0l-79I" customClass="LeftViewController" customModule="Logave" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="settingsView" title="Menu" modalTransitionStyle="crossDissolve" modalPresentationStyle="currentContext" clearsSelectionOnViewWillAppear="NO" id="W3j-0l-79I" customClass="SideMenuController" customModule="Logave" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="4" sectionFooterHeight="4" id="aCo-f2-ilB">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -418,7 +418,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pwv-fD-x8M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1759" y="-2297"/>
+            <point key="canvasLocation" x="-2783" y="-2314"/>
         </scene>
         <!--Your orders-->
         <scene sceneID="KNo-8I-yo7">
