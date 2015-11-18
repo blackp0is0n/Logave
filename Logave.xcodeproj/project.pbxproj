@@ -25,6 +25,9 @@
 		FA2706191B9C60690079894E /* SwiftMD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2706181B9C60690079894E /* SwiftMD5.swift */; };
 		FA3753551B9B793E00BE7150 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3753541B9B793E00BE7150 /* LoginController.swift */; };
 		FA4094C81BA9D32200667582 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4094C71BA9D32200667582 /* MenuController.swift */; };
+		FA79D3851BFCF86F00FFED9E /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA79D3841BFCF86F00FFED9E /* LeftViewController.swift */; };
+		FA79D3871BFCF88E00FFED9E /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA79D3861BFCF88E00FFED9E /* MainController.swift */; };
+		FA79D3891BFCF8BD00FFED9E /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA79D3881BFCF8BD00FFED9E /* SlideMenuController.swift */; };
 		FA8A2E701BA4A1980084A49B /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A2E6F1BA4A1980084A49B /* CoreDataController.swift */; };
 		FA8A2E731BA4A4E80084A49B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A2E721BA4A4E80084A49B /* User.swift */; };
 		FA8A2E751BA4A5050084A49B /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A2E741BA4A5050084A49B /* Task.swift */; };
@@ -71,6 +74,9 @@
 		FA4D94441B98A01700D9F7BE /* Logave1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logave1.xcdatamodel; sourceTree = "<group>"; };
 		FA4D94451B98A4D800D9F7BE /* Logave2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logave2.xcdatamodel; sourceTree = "<group>"; };
 		FA773BA81B9C57D1001A5CA5 /* Logave3plus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logave3plus.xcdatamodel; sourceTree = "<group>"; };
+		FA79D3841BFCF86F00FFED9E /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
+		FA79D3861BFCF88E00FFED9E /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		FA79D3881BFCF8BD00FFED9E /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		FA8A2E6F1BA4A1980084A49B /* CoreDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		FA8A2E721BA4A4E80084A49B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA8A2E741BA4A5050084A49B /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
@@ -201,6 +207,8 @@
 				662307D81BAAE544002D3F6F /* SideMenuController.swift */,
 				FA3753541B9B793E00BE7150 /* LoginController.swift */,
 				FA4094C71BA9D32200667582 /* MenuController.swift */,
+				FA79D3841BFCF86F00FFED9E /* LeftViewController.swift */,
+				FA79D3861BFCF88E00FFED9E /* MainController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -218,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				FA2706181B9C60690079894E /* SwiftMD5.swift */,
+				FA79D3881BFCF8BD00FFED9E /* SlideMenuController.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -395,9 +404,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				662307D91BAAE544002D3F6F /* SideMenuController.swift in Sources */,
+				FA79D3891BFCF8BD00FFED9E /* SlideMenuController.swift in Sources */,
 				66614ACB1BA9C86A00D68C05 /* ConversationsController.swift in Sources */,
 				FAA0BBF31B9474F900A36590 /* AppDelegate.swift in Sources */,
 				FA8A2E701BA4A1980084A49B /* CoreDataController.swift in Sources */,
+				FA79D3871BFCF88E00FFED9E /* MainController.swift in Sources */,
 				FA8A2E751BA4A5050084A49B /* Task.swift in Sources */,
 				FAA0BBF61B9474F900A36590 /* Logave.xcdatamodeld in Sources */,
 				FA2706191B9C60690079894E /* SwiftMD5.swift in Sources */,
@@ -412,6 +423,7 @@
 				66AB9A411BAA0CBE00298EB9 /* MapController.swift in Sources */,
 				666555091BA8699F009D0197 /* MessagingController.swift in Sources */,
 				662307FF1BAB273A002D3F6F /* SlideViewTransitionManager.swift in Sources */,
+				FA79D3851BFCF86F00FFED9E /* LeftViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

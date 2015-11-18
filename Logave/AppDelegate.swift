@@ -24,9 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        print("Hello")
         //print("View loaded")
-        let coreDataTest = CoreDataController()
+        /*let coreDataTest = CoreDataController()
         let user = coreDataTest.getUser()
         
         if user?.name != ""{
@@ -35,8 +34,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let mainViewController = storyboard.instantiateViewControllerWithIdentifier("OrdersMenu")
             self.window?.rootViewController = mainViewController
             self.window?.makeKeyAndVisible()
-        }
+        }*/
+        
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let mainViewController = storyboard.instantiateViewControllerWithIdentifier("LoginController")
+        let leftViewController = storyboard.instantiateViewControllerWithIdentifier("OrdersMenu")
 
+        
+        let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
+        
+        
+        let slideMenuController = SlideMenuController(mainViewController:nvc, leftMenuViewController: leftViewController)
+        slideMenuController.automaticallyAdjustsScrollViewInsets = true
+        self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
+        self.window?.rootViewController = slideMenuController
+        self.window?.makeKeyAndVisible()
         
         return true
     }
