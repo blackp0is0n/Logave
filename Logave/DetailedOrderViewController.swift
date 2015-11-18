@@ -9,4 +9,9 @@
 import UIKit
 
 class DetailedOrderViewController:UITableViewController{
+    
+    @IBAction func toggleConversations(sender: AnyObject) {
+        self.performSegueWithIdentifier("toggleMessages", sender: nil)
+    }
+    
 }
