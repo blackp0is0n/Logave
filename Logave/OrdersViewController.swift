@@ -33,10 +33,6 @@ class OrdersViewController:UITableViewController{
         return order
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: (NSIndexPath!)) {
-        self.performSegueWithIdentifier("showOrderDetails", sender: self)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

@@ -29,4 +29,8 @@ class MapController:UIViewController{
         
         self.presentViewController(settings, animated: true, completion: nil)
     }
+    
+    override func viewDidLoad() {
+        let location = CLLocationManager()
+    }
 }
