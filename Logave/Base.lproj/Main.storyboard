@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9046" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GiB-Zv-qSf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GiB-Zv-qSf">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--Authorization-->
@@ -83,7 +83,7 @@
                     <connections>
                         <outlet property="authPassword" destination="5ww-DP-scj" id="NYq-Pp-yD0"/>
                         <outlet property="authUsername" destination="PKD-Lr-8ZE" id="l0n-ce-dFI"/>
-                        <segue destination="858-7q-KsM" kind="presentation" identifier="authCompleted" id="8CP-h7-jz7"/>
+                        <segue destination="W3j-0l-79I" kind="show" identifier="authCompleted" id="cAY-lA-jXO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhp-r0-pxC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -133,7 +133,7 @@
                                     <rect key="frame" x="546" y="166" width="47" height="30"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="W3j-0l-79I" kind="show" id="pew-v1-7Z5"/>
+                                    <segue destination="xWx-bB-kza" kind="show" id="CZg-SQ-TSX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -332,10 +332,10 @@
             <objects>
                 <tableViewController title="Menu" modalTransitionStyle="crossDissolve" modalPresentationStyle="currentContext" clearsSelectionOnViewWillAppear="NO" id="W3j-0l-79I" customClass="SideMenuController" customModule="Logave" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="4" sectionFooterHeight="4" id="aCo-f2-ilB">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="67E-sg-ARI">
                                 <cells/>
@@ -1341,8 +1341,7 @@
         <image name="menu" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="z1V-FB-abR"/>
-        <segue reference="StF-Uw-K4b"/>
+        <segue reference="cAY-lA-jXO"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>
