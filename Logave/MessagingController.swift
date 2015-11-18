@@ -16,21 +16,8 @@ class ConversationCell:UITableViewCell{
     @IBOutlet weak var lastMessageTime: UILabel!
 }
 
-class MessagingController:UITableViewController, slideViewTransitionManagerDelegate{
-    
-    var slideTransitionManager = SlideTransitionManager()
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showMenu" {
-            let menuTableViewController = segue.destinationViewController as! SideMenuController
-            menuTableViewController.transitioningDelegate = self.slideTransitionManager
-        }
-    }
-    
-    func dismiss() {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
+class MessagingController:UITableViewController{
+
     let conversations = ["John Appleseed","Alexander Sifuck0ff","Big Boss","ZOG"]
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,9 +32,5 @@ class MessagingController:UITableViewController, slideViewTransitionManagerDeleg
         conversation.lastMessageLabel.text = "Last Conversation's Message"
         
         return conversation
-    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: (NSIndexPath!)) {
-        self.performSegueWithIdentifier("showConversation", sender: self)
     }
 }

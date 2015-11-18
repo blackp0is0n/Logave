@@ -8,20 +8,12 @@
 
 import UIKit
 
-class OrdersViewController:UITableViewController, slideViewTransitionManagerDelegate{
+class OrdersViewController:UITableViewController{
+    
     @IBOutlet var table: UITableView!
     
     let orders = ["Apples","Trash Bins","Windows","Penguins"]
     let distantions = ["150m","350m","1km","800m"]
-    
-    var slideTransitionManager = SlideTransitionManager()
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showMenu" {
-            let menuTableViewController = segue.destinationViewController as! SideMenuController
-            menuTableViewController.transitioningDelegate = self.slideTransitionManager
-        }
-    }
     
     func dismiss() {
         dismissViewControllerAnimated(true, completion: nil)
@@ -46,9 +38,6 @@ class OrdersViewController:UITableViewController, slideViewTransitionManagerDele
     }
     
     override func viewDidLoad() {
-        if (UIDevice.currentDevice().model == "iPad") {
-            performSegueWithIdentifier("showMenu", sender: nil)
-        }
         super.viewDidLoad()
     }
 }

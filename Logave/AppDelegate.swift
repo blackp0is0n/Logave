@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let mainViewController = storyboard.instantiateViewControllerWithIdentifier("LoginController")
-        let leftViewController = storyboard.instantiateViewControllerWithIdentifier("OrdersMenu")
+        let leftViewController = storyboard.instantiateViewControllerWithIdentifier("settingsView")
 
         
         let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
