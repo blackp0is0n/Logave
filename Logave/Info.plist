@@ -44,6 +44,10 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Do you allow Logave to use your location when you use it?</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Do you allow Logave to always use your location?</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

@@ -8,8 +8,14 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapController:UIViewController{
+    
+    let location = CLLocationManager()
+    var pinnotation: MKPointAnnotation
+    let pin = CLLocationCoordinate2D(latitude: 53.911976, longitude: 27.594751)
+    
     @IBOutlet weak var mapView: MKMapView!
     
     @IBAction func showSettings(sender: AnyObject) {
@@ -31,6 +37,17 @@ class MapController:UIViewController{
     }
     
     override func viewDidLoad() {
-        let location = CLLocationManager()
-    }
+        super.viewDidLoad()
+        if CLLocationManager.locationServicesEnabled(){
+            self.location.requestAlwaysAuthorization()
+            self.location.requestWhenInUseAuthorization()
+            location.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            location.startUpdatingLocation()
+        }
+        pinnotation.coordinate = pin
+        pinnotation.title = "Гикало" +  "9"
+        pinnotation.subtitle = "Big Boss"
+        mapView.addAnnotation(pinnotation)
+        mapView.showsUserLocation = true
+    }    
 }
