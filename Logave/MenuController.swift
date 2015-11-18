@@ -22,15 +22,4 @@ class MenuController:UIViewController {
             performSegueWithIdentifier("showAuth", sender: self)
         }
     }
-    
-    @IBAction func tapOnSignIn(sender: AnyObject) {
-        let coreDataTest = CoreDataController()
-        let user = coreDataTest.getUser()
-        
-        if user?.name != ""{
-            performSegueWithIdentifier("showMenu", sender: self)
-        } else {
-            performSegueWithIdentifier("showAuth", sender: self)
-        }
-    }
 }
