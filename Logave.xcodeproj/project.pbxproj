@@ -239,7 +239,6 @@
 				FAA0BBEF1B9474F900A36590 /* Logave */,
 				FAA0BC081B9474FA00A36590 /* LogaveTests */,
 				FAA0BBEE1B9474F900A36590 /* Products */,
-				663400801BB3BC4C00B3196A /* Logave-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};

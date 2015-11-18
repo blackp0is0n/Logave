@@ -10,15 +10,27 @@ import Foundation
 import UIKit
 
 class MenuController:UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //print("View loaded")
+        let coreDataTest = CoreDataController()
+        let user = coreDataTest.getUser()
+        
+        if user?.name != ""{
+            performSegueWithIdentifier("showMenu", sender: self)
+        } else {
+            performSegueWithIdentifier("showAuth", sender: self)
+        }
+    }
     
     @IBAction func tapOnSignIn(sender: AnyObject) {
         let coreDataTest = CoreDataController()
         let user = coreDataTest.getUser()
         
-        /*if user?.name != ""{
+        if user?.name != ""{
             performSegueWithIdentifier("showMenu", sender: self)
         } else {
             performSegueWithIdentifier("showAuth", sender: self)
-        }*/
+        }
     }
 }
