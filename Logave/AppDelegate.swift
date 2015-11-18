@@ -25,6 +25,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         print("fuckoff")
+        //print("View loaded")
+        let coreDataTest = CoreDataController()
+        let user = coreDataTest.getUser()
+        
+        if user?.name != ""{
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let mainViewController = storyboard.instantiateViewControllerWithIdentifier("OrdersMenu")
+            self.window?.rootViewController = mainViewController
+            self.window?.makeKeyAndVisible()
+        }
+
         
         return true
     }

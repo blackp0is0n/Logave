@@ -12,14 +12,5 @@ import UIKit
 class MenuController:UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print("View loaded")
-        let coreDataTest = CoreDataController()
-        let user = coreDataTest.getUser()
-        
-        if user?.name != ""{
-            performSegueWithIdentifier("showMenu", sender: self)
-        } else {
-            performSegueWithIdentifier("showAuth", sender: self)
-        }
     }
 }
