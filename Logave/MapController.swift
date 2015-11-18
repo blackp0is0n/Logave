@@ -11,7 +11,7 @@ import MapKit
 
 class MapController:UIViewController{
     let location = CLLocationManager()
-    //var pinnotation: MKPointAnnotation
+    let pinnotation: MKPointAnnotation = MKPointAnnotation()
     let pin = CLLocationCoordinate2D(latitude: 53.911976, longitude: 27.594751)
     
     @IBOutlet weak var mapView: MKMapView!
@@ -42,10 +42,10 @@ class MapController:UIViewController{
             location.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             location.startUpdatingLocation()
         }
-        /*pinnotation.coordinate = pin
+        pinnotation.coordinate = pin
         pinnotation.title = "Гикало" +  "9"
         pinnotation.subtitle = "Big Boss"
-        mapView.addAnnotation(pinnotation)*/
+        mapView.addAnnotation(pinnotation)
         mapView.showsUserLocation = true
     }
 }
