@@ -30,9 +30,9 @@ class TaskAnnotation: NSObject, MKAnnotation {
 
 class MapController:UIViewController, MKMapViewDelegate{
     let location = CLLocationManager()
-    
+    var annotations:[TaskAnnotation] = [TaskAnnotation]()
     @IBOutlet weak var mapView: MKMapView!
-    
+    var data: NSMutableData = NSMutableData()
     @IBAction func showSettings(sender: AnyObject) {
         let settings = UIAlertController(title: "Choose an option", message: nil, preferredStyle: .ActionSheet)
         
@@ -91,20 +91,54 @@ class MapController:UIViewController, MKMapViewDelegate{
             location.startUpdatingLocation()
         }
         //------------------------------
-        /*let urlPath: String = "http://api.logave.com/task/gettask?device=c21592b180d10e601f2080111fc657de&email="
+        let urlPath: String = "http://api.logave.com/task/gettask?device=c21592b180d10e601f2080111fc657de&key="
         
-        let pather:String = urlPath + String(format: "\(username!)&password=\(password!.md5())")
+        let pather:String = urlPath + CoreDataController.getUser()!.key + "&date=2015-09-05"
         
-        print(pather)
+        //print(pather)
         self.data = NSMutableData()
         let url: NSURL = NSURL(string: pather)!
         let request: NSURLRequest = NSURLRequest(URL: url)
         let connection: NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: true)!
-        connection.start()*/
+        connection.start()
         //---------------
-        let first = TaskAnnotation(title: "First", subtitle: "blabla", coordinates: CLLocationCoordinate2D(latitude: 53.911976, longitude: 27.594751), info: "Big Boss")
-        let second = TaskAnnotation(title: "Second", subtitle: "blabla", coordinates: CLLocationCoordinate2D(latitude: 53.111976, longitude: 27.594751), info: "Tim Cock")
-        mapView.addAnnotations([first, second])
+        // first = TaskAnnotation(title: "First", subtitle: "blabla", coordinates: CLLocationCoordinate2D(latitude: 53.911976, longitude: 27.594751), info: "Big Boss")
+        // second = TaskAnnotation(title: "Second", subtitle: "blabla", coordinates: CLLocationCoordinate2D(latitude: 53.111976, longitude: 27.594751), info: "Tim Cock")
+        //mapView.addAnnotations([first, second])
         mapView.showsUserLocation = true
+    }
+    
+    func connection(connection: NSURLConnection!, didReceiveData data: NSData!) {
+        self.data.appendData(data)
+    }
+    
+    func showAlert(title: String,message: String){
+        let alertController = UIAlertController(title: title,message:message, preferredStyle:UIAlertControllerStyle.Alert)
+        
+        alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default,handler: nil))
+        self.presentViewController(alertController,animated:true,completion:nil)
+    }
+    
+    func connection(connection: NSURLConnection!, didFailWithError error:NSError! ){
+        showAlert("Issue",message: "Check your internet connection")
+    }
+    
+    func connectionDidFinishLoading(connection: NSURLConnection!) {
+        let key:String = JsonParserHelper.getKey(data)
+        let tasks:[Task] = JsonParserHelper.getTasks(data)
+        //CoreDataController.setTasks(tasks)
+        if tasks.count > 0 {
+            for index in tasks{
+                var annotation = TaskAnnotation(title: index.address!, subtitle: index.name!, coordinates: CLLocationCoordinate2D(latitude: index.coordinates[0], longitude: index.coordinates[1]),info: "task")
+                annotations.append(annotation)
+            }
+            mapView.addAnnotations(annotations)
+            //var datastring = NSString(data:data, encoding:NSUTF8StringEncoding) as! String
+            print(key)
+            //performSegueWithIdentifier("authCompleted", sender: self)
+        } else {
+            showAlert("Error", message: "Re-Check Your Credentials")
+        }
+        
     }
 }

@@ -63,8 +63,7 @@ class LoginController:UITableViewController {
         let user:User? = JsonParserHelper.getUserFromData(data)
         if user != nil{
             print(user!.name + " " + user!.sName + " " + user!.id)
-            let coreDataTest = CoreDataController()
-            coreDataTest.setUser(user)
+            CoreDataController.setUser(user)
             authCompleted()
             //performSegueWithIdentifier("authCompleted", sender: self)
         } else {
@@ -76,7 +75,7 @@ class LoginController:UITableViewController {
     func authCompleted(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let mainViewController = storyboard.instantiateViewControllerWithIdentifier("MapNavController")
+        let mainViewController = storyboard.instantiateViewControllerWithIdentifier("mapController")
         let leftViewController = storyboard.instantiateViewControllerWithIdentifier("settingsView")
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
