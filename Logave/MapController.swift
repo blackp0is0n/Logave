@@ -10,11 +10,26 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapController:UIViewController{
+class TaskAnnotation: NSObject, MKAnnotation {
+    var title: String?
+    var subtitle: String?
+    var location: CLLocationCoordinate2D
+    var info: String
     
+    init(title: String,subtitle: String, coordinates: CLLocationCoordinate2D, info: String){
+        self.title = title
+        self.subtitle = subtitle
+        self.location = coordinates
+        self.info = info
+    }
+    
+    var coordinate: CLLocationCoordinate2D{
+        return location
+    }
+}
+
+class MapController:UIViewController, MKMapViewDelegate{
     let location = CLLocationManager()
-    var pinnotation: MKPointAnnotation
-    let pin = CLLocationCoordinate2D(latitude: 53.911976, longitude: 27.594751)
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -68,16 +83,28 @@ class MapController:UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
         if CLLocationManager.locationServicesEnabled(){
             self.location.requestAlwaysAuthorization()
             self.location.requestWhenInUseAuthorization()
             location.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             location.startUpdatingLocation()
         }
-        pinnotation.coordinate = pin
-        pinnotation.title = "Гикало" +  "9"
-        pinnotation.subtitle = "Big Boss"
-        mapView.addAnnotation(pinnotation)
+        //------------------------------
+        /*let urlPath: String = "http://api.logave.com/task/gettask?device=c21592b180d10e601f2080111fc657de&email="
+        
+        let pather:String = urlPath + String(format: "\(username!)&password=\(password!.md5())")
+        
+        print(pather)
+        self.data = NSMutableData()
+        let url: NSURL = NSURL(string: pather)!
+        let request: NSURLRequest = NSURLRequest(URL: url)
+        let connection: NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: true)!
+        connection.start()*/
+        //---------------
+        let first = TaskAnnotation(title: "First", subtitle: "blabla", coordinates: CLLocationCoordinate2D(latitude: 53.911976, longitude: 27.594751), info: "Big Boss")
+        let second = TaskAnnotation(title: "Second", subtitle: "blabla", coordinates: CLLocationCoordinate2D(latitude: 53.111976, longitude: 27.594751), info: "Tim Cock")
+        mapView.addAnnotations([first, second])
         mapView.showsUserLocation = true
-    }    
+    }
 }

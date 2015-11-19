@@ -941,12 +941,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BFh-Ah-WeB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2136" y="-808"/>
+            <point key="canvasLocation" x="-2070" y="-754"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u1F-1a-rKv">
             <objects>
-                <navigationController storyboardIdentifier="MapNavController" id="Es0-od-hkB" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="mapController" id="Es0-od-hkB" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hg2-j6-QIX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -958,7 +958,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AZ3-GK-LQs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3525" y="-1530"/>
+            <point key="canvasLocation" x="-3461" y="-1530"/>
         </scene>
         <!--Orders-->
         <scene sceneID="yRX-Y1-8zI">
@@ -1006,7 +1006,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2U0-AB-kTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2851" y="-1530"/>
+            <point key="canvasLocation" x="-2783" y="-1530"/>
         </scene>
         <!--Settings-->
         <scene sceneID="xRW-ZY-Pab">
@@ -1222,7 +1222,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mFa-gX-SCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2136" y="-2236"/>
+            <point key="canvasLocation" x="-2070" y="-2314"/>
         </scene>
     </scenes>
     <resources>
