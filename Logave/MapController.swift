@@ -36,6 +36,36 @@ class MapController:UIViewController{
         self.presentViewController(settings, animated: true, completion: nil)
     }
     
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        let identifier = "task"
+        
+        if annotation.isKindOfClass(TaskAnnotation.self){
+            var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
+            
+            if annotationView == nil{
+                annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                annotationView!.canShowCallout = true
+                
+                let orderDetailsButton = UIButton(type: .InfoLight)
+                annotationView!.rightCalloutAccessoryView = orderDetailsButton
+            }
+            else{
+                annotationView!.annotation = annotation
+            }
+            return annotationView
+        }
+        return nil
+    }
+    
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl){
+        let task = view.annotation as! TaskAnnotation
+        /*let taskName = task.title
+        let taskInfo = task.info*/
+        
+        self.performSegueWithIdentifier("showOrderDetails", sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if CLLocationManager.locationServicesEnabled(){

@@ -335,7 +335,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="optionCell" textLabel="thV-cs-Jc4" style="IBUITableViewCellStyleDefault" id="PAB-j8-KO9">
                                 <rect key="frame" x="0.0" y="50" width="600" height="44"/>
@@ -587,10 +587,9 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BIf-oU-lSs" firstAttribute="leading" secondItem="8If-QY-0DQ" secondAttribute="leading" id="JKd-Zg-ILl"/>
-                            <constraint firstItem="BIf-oU-lSs" firstAttribute="centerX" secondItem="8If-QY-0DQ" secondAttribute="centerX" id="g2A-KW-Csc"/>
-                            <constraint firstAttribute="trailing" secondItem="BIf-oU-lSs" secondAttribute="trailing" id="gj0-B1-aPs"/>
-                            <constraint firstAttribute="bottom" secondItem="BIf-oU-lSs" secondAttribute="bottom" id="xc5-Fp-IdZ"/>
+                            <constraint firstItem="BIf-oU-lSs" firstAttribute="leading" secondItem="8If-QY-0DQ" secondAttribute="leading" id="QEo-zL-Y9i"/>
+                            <constraint firstAttribute="trailing" secondItem="BIf-oU-lSs" secondAttribute="trailing" id="WfD-CC-Irp"/>
+                            <constraint firstItem="Ae5-cf-3rb" firstAttribute="top" secondItem="BIf-oU-lSs" secondAttribute="bottom" id="b5B-0A-q7a"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -976,6 +975,9 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sqJ-mk-bOd">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
+                                <connections>
+                                    <outlet property="delegate" destination="KsU-Wb-e9W" id="ccN-Gt-IF1"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <animations/>
@@ -996,9 +998,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="mapView" destination="sqJ-mk-bOd" id="buh-Ol-k6A"/>
+                        <outlet property="mapView" destination="sqJ-mk-bOd" id="f9R-k1-5ry"/>
                         <segue destination="mKt-bu-LKj" kind="show" identifier="toggleSettings" id="yPA-3i-xGZ"/>
                         <segue destination="BEL-HD-Ug2" kind="show" identifier="toggleOrders" id="pjM-f2-Z1K"/>
+                        <segue destination="RHV-HX-fKL" kind="show" identifier="showOrderDetails" id="GEE-ix-0to"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2U0-AB-kTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1225,5 +1228,8 @@
     <resources>
         <image name="menu" width="1024" height="1024"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="GEE-ix-0to"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>
