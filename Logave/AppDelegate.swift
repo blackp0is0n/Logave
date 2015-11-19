@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if user?.name != ""{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
-            let mainViewController = storyboard.instantiateViewControllerWithIdentifier("MapNavController")
+            let mainViewController = storyboard.instantiateViewControllerWithIdentifier("mapController")
             let leftViewController = storyboard.instantiateViewControllerWithIdentifier("settingsView")
             
             
@@ -43,10 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = slideMenuController
             self.window?.makeKeyAndVisible()
         }
-        
-        
-
-        
+       
         return true
     }
 
@@ -62,7 +59,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-        print("CFuck0ff")
         self.saveContext()
     }
 
