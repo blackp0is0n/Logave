@@ -25,33 +25,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         //print("View loaded")
-        /*let coreDataTest = CoreDataController()
+        let coreDataTest = CoreDataController()
         let user = coreDataTest.getUser()
         
         if user?.name != ""{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
-            let mainViewController = storyboard.instantiateViewControllerWithIdentifier("OrdersMenu")
-            self.window?.rootViewController = mainViewController
+            let mainViewController = storyboard.instantiateViewControllerWithIdentifier("mapController")
+            let leftViewController = storyboard.instantiateViewControllerWithIdentifier("settingsView")
+            
+            let slideMenuController = SlideMenuController(mainViewController:mainViewController, leftMenuViewController: leftViewController)
+            slideMenuController.automaticallyAdjustsScrollViewInsets = true
+            self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
+            self.window?.rootViewController = slideMenuController
             self.window?.makeKeyAndVisible()
-        }*/
-        
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let mainViewController = storyboard.instantiateViewControllerWithIdentifier("LoginController")
-        let leftViewController = storyboard.instantiateViewControllerWithIdentifier("settingsView")
-
-        
-        let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
-        
-        
-        let slideMenuController = SlideMenuController(mainViewController:nvc, leftMenuViewController: leftViewController)
-        slideMenuController.automaticallyAdjustsScrollViewInsets = true
-        self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
-        self.window?.rootViewController = slideMenuController
-        self.window?.makeKeyAndVisible()
-        
+        }
+       
         return true
     }
 
@@ -67,7 +56,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-        print("CFuck0ff")
         self.saveContext()
     }
 
