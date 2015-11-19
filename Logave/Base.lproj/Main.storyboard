@@ -559,6 +559,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BBO-Uk-2j9">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BIf-oU-lSs">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <animations/>
@@ -586,11 +591,19 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="BIf-oU-lSs" firstAttribute="leading" secondItem="8If-QY-0DQ" secondAttribute="leading" id="QEo-zL-Y9i"/>
-                            <constraint firstAttribute="trailing" secondItem="BIf-oU-lSs" secondAttribute="trailing" id="WfD-CC-Irp"/>
-                            <constraint firstItem="Ae5-cf-3rb" firstAttribute="top" secondItem="BIf-oU-lSs" secondAttribute="bottom" id="b5B-0A-q7a"/>
+                            <constraint firstItem="BBO-Uk-2j9" firstAttribute="leading" secondItem="8If-QY-0DQ" secondAttribute="leading" id="2Jp-yv-W1w"/>
+                            <constraint firstItem="BIf-oU-lSs" firstAttribute="leading" secondItem="BBO-Uk-2j9" secondAttribute="leading" id="9sb-p6-5E2"/>
+                            <constraint firstAttribute="bottom" secondItem="BBO-Uk-2j9" secondAttribute="bottom" id="Mcz-rp-73N"/>
+                            <constraint firstAttribute="trailing" secondItem="BBO-Uk-2j9" secondAttribute="trailing" id="StA-ru-WnP"/>
+                            <constraint firstItem="BIf-oU-lSs" firstAttribute="trailing" secondItem="BBO-Uk-2j9" secondAttribute="trailing" id="fe3-Uv-6jA"/>
+                            <constraint firstItem="BIf-oU-lSs" firstAttribute="bottom" secondItem="BBO-Uk-2j9" secondAttribute="bottom" id="gbh-Px-WUT"/>
+                            <constraint firstItem="BBO-Uk-2j9" firstAttribute="top" secondItem="8If-QY-0DQ" secondAttribute="top" id="znR-cR-l5V"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="woZ-Da-fs2" appends="YES" id="0vc-ou-e9V"/>
+                        </connections>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="User" id="XgD-eZ-aTt">
@@ -601,10 +614,17 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bottom" destination="Mcz-rp-73N" id="6Ig-Rt-67x"/>
                         <outlet property="composeField" destination="yo4-ub-5Vo" id="jLe-r7-c2l"/>
+                        <outlet property="conversationView" destination="8If-QY-0DQ" id="tRa-Co-Zqx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbv-LJ-PRX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="woZ-Da-fs2">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="riH-18-iUS" id="4sB-IO-cGq"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-654" y="-754"/>
         </scene>
@@ -960,7 +980,7 @@
             </objects>
             <point key="canvasLocation" x="-3461" y="-1530"/>
         </scene>
-        <!--Orders-->
+        <!--Map Controller-->
         <scene sceneID="yRX-Y1-8zI">
             <objects>
                 <viewController id="CCe-Er-aZe" customClass="MapController" customModule="Logave" customModuleProvider="target" sceneMemberID="viewController">
@@ -989,8 +1009,18 @@
                             <constraint firstItem="sqJ-mk-bOd" firstAttribute="top" secondItem="KsU-Wb-e9W" secondAttribute="top" id="jhh-NY-yoF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Orders" id="yPB-xK-6Ip">
+                    <navigationItem key="navigationItem" id="yPB-xK-6Ip">
+                        <nil key="title"/>
                         <barButtonItem key="backBarButtonItem" title="Back" id="rMY-Wc-o1Y"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="556-IC-exa">
+                            <rect key="frame" x="200" y="7" width="200" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <state key="normal" title="Today ▾"/>
+                            <connections>
+                                <action selector="showDatePicker:" destination="CCe-Er-aZe" eventType="touchUpInside" id="4NO-81-UdH"/>
+                            </connections>
+                        </button>
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="tef-qM-uOP">
                             <connections>
                                 <action selector="showSettings:" destination="CCe-Er-aZe" id="0eA-GN-zmG"/>
@@ -999,6 +1029,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="sqJ-mk-bOd" id="f9R-k1-5ry"/>
+                        <outlet property="pickerButton" destination="556-IC-exa" id="IbN-8L-uyl"/>
                         <segue destination="mKt-bu-LKj" kind="show" identifier="toggleSettings" id="yPA-3i-xGZ"/>
                         <segue destination="BEL-HD-Ug2" kind="show" identifier="toggleOrders" id="pjM-f2-Z1K"/>
                         <segue destination="RHV-HX-fKL" kind="show" identifier="showOrderDetails" id="GEE-ix-0to"/>

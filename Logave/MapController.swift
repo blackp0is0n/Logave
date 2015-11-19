@@ -27,7 +27,7 @@ class TaskAnnotation: NSObject, MKAnnotation {
     }
 }
 
-class MapController:UIViewController, MKMapViewDelegate{
+class MapController:UIViewController, MKMapViewDelegate, UIPopoverPresentationControllerDelegate{
     let location = CLLocationManager()
     
     @IBOutlet weak var mapView: MKMapView!
@@ -61,7 +61,7 @@ class MapController:UIViewController, MKMapViewDelegate{
                 annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 annotationView!.canShowCallout = true
                 
-                let orderDetailsButton = UIButton(type: .InfoLight)
+                let orderDetailsButton = UIButton(type: .DetailDisclosure)
                 annotationView!.rightCalloutAccessoryView = orderDetailsButton
             }
             else{
@@ -78,6 +78,29 @@ class MapController:UIViewController, MKMapViewDelegate{
         let taskInfo = task.info*/
         
         self.performSegueWithIdentifier("showOrderDetails", sender: self)
+    }
+    
+    @IBOutlet weak var pickerButton: UIButton!
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .None
+    }
+    
+    @IBAction func showDatePicker(sender: AnyObject) {
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .Date
+        
+        let pickerController = UIViewController()
+        pickerController.view.addSubview(datePicker)
+        pickerController.preferredContentSize = datePicker.frame.size
+        pickerController.modalPresentationStyle = .Popover
+        
+        let popover = pickerController.popoverPresentationController
+        popover?.delegate = self
+        popover?.sourceRect = pickerButton.bounds
+        popover?.sourceView = pickerButton
+        
+        self.presentViewController(pickerController, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -102,8 +125,7 @@ class MapController:UIViewController, MKMapViewDelegate{
         connection.start()*/
         //---------------
         let first = TaskAnnotation(title: "First", subtitle: "blabla", coordinates: CLLocationCoordinate2D(latitude: 53.911976, longitude: 27.594751), info: "Big Boss")
-        let second = TaskAnnotation(title: "Second", subtitle: "blabla", coordinates: CLLocationCoordinate2D(latitude: 53.111976, longitude: 27.594751), info: "Tim Cock")
-        mapView.addAnnotations([first, second])
+        mapView.addAnnotations([first])
         mapView.showsUserLocation = true
     }
 }
