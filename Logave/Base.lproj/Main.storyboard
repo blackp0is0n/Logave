@@ -1301,6 +1301,10 @@
         <scene sceneID="nqB-cT-dUe">
             <objects>
                 <viewController id="nal-BM-Xi7" customClass="MapController" customModule="Logave" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IVS-ac-aAr"/>
+                        <viewControllerLayoutGuide type="bottom" id="bvB-MZ-u3R"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="a37-ko-2xk">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -106,7 +106,6 @@ class MapController:UIViewController, MKMapViewDelegate{
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let date = dateFormatter.dateFromString("2015-09-05")
         let tasks:[Task] = CoreDataController.getTasks(date!)
-        print(tasks.count)
         for index in tasks{
             let annotation = TaskAnnotation(title: index.name!, subtitle: index.address!, coordinates: CLLocationCoordinate2D(latitude: index.coordinates[0], longitude: index.coordinates[1]),info: "task")
             annotations.append(annotation)
@@ -120,7 +119,6 @@ class MapController:UIViewController, MKMapViewDelegate{
         CoreDataController.setKey(key)
         //CoreDataController.setTasks(tasks)
         if tasks.count > 0 {
-            print(tasks.count)
             for index in tasks{
                 CoreDataController.addTask(index)
                 let annotation = TaskAnnotation(title: index.name!, subtitle: index.address!, coordinates: CLLocationCoordinate2D(latitude: index.coordinates[0], longitude: index.coordinates[1]),info: "task")
