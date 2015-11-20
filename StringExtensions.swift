@@ -38,15 +38,12 @@ extension String {
         }
     }
     
-    func toDouble() -> Double? {
-        return NSNumberFormatter().numberFromString(self)?.doubleValue
-    }
     
     func splitToArray() -> [Double]{
         var arr:[Double] = [Double]()
         var myStringArr = self.componentsSeparatedByString(",")
-        arr.append(myStringArr[0].toDouble()!)
-        arr.append(myStringArr[0].toDouble()!)
+        arr.append((myStringArr[0] as! NSString).doubleValue)
+        arr.append((myStringArr[1] as! NSString).doubleValue)
         return arr
     }
 }
