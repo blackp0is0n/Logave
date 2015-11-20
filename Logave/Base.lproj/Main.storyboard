@@ -408,7 +408,7 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <segue destination="RHV-HX-fKL" kind="presentation" identifier="showOrderDetails" id="Zur-UT-oLx"/>
+                                    <segue destination="RHV-HX-fKL" kind="show" identifier="showOrderDetails" id="Nyv-OV-eYN"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -548,7 +548,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ns-hT-u1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-519" y="-1530"/>
+            <point key="canvasLocation" x="-489" y="-1507"/>
         </scene>
         <!--ConversationView-->
         <scene sceneID="Psd-yH-zPZ">
@@ -629,7 +629,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="198" y="-1530"/>
+            <point key="canvasLocation" x="228" y="-1507"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AJo-Hv-MT8">
@@ -656,7 +656,7 @@
         <!--Order-->
         <scene sceneID="fBT-6r-xIA">
             <objects>
-                <tableViewController id="RHV-HX-fKL" customClass="DetailedOrderViewController" customModule="Logave" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController definesPresentationContext="YES" modalPresentationStyle="currentContext" id="RHV-HX-fKL" customClass="DetailedOrderViewController" customModule="Logave" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="kDO-N3-IG2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -964,7 +964,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BFh-Ah-WeB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1221" y="-1530"/>
+            <point key="canvasLocation" x="-1191" y="-1507"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u1F-1a-rKv">
@@ -1328,7 +1328,7 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="sqJ-mk-bOd" id="ilS-CY-LQw"/>
-                        <segue destination="RHV-HX-fKL" kind="showDetail" id="T0q-LD-OMs"/>
+                        <segue destination="RHV-HX-fKL" kind="show" identifier="showOrderDetails" id="OSq-mQ-qeu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9G9-b4-39L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1340,7 +1340,7 @@
         <image name="menu" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zur-UT-oLx"/>
+        <segue reference="Nyv-OV-eYN"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>
