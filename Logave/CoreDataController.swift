@@ -33,6 +33,7 @@ class CoreDataController{
             newManagedObject.setValue(index.date, forKey: "taskDate")
             appDelegate.saveContext()
         }
+        
     }
     
     static func addTask(task:Task){
@@ -43,9 +44,9 @@ class CoreDataController{
             newManagedObject.setValue(Int(task.courierId), forKey: "courier_id")
             newManagedObject.setValue(NSNumber(double: task.coordinates[0]), forKey: "latitude")
             newManagedObject.setValue(NSNumber(double: task.coordinates[1]), forKey: "longtitude")
-            newManagedObject.setValue(task.name, forKey: "name")
-            newManagedObject.setValue(task.sName, forKey: "sName")
-            newManagedObject.setValue(task.phone, forKey: "phone")
+            newManagedObject.setValue(task.name, forKey: "reciever_name")
+            newManagedObject.setValue(task.sName, forKey: "reciever_sname")
+            newManagedObject.setValue(task.phone, forKey: "reciever_phone")
             newManagedObject.setValue(task.address, forKey: "address")
             newManagedObject.setValue(task.description, forKey: "task_description")
             newManagedObject.setValue(task.active, forKey: "isActive")
@@ -54,9 +55,23 @@ class CoreDataController{
         }
     }
     
+    static func setSafeUser(user:User){
+        removeUser()
+        
+        let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: appDelegate.managedObjectContext!)
+        
+        newManagedObject.setValue(user.name, forKey: "name")
+        newManagedObject.setValue(user.sName, forKey: "sName")
+        newManagedObject.setValue(user.keyDate, forKey: "keyDate")
+        newManagedObject.setValue(user.key, forKey: "key")
+        newManagedObject.setValue(user.name, forKey: "email")
+        newManagedObject.setValue(user.expDate, forKey: "expDate")
+        newManagedObject.setValue(String(user.id), forKey: "id")
+        appDelegate.saveContext()
+    }
     static func taskExists(task:Task)-> Bool{
         let fReq: NSFetchRequest = NSFetchRequest(entityName: "Task")
-        fReq.predicate = NSPredicate(format: "id = %@", Int(task.id))
+        fReq.predicate = NSPredicate(format: "id = %d", task.id)
         var result: [AnyObject]?
         do {
             result = try appDelegate.managedObjectContext!.executeFetchRequest(fReq)
@@ -109,7 +124,7 @@ class CoreDataController{
             user?.email = resultItem.valueForKey("email") as! String
             let stringer =  resultItem.valueForKey("id") as! String
             user?.id = stringer
-            NSLog(stringer)
+            //NSLog(stringer)
             break
         }
         return user
@@ -142,7 +157,7 @@ class CoreDataController{
     
     static func getTasks(date: NSDate)-> [Task]{
         let fReq: NSFetchRequest = NSFetchRequest(entityName: "Task")
-        fReq.predicate = NSPredicate(format: "taskDate = %@", date)
+        fReq.predicate = NSPredicate(format: "taskDate == %@", date)
         var result: [AnyObject]?
         do {
             result = try appDelegate.managedObjectContext!.executeFetchRequest(fReq)
@@ -171,7 +186,7 @@ class CoreDataController{
         return tasks
     }
     
-    static func getAllTasks() -> [Task?]{//deprecated method
+    static func getAllTasks() -> [Task]{//deprecated method
         let fReq: NSFetchRequest = NSFetchRequest(entityName: "Task")
         
         //var messages = [Message?]()
@@ -182,7 +197,7 @@ class CoreDataController{
             print("Core Data Error!\(error1.description)\n")
             result = nil
         }
-        var tasks = [Task?]()
+        var tasks = [Task]()
         for resultItem in result! {
             let task = Task()
             task.id = (resultItem.valueForKey("id") as? Int)!
@@ -203,7 +218,22 @@ class CoreDataController{
         return tasks
     }
     
-    
+    static func setKey(key:String){
+        let user = getUser()
+        user?.key = key
+        removeUser()
+        
+        let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: appDelegate.managedObjectContext!)
+        
+        newManagedObject.setValue(user?.name, forKey: "name")
+        newManagedObject.setValue(user?.sName, forKey: "sName")
+        newManagedObject.setValue(user?.keyDate, forKey: "keyDate")
+        newManagedObject.setValue(user?.key, forKey: "key")
+        newManagedObject.setValue(user?.name, forKey: "email")
+        newManagedObject.setValue(user?.expDate, forKey: "expDate")
+        newManagedObject.setValue(String(user?.id), forKey: "id")
+        appDelegate.saveContext()
+    }
     static func removeUser(){//remove all users in a database
         
         removeAllEntities("User")

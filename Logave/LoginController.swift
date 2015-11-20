@@ -62,8 +62,7 @@ class LoginController:UITableViewController {
     func connectionDidFinishLoading(connection: NSURLConnection!) {
         let user:User? = JsonParserHelper.getUserFromData(data)
         if user != nil{
-            print(user!.name + " " + user!.sName + " " + user!.id)
-            CoreDataController.setUser(user)
+            CoreDataController.setSafeUser(user!)
             authCompleted()
             //performSegueWithIdentifier("authCompleted", sender: self)
         } else {

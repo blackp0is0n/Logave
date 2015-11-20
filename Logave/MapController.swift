@@ -90,7 +90,7 @@ class MapController:UIViewController, MKMapViewDelegate{
             location.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             location.startUpdatingLocation()
         }
-        //------------------------------
+        //------------------------------ Creating tasks connection
         let urlPath: String = "http://api.logave.com/task/gettask?device=c21592b180d10e601f2080111fc657de&key="
         
         let pather:String = urlPath + CoreDataController.getUser()!.key + "&date=2015-09-05"
@@ -102,9 +102,6 @@ class MapController:UIViewController, MKMapViewDelegate{
         let connection: NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: true)!
         connection.start()
         //---------------
-        // first = TaskAnnotation(title: "First", subtitle: "blabla", coordinates: CLLocationCoordinate2D(latitude: 53.911976, longitude: 27.594751), info: "Big Boss")
-        // second = TaskAnnotation(title: "Second", subtitle: "blabla", coordinates: CLLocationCoordinate2D(latitude: 53.111976, longitude: 27.594751), info: "Tim Cock")
-        //mapView.addAnnotations([first, second])
         mapView.showsUserLocation = true
     }
     
@@ -120,21 +117,34 @@ class MapController:UIViewController, MKMapViewDelegate{
     }
     
     func connection(connection: NSURLConnection!, didFailWithError error:NSError! ){
-        showAlert("Issue",message: "Check your internet connection")
+        //showAlert("Issue",message: "Check your internet connection")
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.dateFromString("2015-09-05")
+        let tasks:[Task] = CoreDataController.getAllTasks()
+        print(tasks.count)
+        for index in tasks{
+            var annotation = TaskAnnotation(title: index.address!, subtitle: index.name!, coordinates: CLLocationCoordinate2D(latitude: index.coordinates[0], longitude: index.coordinates[1]),info: "task")
+            annotations.append(annotation)
+        }
+        mapView.addAnnotations(annotations)
     }
     
-    func connectionDidFinishLoading(connection: NSURLConnection!) {
+    func connectionDidFinishLoading(connection: NSURLConnection!) {//////Доделать!!!!!!!!
         let key:String = JsonParserHelper.getKey(data)
         let tasks:[Task] = JsonParserHelper.getTasks(data)
+        CoreDataController.setKey(key)
         //CoreDataController.setTasks(tasks)
         if tasks.count > 0 {
+            print(tasks.count)
             for index in tasks{
                 var annotation = TaskAnnotation(title: index.address!, subtitle: index.name!, coordinates: CLLocationCoordinate2D(latitude: index.coordinates[0], longitude: index.coordinates[1]),info: "task")
                 annotations.append(annotation)
             }
             mapView.addAnnotations(annotations)
-            //var datastring = NSString(data:data, encoding:NSUTF8StringEncoding) as! String
-            print(key)
+            CoreDataController.setTasks(tasks)
+            var datastring = NSString(data:data, encoding:NSUTF8StringEncoding) as! String
+            //print(key)
             //performSegueWithIdentifier("authCompleted", sender: self)
         } else {
             showAlert("Error", message: "Re-Check Your Credentials")

@@ -13,7 +13,7 @@ class Task{
     var managerId:Int = 0
     var courierId:Int = 0
     var address:String? = nil
-    var coordinates:[Double] = []
+    var coordinates:[Double] = [Double](count:2,repeatedValue:0)
     var description:String? = nil
     var name:String? = nil
     var sName:String? = nil
