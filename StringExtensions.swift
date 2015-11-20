@@ -40,9 +40,10 @@ extension String {
     
     
     func splitToArray() -> [Double]{
-        let fullNameArr = self.characters.split{$0 == ","}.map(String.init)
-        let longitude:Double = fullNameArr[0].toDouble()!
-        let latitude:Double = fullNameArr[1].toDouble()!
-        return [longitude,latitude]
+        var arr:[Double] = [Double]()
+        var myStringArr = self.componentsSeparatedByString(",")
+        arr.append((myStringArr[0] as NSString).doubleValue)
+        arr.append((myStringArr[1] as NSString).doubleValue)
+        return arr
     }
 }
