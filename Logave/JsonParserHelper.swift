@@ -37,7 +37,7 @@ class JsonParserHelper{
         }
         return nil
     }
-    /*static func getTasksFrom(data: NSMutableData) -> [Task?]{
+    static func getTasks(data: NSMutableData)->[Task]{
         let decodedJson = (try! NSJSONSerialization.JSONObjectWithData(data, options: [])) as! Dictionary<String, AnyObject>
         var tasksArray:[Task] = [Task]()
         if let serverData = decodedJson["data"] as? NSDictionary{
@@ -69,6 +69,20 @@ class JsonParserHelper{
                 
             }
         }
-    }*/
+        return tasksArray
+    }
+    static func getKey(data:NSData)->String{
+        let decodedJson = (try! NSJSONSerialization.JSONObjectWithData(data, options: [])) as! Dictionary<String, AnyObject>
+        if let jsonData = decodedJson["data"] as? NSDictionary{
+            if let key = jsonData["key"] as? String{
+                return key
+            } else {
+                return ""
+            }
+            
+        } else {
+            return ""
+        }
+    }
     
 }

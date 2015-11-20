@@ -25,7 +25,7 @@
 		FA3753551B9B793E00BE7150 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3753541B9B793E00BE7150 /* LoginController.swift */; };
 		FA4094C81BA9D32200667582 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4094C71BA9D32200667582 /* MenuController.swift */; };
 		FA79D3851BFCF86F00FFED9E /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA79D3841BFCF86F00FFED9E /* LeftViewController.swift */; };
-		FA79D3871BFCF88E00FFED9E /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA79D3861BFCF88E00FFED9E /* MainController.swift */; };
+		FA79D3871BFCF88E00FFED9E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA79D3861BFCF88E00FFED9E /* MainViewController.swift */; };
 		FA79D3891BFCF8BD00FFED9E /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA79D3881BFCF8BD00FFED9E /* SlideMenuController.swift */; };
 		FA8A2E701BA4A1980084A49B /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A2E6F1BA4A1980084A49B /* CoreDataController.swift */; };
 		FA8A2E731BA4A4E80084A49B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A2E721BA4A4E80084A49B /* User.swift */; };
@@ -73,7 +73,7 @@
 		FA4D94451B98A4D800D9F7BE /* Logave2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logave2.xcdatamodel; sourceTree = "<group>"; };
 		FA773BA81B9C57D1001A5CA5 /* Logave3plus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logave3plus.xcdatamodel; sourceTree = "<group>"; };
 		FA79D3841BFCF86F00FFED9E /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
-		FA79D3861BFCF88E00FFED9E /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		FA79D3861BFCF88E00FFED9E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FA79D3881BFCF8BD00FFED9E /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		FA8A2E6F1BA4A1980084A49B /* CoreDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		FA8A2E721BA4A4E80084A49B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 				FA3753541B9B793E00BE7150 /* LoginController.swift */,
 				FA4094C71BA9D32200667582 /* MenuController.swift */,
 				FA79D3841BFCF86F00FFED9E /* LeftViewController.swift */,
-				FA79D3861BFCF88E00FFED9E /* MainController.swift */,
+				FA79D3861BFCF88E00FFED9E /* MainViewController.swift */,
 				669342D31BFD220D0027D460 /* SideMenuController.swift */,
 			);
 			name = "View Controllers";
@@ -396,7 +396,7 @@
 				66614ACB1BA9C86A00D68C05 /* ConversationsController.swift in Sources */,
 				FAA0BBF31B9474F900A36590 /* AppDelegate.swift in Sources */,
 				FA8A2E701BA4A1980084A49B /* CoreDataController.swift in Sources */,
-				FA79D3871BFCF88E00FFED9E /* MainController.swift in Sources */,
+				FA79D3871BFCF88E00FFED9E /* MainViewController.swift in Sources */,
 				669342D41BFD220D0027D460 /* SideMenuController.swift in Sources */,
 				FA8A2E751BA4A5050084A49B /* Task.swift in Sources */,
 				FAA0BBF61B9474F900A36590 /* Logave.xcdatamodeld in Sources */,

@@ -28,28 +28,12 @@ class TaskAnnotation: NSObject, MKAnnotation {
     }
 }
 
-class MapController:UIViewController, MKMapViewDelegate, UIPopoverPresentationControllerDelegate{
+class MapController:UIViewController, MKMapViewDelegate{
     let location = CLLocationManager()
     var annotations:[TaskAnnotation] = [TaskAnnotation]()
     @IBOutlet weak var mapView: MKMapView!
     var data: NSMutableData = NSMutableData()
-    @IBAction func showSettings(sender: AnyObject) {
-        let settings = UIAlertController(title: "Choose an option", message: nil, preferredStyle: .ActionSheet)
-        
-        settings.addAction(UIAlertAction(title: "Settings", style: .Default, handler: {
-            action in
-            self.performSegueWithIdentifier("toggleSettings", sender: nil)
-        }))
-        
-        settings.addAction(UIAlertAction(title: "Orders", style: .Default, handler: {
-            action in
-            self.performSegueWithIdentifier("toggleOrders", sender: nil)
-        }))
-        
-        settings.addAction(UIAlertAction(title: "Cancel", style: .Cancel){action -> Void in})
-        
-        self.presentViewController(settings, animated: true, completion: nil)
-    }
+    
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         
@@ -81,29 +65,6 @@ class MapController:UIViewController, MKMapViewDelegate, UIPopoverPresentationCo
         self.performSegueWithIdentifier("showOrderDetails", sender: self)
     }
     
-    @IBOutlet weak var pickerButton: UIButton!
-    
-    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
-        return .None
-    }
-    
-    @IBAction func showDatePicker(sender: AnyObject) {
-        let datePicker = UIDatePicker()
-        datePicker.datePickerMode = .Date
-        
-        let pickerController = UIViewController()
-        pickerController.view.addSubview(datePicker)
-        pickerController.preferredContentSize = datePicker.frame.size
-        pickerController.modalPresentationStyle = .Popover
-        
-        let popover = pickerController.popoverPresentationController
-        popover?.delegate = self
-        popover?.sourceRect = pickerButton.bounds
-        popover?.sourceView = pickerButton
-        
-        self.presentViewController(pickerController, animated: true, completion: nil)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
@@ -125,8 +86,6 @@ class MapController:UIViewController, MKMapViewDelegate, UIPopoverPresentationCo
         let connection: NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: true)!
         connection.start()
         //---------------
-        let first = TaskAnnotation(title: "First", subtitle: "blabla", coordinates: CLLocationCoordinate2D(latitude: 53.911976, longitude: 27.594751), info: "Big Boss")
-        mapView.addAnnotations([first])
         mapView.showsUserLocation = true
     }
     
@@ -149,8 +108,7 @@ class MapController:UIViewController, MKMapViewDelegate, UIPopoverPresentationCo
         let tasks:[Task] = CoreDataController.getTasks(date!)
         print(tasks.count)
         for index in tasks{
-            
-            var annotation = TaskAnnotation(title: index.address!, subtitle: index.name!, coordinates: CLLocationCoordinate2D(latitude: index.coordinates[0], longitude: index.coordinates[1]),info: "task")
+            let annotation = TaskAnnotation(title: index.name!, subtitle: index.address!, coordinates: CLLocationCoordinate2D(latitude: index.coordinates[0], longitude: index.coordinates[1]),info: "task")
             annotations.append(annotation)
         }
         mapView.addAnnotations(annotations)
@@ -165,7 +123,7 @@ class MapController:UIViewController, MKMapViewDelegate, UIPopoverPresentationCo
             print(tasks.count)
             for index in tasks{
                 CoreDataController.addTask(index)
-                var annotation = TaskAnnotation(title: index.address!, subtitle: index.name!, coordinates: CLLocationCoordinate2D(latitude: index.coordinates[0], longitude: index.coordinates[1]),info: "task")
+                let annotation = TaskAnnotation(title: index.name!, subtitle: index.address!, coordinates: CLLocationCoordinate2D(latitude: index.coordinates[0], longitude: index.coordinates[1]),info: "task")
                 annotations.append(annotation)
             }
             mapView.addAnnotations(annotations)

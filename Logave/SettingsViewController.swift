@@ -15,7 +15,10 @@ class SettingsViewController:UITableViewController{
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
+    
+    
     override func viewDidLoad() {
+        let user = CoreDataController.getUser()
         let switchDisclosure = UISwitch()
         touchIDCell.accessoryView = switchDisclosure
         if switchDisclosure.on == true{
