@@ -447,7 +447,7 @@
                             <animations/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="webSearch" returnKeyType="search"/>
                             <connections>
-                                <outlet property="delegate" destination="aaX-Rb-zWy" id="KGb-D8-vVZ"/>
+                                <outlet property="delegate" destination="ISg-hj-RPW" id="251-9l-0Er"/>
                             </connections>
                         </searchBar>
                         <prototypes>
@@ -545,20 +545,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title=" Messages" id="Q1j-tp-ebI"/>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="pHO-VA-wJQ" id="P8A-8u-zVl"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ns-hT-u1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="pHO-VA-wJQ">
-                    <connections>
-                        <outlet property="delegate" destination="aaX-Rb-zWy" id="s5Q-30-hph"/>
-                        <outlet property="searchBar" destination="uDz-Fs-sHN" id="Cjr-Jw-WqQ"/>
-                        <outlet property="searchContentsController" destination="aaX-Rb-zWy" id="YsV-7E-lFa"/>
-                        <outlet property="searchResultsDataSource" destination="aaX-Rb-zWy" id="3f3-rw-zol"/>
-                        <outlet property="searchResultsDelegate" destination="aaX-Rb-zWy" id="9gT-dz-EKA"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="-1352" y="-754"/>
         </scene>

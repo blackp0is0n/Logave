@@ -16,36 +16,18 @@ class ConversationCell:UITableViewCell{
     @IBOutlet weak var lastMessageTime: UILabel!
 }
 
-class MessagingController:UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate{
+class MessagingController:UITableViewController{
 
     struct Conversation {
         let recipient: String
-        let recepientAvatar: UIImage?
-        let userAvatar: UIImage?
+        let recepientAvatar: UIImage!
+        let userAvatar: UIImage!
         let lastMessage: String
         let lastMessageTime: NSDate
     }
     
     var conversations = [Conversation]()
     var filteredConversations = [Conversation]()
-    var resultSearchController = UISearchController()
-    
-    func filterContentForSearchText(searchText: String, scope: String = "Recipient") {
-        self.filteredConversations = self.conversations.filter({( Conversation: Conversation) -> Bool in
-            let categoryMatch = (scope == "Recipient") || (Conversation.recipient == scope)
-            let stringMatch = Conversation.recipient.rangeOfString(searchText)
-            return categoryMatch && (stringMatch != nil)
-        })
-    }
-    
-    func updateSearchResultsForSearchController(searchController: UISearchController)
-    {
-        filteredConversations.removeAll(keepCapacity: false)
-        
-        
-        
-        self.tableView.reloadData()
-    }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return conversations.count
@@ -71,11 +53,14 @@ class MessagingController:UITableViewController, UISearchBarDelegate, UISearchDi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        conversations.append(Conversation(recipient: "Tim Cock", recepientAvatar: UIImage(named: "menu"), userAvatar: UIImage(named: "menu"), lastMessage: "Logave is magic",lastMessageTime: NSDate()))
+        
         self.conversations = [
             Conversation(recipient: "Tim Cock", recepientAvatar: UIImage(named: "menu"), userAvatar: UIImage(named: "menu"), lastMessage: "Logave is magic",lastMessageTime: NSDate()),
             Conversation(recipient: "Alex Cfuck0ff", recepientAvatar: UIImage(named: "menu"), userAvatar: UIImage(named: "menu"), lastMessage: "But right now...",lastMessageTime: NSDate()),
             Conversation(recipient: "John Appleseed", recepientAvatar: UIImage(named: "menu"), userAvatar: UIImage(named: "menu"), lastMessage: "It hurts you much at",lastMessageTime: NSDate()),
-            Conversation(recipient: "ZOG", recepientAvatar: UIImage(named: "menu"), userAvatar: UIImage(named: "menu"), lastMessage: "BUTT!",lastMessageTime: NSDate())]
+            Conversation(recipient: "ZOG", recepientAvatar: UIImage(named: "menu"), userAvatar: UIImage(named: "menu"), lastMessage: "BUTT!",lastMessageTime: NSDate())
+        ]
 
         self.tableView.reloadData()
         
