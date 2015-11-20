@@ -14,6 +14,7 @@ class SideMenuController: UITableViewController{
     var tasksController:UINavigationController? = nil
     var messagesController:UINavigationController? = nil
     var slidecontroller:SlideMenuController? = nil
+    var settingsController:UINavigationController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,9 @@ class SideMenuController: UITableViewController{
         case 1:
             print("1 selected")
             self.slidecontroller?.changeMainViewController(messagesController!, close: true)
+        case 2:
+            print("2 selected")
+            self.slidecontroller?.changeMainViewController(settingsController!, close: true)
         default:
             print("Default")
         }
