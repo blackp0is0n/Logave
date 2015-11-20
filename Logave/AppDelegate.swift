@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {//Доделать Пол
             let mainViewController = storyboard.instantiateViewControllerWithIdentifier("mapController") as! UINavigationController
             let leftViewController = storyboard.instantiateViewControllerWithIdentifier("settingsView") as! SideMenuController
             
-            let messagesController = storyboard.instantiateViewControllerWithIdentifier("messagesController") as! UITableViewController
+            let messagesController = storyboard.instantiateViewControllerWithIdentifier("messagingView") as! UITableViewController
             
             
             
