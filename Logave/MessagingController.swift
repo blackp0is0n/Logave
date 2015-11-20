@@ -18,7 +18,16 @@ class ConversationCell:UITableViewCell{
 
 class MessagingController:UITableViewController{
 
-    let conversations = ["John Appleseed","Alexander Sifuck0ff","Big Boss","ZOG"]
+    struct Conversation {
+        let recipient: String
+        let recepientAvatar: UIImage!
+        let userAvatar: UIImage!
+        let lastMessage: String
+        let lastMessageTime: NSDate
+    }
+    
+    var conversations = [Conversation]()
+    var filteredConversations = [Conversation]()
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return conversations.count
@@ -26,11 +35,34 @@ class MessagingController:UITableViewController{
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let conversation = tableView.dequeueReusableCellWithIdentifier("conversationCell") as! ConversationCell
-
-        conversation.recepientLabel.text = conversations[indexPath.row]
-        conversation.lastMessageLabel.text = "Last Conversation's Message"
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "hh:mm"
         
-        return conversation
+        let conversationCell = tableView.dequeueReusableCellWithIdentifier("conversationCell") as! ConversationCell
+        
+        let conversation = self.conversations[indexPath.row]
+        
+        conversationCell.recepientLabel.text = conversation.recipient
+        conversationCell.recepientPicture.image = conversation.recepientAvatar
+        conversationCell.lastMessagePicture.image = conversation.userAvatar
+        conversationCell.lastMessageLabel.text = conversation.lastMessage
+        conversationCell.lastMessageTime.text = dateFormatter.stringFromDate(conversation.lastMessageTime)
+        return conversationCell
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        conversations.append(Conversation(recipient: "Tim Cock", recepientAvatar: UIImage(named: "menu"), userAvatar: UIImage(named: "menu"), lastMessage: "Logave is magic",lastMessageTime: NSDate()))
+        
+        self.conversations = [
+            Conversation(recipient: "Tim Cock", recepientAvatar: UIImage(named: "menu"), userAvatar: UIImage(named: "menu"), lastMessage: "Logave is magic",lastMessageTime: NSDate()),
+            Conversation(recipient: "Alex Cfuck0ff", recepientAvatar: UIImage(named: "menu"), userAvatar: UIImage(named: "menu"), lastMessage: "But right now...",lastMessageTime: NSDate()),
+            Conversation(recipient: "John Appleseed", recepientAvatar: UIImage(named: "menu"), userAvatar: UIImage(named: "menu"), lastMessage: "It hurts you much at",lastMessageTime: NSDate()),
+            Conversation(recipient: "ZOG", recepientAvatar: UIImage(named: "menu"), userAvatar: UIImage(named: "menu"), lastMessage: "BUTT!",lastMessageTime: NSDate())
+        ]
+
+        self.tableView.reloadData()
+        
     }
 }

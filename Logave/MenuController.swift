@@ -6,7 +6,6 @@
 //  Copyright © 2015 Logave. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class MenuController:UIViewController {

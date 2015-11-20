@@ -33,23 +33,7 @@ class MapController:UIViewController, MKMapViewDelegate{
     var annotations:[TaskAnnotation] = [TaskAnnotation]()
     @IBOutlet weak var mapView: MKMapView!
     var data: NSMutableData = NSMutableData()
-    @IBAction func showSettings(sender: AnyObject) {
-        let settings = UIAlertController(title: "Choose an option", message: nil, preferredStyle: .ActionSheet)
-        
-        settings.addAction(UIAlertAction(title: "Settings", style: .Default, handler: {
-            action in
-            self.performSegueWithIdentifier("toggleSettings", sender: nil)
-        }))
-        
-        settings.addAction(UIAlertAction(title: "Orders", style: .Default, handler: {
-            action in
-            self.performSegueWithIdentifier("toggleOrders", sender: nil)
-        }))
-        
-        settings.addAction(UIAlertAction(title: "Cancel", style: .Cancel){action -> Void in})
-        
-        self.presentViewController(settings, animated: true, completion: nil)
-    }
+    
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         
@@ -62,7 +46,7 @@ class MapController:UIViewController, MKMapViewDelegate{
                 annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 annotationView!.canShowCallout = true
                 
-                let orderDetailsButton = UIButton(type: .InfoLight)
+                let orderDetailsButton = UIButton(type: .DetailDisclosure)
                 annotationView!.rightCalloutAccessoryView = orderDetailsButton
             }
             else{
@@ -124,8 +108,7 @@ class MapController:UIViewController, MKMapViewDelegate{
         let tasks:[Task] = CoreDataController.getTasks(date!)
         print(tasks.count)
         for index in tasks{
-            
-            var annotation = TaskAnnotation(title: index.address!, subtitle: index.name!, coordinates: CLLocationCoordinate2D(latitude: index.coordinates[0], longitude: index.coordinates[1]),info: "task")
+            let annotation = TaskAnnotation(title: index.name!, subtitle: index.address!, coordinates: CLLocationCoordinate2D(latitude: index.coordinates[0], longitude: index.coordinates[1]),info: "task")
             annotations.append(annotation)
         }
         mapView.addAnnotations(annotations)
@@ -140,7 +123,7 @@ class MapController:UIViewController, MKMapViewDelegate{
             print(tasks.count)
             for index in tasks{
                 CoreDataController.addTask(index)
-                var annotation = TaskAnnotation(title: index.address!, subtitle: index.name!, coordinates: CLLocationCoordinate2D(latitude: index.coordinates[0], longitude: index.coordinates[1]),info: "task")
+                let annotation = TaskAnnotation(title: index.name!, subtitle: index.address!, coordinates: CLLocationCoordinate2D(latitude: index.coordinates[0], longitude: index.coordinates[1]),info: "task")
                 annotations.append(annotation)
             }
             mapView.addAnnotations(annotations)
