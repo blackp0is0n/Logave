@@ -134,6 +134,5 @@ class MapController:UIViewController, MKMapViewDelegate{
         } else {
             showAlert("Error", message: "Re-Check Your Credentials")
         }
-        
     }
 }

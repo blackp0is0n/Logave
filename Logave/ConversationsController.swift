@@ -16,9 +16,6 @@ class ConversationsController: UIViewController{
     
     @IBAction func dismissKeyboard(sender: AnyObject) {
         self.view.endEditing(true)
-        UIView.animateWithDuration(0.15, delay: 0, options: .CurveEaseOut, animations: {
-            self.bottom.constant = 0
-            }, completion: nil)
     }
     
     func keyboardWillShow(sender: NSNotification){
@@ -30,8 +27,18 @@ class ConversationsController: UIViewController{
         }
     }
     
+    func keyboardWillHide(sender: NSNotification){
+        if let kbHeight = sender.userInfo![UIKeyboardFrameEndUserInfoKey]?.CGRectValue.height{
+            self.bottom.constant = 0
+            UIView.animateWithDuration(0.15, delay: 0, options: .CurveEaseOut, animations: {
+                self.view.layoutIfNeeded()
+                }, completion: nil)
+        }
+    }
+    
     override func viewDidLoad() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
         composeField.autoresizingMask = .FlexibleWidth
         super.viewDidLoad()
     }
