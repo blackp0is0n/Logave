@@ -17,7 +17,7 @@ class JsonParserHelper{
         let userData:User? = User()
         if let serverData: AnyObject = decodedJson["data"] {
             if let data: AnyObject = serverData["data"] {
-                if let sData:String  = data as? String{
+                if let _:String  = data as? String{
                     
                     return userData
                 }
@@ -63,7 +63,7 @@ class JsonParserHelper{
                     
                 }
             } else {
-                if let noTasks = serverData["task"] as? String{
+                if let _ = serverData["task"] as? String{
                     //print(noTasks)
                 }
                 
