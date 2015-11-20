@@ -38,9 +38,6 @@ extension String {
         }
     }
     
-    func toDouble() -> Double? {
-        return NSNumberFormatter().numberFromString(self)?.doubleValue
-    }
     
     func splitToArray() -> [Double]{
         let fullNameArr = self.characters.split{$0 == ","}.map(String.init)
