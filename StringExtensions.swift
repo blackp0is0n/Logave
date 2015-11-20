@@ -43,9 +43,10 @@ extension String {
     }
     
     func splitToArray() -> [Double]{
+        var arr:[Double] = [Double]()
         var myStringArr = self.componentsSeparatedByString(",")
-        let longitude:Double = myStringArr[0].toDouble()!
-        let latitude:Double = myStringArr[1].toDouble()!
-        return [longitude,latitude]
+        arr.append(myStringArr[0].toDouble()!)
+        arr.append(myStringArr[0].toDouble()!)
+        return arr
     }
 }
