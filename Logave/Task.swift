@@ -9,14 +9,15 @@
 import Foundation
 
 class Task{
-    var id:Int32? = nil
-    var managerId:Int32? = nil
-    var courierId:Int32? = nil
+    var id:Int = 0
+    var managerId:Int = 0
+    var courierId:Int = 0
     var address:String? = nil
-    var coordinates:[Double?] = []
-    var descpription:String? = nil
+    var coordinates:[Double] = [Double](count:2,repeatedValue:0)
+    var description:String? = nil
     var name:String? = nil
     var sName:String? = nil
     var phone:String? = nil
     var active:Bool? = nil
+    var date:NSDate? = nil
 }

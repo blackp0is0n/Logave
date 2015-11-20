@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class TaskAnnotation: NSObject, MKAnnotation {
     var title: String?
@@ -29,9 +30,9 @@ class TaskAnnotation: NSObject, MKAnnotation {
 
 class MapController:UIViewController, MKMapViewDelegate, UIPopoverPresentationControllerDelegate{
     let location = CLLocationManager()
-    
+    var annotations:[TaskAnnotation] = [TaskAnnotation]()
     @IBOutlet weak var mapView: MKMapView!
-    
+    var data: NSMutableData = NSMutableData()
     @IBAction func showSettings(sender: AnyObject) {
         let settings = UIAlertController(title: "Choose an option", message: nil, preferredStyle: .ActionSheet)
         
@@ -112,20 +113,69 @@ class MapController:UIViewController, MKMapViewDelegate, UIPopoverPresentationCo
             location.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             location.startUpdatingLocation()
         }
-        //------------------------------
-        /*let urlPath: String = "http://api.logave.com/task/gettask?device=c21592b180d10e601f2080111fc657de&email="
+        //------------------------------ Creating tasks connection
+        let urlPath: String = "http://api.logave.com/task/gettask?device=c21592b180d10e601f2080111fc657de&key="
         
-        let pather:String = urlPath + String(format: "\(username!)&password=\(password!.md5())")
+        let pather:String = urlPath + CoreDataController.getUser()!.key + "&date=2015-09-05"
         
-        print(pather)
+        //print(pather)
         self.data = NSMutableData()
         let url: NSURL = NSURL(string: pather)!
         let request: NSURLRequest = NSURLRequest(URL: url)
         let connection: NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: true)!
-        connection.start()*/
+        connection.start()
         //---------------
         let first = TaskAnnotation(title: "First", subtitle: "blabla", coordinates: CLLocationCoordinate2D(latitude: 53.911976, longitude: 27.594751), info: "Big Boss")
         mapView.addAnnotations([first])
         mapView.showsUserLocation = true
+    }
+    
+    func connection(connection: NSURLConnection!, didReceiveData data: NSData!) {
+        self.data.appendData(data)
+    }
+    
+    func showAlert(title: String,message: String){
+        let alertController = UIAlertController(title: title,message:message, preferredStyle:UIAlertControllerStyle.Alert)
+        
+        alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default,handler: nil))
+        self.presentViewController(alertController,animated:true,completion:nil)
+    }
+    
+    func connection(connection: NSURLConnection!, didFailWithError error:NSError! ){
+        //showAlert("Issue",message: "Check your internet connection")
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.dateFromString("2015-09-05")
+        let tasks:[Task] = CoreDataController.getTasks(date!)
+        print(tasks.count)
+        for index in tasks{
+            
+            var annotation = TaskAnnotation(title: index.address!, subtitle: index.name!, coordinates: CLLocationCoordinate2D(latitude: index.coordinates[0], longitude: index.coordinates[1]),info: "task")
+            annotations.append(annotation)
+        }
+        mapView.addAnnotations(annotations)
+    }
+    
+    func connectionDidFinishLoading(connection: NSURLConnection!) {//////Доделать!!!!!!!!
+        let key:String = JsonParserHelper.getKey(data)
+        let tasks:[Task] = JsonParserHelper.getTasks(data)
+        CoreDataController.setKey(key)
+        //CoreDataController.setTasks(tasks)
+        if tasks.count > 0 {
+            print(tasks.count)
+            for index in tasks{
+                CoreDataController.addTask(index)
+                var annotation = TaskAnnotation(title: index.address!, subtitle: index.name!, coordinates: CLLocationCoordinate2D(latitude: index.coordinates[0], longitude: index.coordinates[1]),info: "task")
+                annotations.append(annotation)
+            }
+            mapView.addAnnotations(annotations)
+            CoreDataController.setTasks(tasks)
+            var datastring = NSString(data:data, encoding:NSUTF8StringEncoding) as! String
+            //print(key)
+            //performSegueWithIdentifier("authCompleted", sender: self)
+        } else {
+            showAlert("Error", message: "Re-Check Your Credentials")
+        }
+        
     }
 }
