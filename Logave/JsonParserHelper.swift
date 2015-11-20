@@ -19,7 +19,7 @@ class JsonParserHelper{
             if let data: AnyObject = serverData["data"] {
                 if let sData:String  = data as? String{
                     
-                    return nil
+                    return userData
                 }
                 if let user: AnyObject? = data["user"]{
                     userData?.key = user!["key"] as! String

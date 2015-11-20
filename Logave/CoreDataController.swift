@@ -125,7 +125,6 @@ class CoreDataController{
             let stringer =  resultItem.valueForKey("id") as! String
             user?.id = stringer
             //NSLog(stringer)
-            break
         }
         return user
     }
@@ -150,7 +149,6 @@ class CoreDataController{
             user.key = resultItem.valueForKey("key") as! String
             user.keyDate = resultItem.valueForKey("keyDate") as! String
             user.email = resultItem.valueForKey("email") as! String
-            break
         }
         return []
     }
@@ -165,6 +163,7 @@ class CoreDataController{
             print("Core Data Error!\(error1.description)\n")
             result = nil
         }
+        print("From core data controller:"+String(result?.count))
         var tasks = [Task]()
         for resultItem in result! {
             let task = Task()
@@ -181,7 +180,6 @@ class CoreDataController{
             task.coordinates[1] = (resultItem.valueForKey("longtitude") as? Double)!
             task.date = resultItem.valueForKey("taskDate") as? NSDate
             tasks.append(task)
-            break
         }
         return tasks
     }
@@ -213,7 +211,6 @@ class CoreDataController{
             task.coordinates[1] = (resultItem.valueForKey("longtitude") as? Double)!
             task.date = resultItem.valueForKey("taskDate") as? NSDate
             tasks.append(task)
-            break
         }
         return tasks
     }
