@@ -42,8 +42,8 @@ class CoreDataController{
             newManagedObject.setValue(Int(task.id), forKey: "id")
             newManagedObject.setValue(Int(task.managerId), forKey: "manager_id")
             newManagedObject.setValue(Int(task.courierId), forKey: "courier_id")
-            newManagedObject.setValue(NSNumber(double: task.coordinates[0]), forKey: "latitude")
-            newManagedObject.setValue(NSNumber(double: task.coordinates[1]), forKey: "longtitude")
+            newManagedObject.setValue(Double(task.coordinates[0]), forKey: "latitude")
+            newManagedObject.setValue(Double(task.coordinates[1]), forKey: "longtitude")
             newManagedObject.setValue(task.name, forKey: "reciever_name")
             newManagedObject.setValue(task.sName, forKey: "reciever_sname")
             newManagedObject.setValue(task.phone, forKey: "reciever_phone")
@@ -126,6 +126,7 @@ class CoreDataController{
             user?.id = stringer
             //NSLog(stringer)
         }
+        appDelegate.saveContext()
         return user
     }
     
@@ -167,6 +168,7 @@ class CoreDataController{
         var tasks = [Task]()
         for resultItem in result! {
             let task = Task()
+            NSLog("ID is %d", task.id)
             task.id = (resultItem.valueForKey("id") as? Int)!
             task.managerId = (resultItem.valueForKey("manager_id") as? Int)!
             task.courierId = (resultItem.valueForKey("courier_id") as? Int)!
@@ -181,6 +183,7 @@ class CoreDataController{
             task.date = resultItem.valueForKey("taskDate") as? NSDate
             tasks.append(task)
         }
+        appDelegate.saveContext()
         return tasks
     }
     
@@ -212,6 +215,7 @@ class CoreDataController{
             task.date = resultItem.valueForKey("taskDate") as? NSDate
             tasks.append(task)
         }
+        appDelegate.saveContext()
         return tasks
     }
     
@@ -221,14 +225,14 @@ class CoreDataController{
         removeUser()
         
         let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: appDelegate.managedObjectContext!)
-        
+        NSLog("%@ \n %@ \n", (user?.id)! , (user?.id)!)
         newManagedObject.setValue(user?.name, forKey: "name")
         newManagedObject.setValue(user?.sName, forKey: "sName")
         newManagedObject.setValue(user?.keyDate, forKey: "keyDate")
         newManagedObject.setValue(user?.key, forKey: "key")
         newManagedObject.setValue(user?.name, forKey: "email")
         newManagedObject.setValue(user?.expDate, forKey: "expDate")
-        newManagedObject.setValue(String(user?.id), forKey: "id")
+        newManagedObject.setValue(user?.id, forKey: "id")
         appDelegate.saveContext()
     }
     static func removeUser(){//remove all users in a database
@@ -264,5 +268,6 @@ class CoreDataController{
         for resultItem in result! {
             appDelegate.managedObjectContext!.deleteObject(resultItem as! NSManagedObject)
         }
+        appDelegate.saveContext()
     }
 }

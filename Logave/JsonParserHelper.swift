@@ -9,6 +9,8 @@
 import Foundation
 
 class JsonParserHelper{
+    
+    
     private init(){}
     
     
@@ -83,6 +85,12 @@ class JsonParserHelper{
         } else {
             return ""
         }
+    }
+    
+    static func getMessages(data: NSData) ->[Message]{
+        //let decodedJson = (try! NSJSONSerialization.JSONObjectWithData(data, options: [])) as! Dictionary<String, AnyObject>
+        
+        return []
     }
     
 }

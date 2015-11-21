@@ -33,7 +33,7 @@ class MapController:UIViewController, MKMapViewDelegate{
     var annotations:[TaskAnnotation] = [TaskAnnotation]()
     @IBOutlet weak var mapView: MKMapView!
     var data: NSMutableData = NSMutableData()
-    
+    var i:Int = 0
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         
@@ -129,7 +129,6 @@ class MapController:UIViewController, MKMapViewDelegate{
                 annotations.append(annotation)
             }
             mapView.addAnnotations(annotations)
-            CoreDataController.setTasks(tasks)
             _ = NSString(data:data, encoding:NSUTF8StringEncoding) as! String
             //print(key)
             //performSegueWithIdentifier("authCompleted", sender: self)
