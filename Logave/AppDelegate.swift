@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {//Доделать Пол
         //print("View loaded")
         let user = CoreDataController.getUser()
         
-        if user?.name != ""{
+        if user.name != ""{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
             let mainViewController = storyboard.instantiateViewControllerWithIdentifier("mapController") as! UINavigationController
@@ -48,6 +48,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {//Доделать Пол
             slideMenuController!.automaticallyAdjustsScrollViewInsets = true
             self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
             self.window?.rootViewController = slideMenuController
+            self.window?.makeKeyAndVisible()
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let mainViewController = storyboard.instantiateViewControllerWithIdentifier("MenuController")
+            self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
+            self.window?.rootViewController = mainViewController
             self.window?.makeKeyAndVisible()
         }
         

@@ -60,7 +60,7 @@ class MapController:UIViewController, MKMapViewDelegate{
     func createConnection(){
         let urlPath: String = "http://api.logave.com/task/gettask?device=c21592b180d10e601f2080111fc657de&key="
         
-        let pather:String = urlPath + CoreDataController.getUser()!.key + "&date=2015-09-05"
+        let pather:String = urlPath + CoreDataController.getUser().key + "&date=2015-09-05"
         
         //print(pather)
         self.data = NSMutableData()
@@ -133,7 +133,6 @@ class MapController:UIViewController, MKMapViewDelegate{
             //print(key)
             //performSegueWithIdentifier("authCompleted", sender: self)
         } else {
-            //showAlert("Error", message: "Re-Check Your Credentials")
             //let datastring = NSString(data:data, encoding:NSUTF8StringEncoding) as! String
             //print(datastring)
             createConnection()

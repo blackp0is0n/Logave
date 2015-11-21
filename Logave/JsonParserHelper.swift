@@ -14,9 +14,9 @@ class JsonParserHelper{
     private init(){}
     
     
-    static func getUserFromData(data: NSMutableData) -> User?{
+    static func getUserFromData(data: NSMutableData) -> User{
         let decodedJson = (try! NSJSONSerialization.JSONObjectWithData(data, options: [])) as! Dictionary<String, AnyObject>
-        let userData:User? = User()
+        let userData:User = User()
         if let serverData: AnyObject = decodedJson["data"] {
             if let data: AnyObject = serverData["data"] {
                 if let _:String  = data as? String{
@@ -24,20 +24,20 @@ class JsonParserHelper{
                     return userData
                 }
                 if let user: AnyObject? = data["user"]{
-                    userData?.key = user!["key"] as! String
-                    userData?.email = user!["email"] as! String
-                    userData?.expDate = user!["expdate"] as! String
+                    userData.key = user!["key"] as! String
+                    userData.email = user!["email"] as! String
+                    userData.expDate = user!["expdate"] as! String
                     let str = user!["id"] as! String
-                    userData?.id = str
-                    userData?.keyDate = user!["keydate"] as! String
-                    userData?.name = user!["name"] as! String
-                    userData?.sName = user!["sname"] as! String
+                    userData.id = str
+                    userData.keyDate = user!["keydate"] as! String
+                    userData.name = user!["name"] as! String
+                    userData.sName = user!["sname"] as! String
                     return userData
                 }
                 
             }
         }
-        return nil
+        return User()
     }
     static func getTasks(data: NSMutableData)->[Task]{
         let decodedJson = (try! NSJSONSerialization.JSONObjectWithData(data, options: [])) as! Dictionary<String, AnyObject>
@@ -78,13 +78,9 @@ class JsonParserHelper{
         if let jsonData = decodedJson["data"] as? NSDictionary{
             if let key = jsonData["key"] as? String{
                 return key
-            } else {
-                return ""
             }
-            
-        } else {
-            return ""
         }
+        return ""
     }
     
     static func getMessages(data: NSData) ->[Message]{
