@@ -12,7 +12,7 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var slideMenuController:SlideMenuController? = nil
-    var leftViewController:SideMenuController?=nil
+    var leftViewController:SideMenuController? = nil
     
     var window: UIWindow?
     override init(){
@@ -31,7 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         //print("View loaded")
         let user = CoreDataController.getUser()
-        
+        //UINavigationBar.appearance().tintColor = UIColor(hex: "689F38")
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         if user.name != ""{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
@@ -52,6 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = slideMenuController
             self.window?.makeKeyAndVisible()
         } else {
+            
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
             let mainViewController = storyboard.instantiateViewControllerWithIdentifier("MenuController")
