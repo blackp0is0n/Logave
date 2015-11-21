@@ -9,28 +9,15 @@
 import UIKit
 
 class MainViewController: UIViewController, UIPopoverPresentationControllerDelegate {
-    @IBAction func showSettings(sender: AnyObject) {
-        let settings = UIAlertController(title: "Choose an option", message: nil, preferredStyle: .ActionSheet)
-        
-        settings.addAction(UIAlertAction(title: "Settings", style: .Default, handler: {
-            action in
-            self.performSegueWithIdentifier("toggleSettings", sender: nil)
-        }))
-        
-        settings.addAction(UIAlertAction(title: "Orders", style: .Default, handler: {
-            action in
-            self.performSegueWithIdentifier("toggleOrders", sender: nil)
-        }))
-        
-        settings.addAction(UIAlertAction(title: "Cancel", style: .Cancel){action -> Void in})
-        
-        self.presentViewController(settings, animated: true, completion: nil)
-    }
-    
+    var slide:SlideMenuController? = nil
     @IBOutlet weak var pickerButton: UIButton!
     @IBOutlet weak var viewChooser: UISegmentedControl!
     @IBOutlet weak var mapView: UIView!
     @IBOutlet weak var ordersView: UIView!
+    
+    @IBAction func showMenu(sender: UIBarButtonItem){
+        self.slide?.openLeft()
+    }
     
     @IBAction func changeView(sender: AnyObject) {
         switch (viewChooser.selectedSegmentIndex){
@@ -66,5 +53,11 @@ class MainViewController: UIViewController, UIPopoverPresentationControllerDeleg
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
         return .None
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        self.slide = appDelegate.slideMenuController
     }
 }
