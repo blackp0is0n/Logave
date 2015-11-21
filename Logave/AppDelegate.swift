@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {//Доделать Пол
         //print("View loaded")
         let user = CoreDataController.getUser()
         
-        if user?.name != ""{
+        if user.name != ""{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
             let mainViewController = storyboard.instantiateViewControllerWithIdentifier("mapController") as! UINavigationController
