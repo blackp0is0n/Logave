@@ -49,6 +49,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {//Доделать Пол
             self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
             self.window?.rootViewController = slideMenuController
             self.window?.makeKeyAndVisible()
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let mainViewController = storyboard.instantiateViewControllerWithIdentifier("MenuController")
+            self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
+            self.window?.rootViewController = mainViewController
+            self.window?.makeKeyAndVisible()
         }
         
         return true

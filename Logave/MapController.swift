@@ -133,7 +133,6 @@ class MapController:UIViewController, MKMapViewDelegate{
             //print(key)
             //performSegueWithIdentifier("authCompleted", sender: self)
         } else {
-            //showAlert("Error", message: "Re-Check Your Credentials")
             //let datastring = NSString(data:data, encoding:NSUTF8StringEncoding) as! String
             //print(datastring)
             createConnection()
