@@ -10,8 +10,10 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {//Доделать Поле левого контроллера
+class AppDelegate: UIResponder, UIApplicationDelegate {
     var slideMenuController:SlideMenuController? = nil
+    var leftViewController:SideMenuController?=nil
+    
     var window: UIWindow?
     override init(){
         super.init()
@@ -34,17 +36,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {//Доделать Пол
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
             let mainViewController = storyboard.instantiateViewControllerWithIdentifier("mapController") as! UINavigationController
-            let leftViewController = storyboard.instantiateViewControllerWithIdentifier("settingsView") as! SideMenuController
+            leftViewController = storyboard.instantiateViewControllerWithIdentifier("settingsView") as! SideMenuController
             
             let messagesController = storyboard.instantiateViewControllerWithIdentifier("messagingView") as! UITableViewController
             let settingsController = storyboard.instantiateViewControllerWithIdentifier("Settings") as! SettingsViewController
             
             
-            slideMenuController = SlideMenuController(mainViewController:mainViewController, leftMenuViewController: leftViewController)
-            leftViewController.slidecontroller = slideMenuController
-            leftViewController.messagesController = UINavigationController(rootViewController: messagesController)
-            leftViewController.tasksController = mainViewController
-            leftViewController.settingsController = UINavigationController(rootViewController: settingsController)
+            slideMenuController = SlideMenuController(mainViewController:mainViewController, leftMenuViewController: leftViewController!)
+            leftViewController!.slidecontroller = slideMenuController
+            leftViewController!.messagesController = UINavigationController(rootViewController: messagesController)
+            leftViewController!.tasksController = mainViewController
+            leftViewController!.settingsController = UINavigationController(rootViewController: settingsController)
             slideMenuController!.automaticallyAdjustsScrollViewInsets = true
             self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
             self.window?.rootViewController = slideMenuController
