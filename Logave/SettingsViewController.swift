@@ -18,7 +18,7 @@ class SettingsViewController:UITableViewController{
     
     
     override func viewDidLoad() {
-        let user = CoreDataController.getUser()
+        _ = CoreDataController.getUser()
         let switchDisclosure = UISwitch()
         touchIDCell.accessoryView = switchDisclosure
         if switchDisclosure.on == true{

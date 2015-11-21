@@ -42,7 +42,7 @@ class OrdersViewController:UITableViewController{
         if tasks.count > 0 {
             CoreDataController.setTasks(self.tasks)
             print(self.tasks.count)
-            var datastring = NSString(data:data, encoding:NSUTF8StringEncoding) as! String
+            _ = NSString(data:data, encoding:NSUTF8StringEncoding) as! String
             self.tableView.reloadData()
         } else {
             showAlert("Error", message: "Re-Check Your Credentials")

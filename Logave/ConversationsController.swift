@@ -28,7 +28,7 @@ class ConversationsController: UIViewController{
     }
     
     func keyboardWillHide(sender: NSNotification){
-        if let kbHeight = sender.userInfo![UIKeyboardFrameEndUserInfoKey]?.CGRectValue.height{
+        if let _ = sender.userInfo![UIKeyboardFrameEndUserInfoKey]?.CGRectValue.height{
             self.bottom.constant = 0
             UIView.animateWithDuration(0.15, delay: 0, options: .CurveEaseOut, animations: {
                 self.view.layoutIfNeeded()

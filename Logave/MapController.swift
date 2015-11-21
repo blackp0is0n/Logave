@@ -33,7 +33,7 @@ class MapController:UIViewController, MKMapViewDelegate{
     var annotations:[TaskAnnotation] = [TaskAnnotation]()
     @IBOutlet weak var mapView: MKMapView!
     var data: NSMutableData = NSMutableData()
-    
+    var i:Int = 0
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         
@@ -71,7 +71,7 @@ class MapController:UIViewController, MKMapViewDelegate{
     }
     
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl){
-        let task = view.annotation as! TaskAnnotation
+        _ = view.annotation as! TaskAnnotation
         /*let taskName = task.title
         let taskInfo = task.info*/
         
@@ -129,12 +129,11 @@ class MapController:UIViewController, MKMapViewDelegate{
                 annotations.append(annotation)
             }
             mapView.addAnnotations(annotations)
-            CoreDataController.setTasks(tasks)
-            var datastring = NSString(data:data, encoding:NSUTF8StringEncoding) as! String
+            _ = NSString(data:data, encoding:NSUTF8StringEncoding) as! String
             //print(key)
             //performSegueWithIdentifier("authCompleted", sender: self)
         } else {
-            showAlert("Error", message: "Re-Check Your Credentials")
+            //showAlert("Error", message: "Re-Check Your Credentials")
             //let datastring = NSString(data:data, encoding:NSUTF8StringEncoding) as! String
             //print(datastring)
             createConnection()
