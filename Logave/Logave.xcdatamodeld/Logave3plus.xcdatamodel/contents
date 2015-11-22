@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9053" systemVersion="14F27" minimumToolsVersion="Automatic">
-    <entity name="Message" syncable="YES"/>
+    <entity name="Message" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="topic" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Task" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="courier_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -25,7 +32,7 @@
         <attribute name="sName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Message" positionX="-63" positionY="90" width="128" height="45"/>
+        <element name="Message" positionX="-63" positionY="90" width="128" height="135"/>
         <element name="Task" positionX="-63" positionY="36" width="128" height="225"/>
         <element name="User" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
