@@ -132,10 +132,51 @@ class CoreDataController{
     
     
     
-    static func getMessages() -> [Message?]{//Must be completed!!!!!!!!!
+    static func getMessages() -> [Message]{//Must be completed!!!!!!!!!
         let fReq: NSFetchRequest = NSFetchRequest(entityName: "Message")
+        var result: [AnyObject]?
+        var messages:[Message]=[Message]()
+        do {
+            result = try appDelegate.managedObjectContext!.executeFetchRequest(fReq)
+        } catch let error1 as NSError {
+            print("Core Data Error!\(error1.description)\n")
+            result = nil
+        }
+        for resultItem in result!{
+            let message = Message()
+            message.id = (resultItem.valueForKey("id") as? Int)!
+            message.topic = (resultItem.valueForKey("topic") as? String)!
+            message.message = (resultItem.valueForKey("message") as? String)!
+            message.name = (resultItem.valueForKey("name") as? String)!
+            message.sname = (resultItem.valueForKey("sname") as? String)!
+            message.date = (resultItem.valueForKey("date") as? NSDate)!
+            messages.append(message)
+        }
+        appDelegate.saveContext()
+        return messages
+    }
+    
+    static func removeAndSetMessages(messages:[Message]){
+        removeMessages()
+        appendMessages(messages)
         
-        //var messages = [Message?]()
+    }
+    
+    static func appendMessages(messages:[Message]){
+        for message in messages{
+            let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: appDelegate.managedObjectContext!)
+            newManagedObject.setValue(message.date, forKey: "date")
+            newManagedObject.setValue(message.id, forKey: "id")
+            newManagedObject.setValue(message.message, forKey: "message")
+            newManagedObject.setValue(message.topic, forKey: "topic")
+            newManagedObject.setValue(message.name, forKey: "name")
+            newManagedObject.setValue(message.sname, forKey: "sname")
+            appDelegate.saveContext()
+        }
+    }
+    
+    static func haveInbox() -> Bool{
+        let fReq: NSFetchRequest = NSFetchRequest(entityName: "Message")
         var result: [AnyObject]?
         do {
             result = try appDelegate.managedObjectContext!.executeFetchRequest(fReq)
@@ -143,17 +184,36 @@ class CoreDataController{
             print("Core Data Error!\(error1.description)\n")
             result = nil
         }
-        let user:User = User()
-        for resultItem in result! {
-            user.name = resultItem.valueForKey("name") as! String
-            user.sName = resultItem.valueForKey("sName") as! String
-            user.key = resultItem.valueForKey("key") as! String
-            user.keyDate = resultItem.valueForKey("keyDate") as! String
-            user.email = resultItem.valueForKey("email") as! String
+        appDelegate.saveContext()
+        if result?.count > 0{
+            return true
         }
-        return []
+        return false
     }
-    
+    static func messagesFrom(name:String,andSurname surname:String) -> [Message] {
+        let fReq: NSFetchRequest = NSFetchRequest(entityName: "Message")
+        fReq.predicate = NSPredicate(format: "name = %@ AND sname = %@", name, surname)
+        var result: [AnyObject]?
+        do {
+            result = try appDelegate.managedObjectContext!.executeFetchRequest(fReq)
+        } catch let error1 as NSError {
+            print("Core Data Error!\(error1.description)\n")
+            result = nil
+        }
+        var messages:[Message] = [Message]()
+        for resultItem in result!{
+            let message = Message()
+            message.id = (resultItem.valueForKey("id") as? Int)!
+            message.topic = (resultItem.valueForKey("topic") as? String)!
+            message.message = (resultItem.valueForKey("message") as? String)!
+            message.name = (resultItem.valueForKey("name") as? String)!
+            message.sname = (resultItem.valueForKey("sname") as? String)!
+            message.date = (resultItem.valueForKey("date") as? NSDate)!
+            messages.append(message)
+        }
+        appDelegate.saveContext()
+        return messages
+    }
     static func getTasks(date: NSDate)-> [Task]{
         let fReq: NSFetchRequest = NSFetchRequest(entityName: "Task")
         fReq.predicate = NSPredicate(format: "taskDate == %@", date)
@@ -164,11 +224,9 @@ class CoreDataController{
             print("Core Data Error!\(error1.description)\n")
             result = nil
         }
-        print("From core data controller:"+String(result?.count))
         var tasks = [Task]()
         for resultItem in result! {
             let task = Task()
-            NSLog("ID is %d", task.id)
             task.id = (resultItem.valueForKey("id") as? Int)!
             task.managerId = (resultItem.valueForKey("manager_id") as? Int)!
             task.courierId = (resultItem.valueForKey("courier_id") as? Int)!
