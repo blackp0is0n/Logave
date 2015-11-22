@@ -9,5 +9,11 @@
 import Foundation
 
 class Message{
+    var id:Int = 0
+    var date:NSDate = NSDate()
     
+    var topic:String = ""
+    var message:String = ""
+    var name:String = ""
+    var sname:String = ""
 }
