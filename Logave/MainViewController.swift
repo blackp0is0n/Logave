@@ -10,15 +10,28 @@ import UIKit
 
 class MainViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     var slide:SlideMenuController? = nil
-    @IBOutlet weak var pickerButton: UIButton!
+    
+    var message:String?
+    
+    @IBOutlet weak var dateLabel: UIBarButtonItem!
     @IBOutlet weak var viewChooser: UISegmentedControl!
     @IBOutlet weak var mapView: UIView!
     @IBOutlet weak var ordersView: UIView!
     
-    @IBAction func showMenu(sender: UIBarButtonItem){
-        self.slide?.openLeft()
+    @IBAction func setDate(segue: UIStoryboardSegue){
+        let popover = segue.sourceViewController as! DatePickerPopoverController
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        self.dateLabel.title = dateFormatter.stringFromDate(popover.selectedDate!)
     }
     
+    @IBAction func locatePressed(sender: AnyObject) {
+    }
+    
+    @IBAction func showMenu(sender: AnyObject){
+        self.slide?.openLeft()
+    }
+
     @IBAction func changeView(sender: AnyObject) {
         switch (viewChooser.selectedSegmentIndex){
         case 0:
@@ -34,25 +47,16 @@ class MainViewController: UIViewController, UIPopoverPresentationControllerDeleg
         }
     }
     
-    @IBAction func showDatePicker(sender: AnyObject) {
-        let datePicker = UIDatePicker()
-        datePicker.datePickerMode = .Date
-        
-        let pickerController = UIViewController()
-        pickerController.view.addSubview(datePicker)
-        pickerController.preferredContentSize = datePicker.frame.size
-        pickerController.modalPresentationStyle = .Popover
-        
-        let popover = pickerController.popoverPresentationController
-        popover?.delegate = self
-        popover?.sourceRect = pickerButton.bounds
-        popover?.sourceView = pickerButton
-        
-        self.presentViewController(pickerController, animated: true, completion: nil)
-    }
-    
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
         return .None
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "popoverSegue" {
+            let popoverViewController = segue.destinationViewController 
+            popoverViewController.modalPresentationStyle = UIModalPresentationStyle.Popover
+            popoverViewController.popoverPresentationController!.delegate = self
+        }
     }
     
     override func viewDidLoad() {

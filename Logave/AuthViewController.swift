@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuController:UIViewController {
+class AuthViewController:UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }

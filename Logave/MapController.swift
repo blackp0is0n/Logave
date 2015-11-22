@@ -57,6 +57,27 @@ class MapController:UIViewController, MKMapViewDelegate{
         return nil
     }
     
+    @IBAction func setMapMode(segue: UIStoryboardSegue){
+        let popover = segue.sourceViewController as! OptionsPopoverController
+        switch (popover.selectedMode!){
+        case 0:
+            mapView.mapType = MKMapType.Standard;
+            break
+        case 1:
+            mapView.mapType = MKMapType.Satellite;
+            break
+        case 2:
+            mapView.mapType = MKMapType.Hybrid;
+            break
+        default:
+            break
+        }
+    }
+    
+    @IBAction func locate(segue: UIStoryboardSegue){
+        mapView.setCenterCoordinate((mapView.userLocation.location?.coordinate)!, animated: true)
+    }
+    
     func createConnection(){
         let urlPath: String = "http://api.logave.com/task/gettask?device=c21592b180d10e601f2080111fc657de&key="
         
@@ -130,11 +151,9 @@ class MapController:UIViewController, MKMapViewDelegate{
             }
             mapView.addAnnotations(annotations)
             _ = NSString(data:data, encoding:NSUTF8StringEncoding) as! String
-            //print(key)
-            //performSegueWithIdentifier("authCompleted", sender: self)
+
         } else {
-            //let datastring = NSString(data:data, encoding:NSUTF8StringEncoding) as! String
-            //print(datastring)
+
             createConnection()
         }
     }

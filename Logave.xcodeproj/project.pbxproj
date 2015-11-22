@@ -11,7 +11,6 @@
 		664D8B121BA8887B00384E7C /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664D8B111BA8887B00384E7C /* OrdersViewController.swift */; };
 		66614ACB1BA9C86A00D68C05 /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66614ACA1BA9C86A00D68C05 /* ConversationsController.swift */; };
 		666555091BA8699F009D0197 /* MessagingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666555081BA8699F009D0197 /* MessagingController.swift */; };
-		669342D41BFD220D0027D460 /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669342D31BFD220D0027D460 /* SideMenuController.swift */; };
 		66AB9A331BAA0B0E00298EB9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AB9A321BAA0B0E00298EB9 /* CoreLocation.framework */; };
 		66AB9A351BAA0B1500298EB9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AB9A341BAA0B1500298EB9 /* CoreGraphics.framework */; };
 		66AB9A371BAA0B1C00298EB9 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AB9A361BAA0B1C00298EB9 /* LocalAuthentication.framework */; };
@@ -20,10 +19,13 @@
 		66AB9A3D1BAA0B9500298EB9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AB9A3C1BAA0B9500298EB9 /* MapKit.framework */; };
 		66AB9A3F1BAA0B9F00298EB9 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AB9A3E1BAA0B9F00298EB9 /* NotificationCenter.framework */; };
 		66AB9A411BAA0CBE00298EB9 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AB9A401BAA0CBE00298EB9 /* MapController.swift */; };
+		66BF7AFF1C01FC0500565DED /* OptionsPopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BF7AFE1C01FC0500565DED /* OptionsPopoverController.swift */; };
+		66BF7B011C01FC6100565DED /* DatePickerPopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BF7B001C01FC6100565DED /* DatePickerPopoverController.swift */; };
+		66BF7B031C02067200565DED /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BF7B021C02067200565DED /* SideMenuController.swift */; };
 		66EECA0F1BAA35C9005EDAAE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EECA0E1BAA35C9005EDAAE /* SettingsViewController.swift */; };
 		FA2706191B9C60690079894E /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2706181B9C60690079894E /* StringExtensions.swift */; };
 		FA3753551B9B793E00BE7150 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3753541B9B793E00BE7150 /* LoginController.swift */; };
-		FA4094C81BA9D32200667582 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4094C71BA9D32200667582 /* MenuController.swift */; };
+		FA4094C81BA9D32200667582 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4094C71BA9D32200667582 /* AuthViewController.swift */; };
 		FA79D3851BFCF86F00FFED9E /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA79D3841BFCF86F00FFED9E /* LeftViewController.swift */; };
 		FA79D3871BFCF88E00FFED9E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA79D3861BFCF88E00FFED9E /* MainViewController.swift */; };
 		FA79D3891BFCF8BD00FFED9E /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA79D3881BFCF8BD00FFED9E /* SlideMenuController.swift */; };
@@ -56,7 +58,6 @@
 		664D8B111BA8887B00384E7C /* OrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		66614ACA1BA9C86A00D68C05 /* ConversationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
 		666555081BA8699F009D0197 /* MessagingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingController.swift; sourceTree = "<group>"; };
-		669342D31BFD220D0027D460 /* SideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 		66AB9A321BAA0B0E00298EB9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		66AB9A341BAA0B1500298EB9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		66AB9A361BAA0B1C00298EB9 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
@@ -65,10 +66,13 @@
 		66AB9A3C1BAA0B9500298EB9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		66AB9A3E1BAA0B9F00298EB9 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		66AB9A401BAA0CBE00298EB9 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		66BF7AFE1C01FC0500565DED /* OptionsPopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsPopoverController.swift; sourceTree = "<group>"; };
+		66BF7B001C01FC6100565DED /* DatePickerPopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerPopoverController.swift; sourceTree = "<group>"; };
+		66BF7B021C02067200565DED /* SideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 		66EECA0E1BAA35C9005EDAAE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FA2706181B9C60690079894E /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = ../StringExtensions.swift; sourceTree = "<group>"; };
 		FA3753541B9B793E00BE7150 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		FA4094C71BA9D32200667582 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		FA4094C71BA9D32200667582 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		FA4D94441B98A01700D9F7BE /* Logave1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logave1.xcdatamodel; sourceTree = "<group>"; };
 		FA4D94451B98A4D800D9F7BE /* Logave2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logave2.xcdatamodel; sourceTree = "<group>"; };
 		FA773BA81B9C57D1001A5CA5 /* Logave3plus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logave3plus.xcdatamodel; sourceTree = "<group>"; };
@@ -194,10 +198,12 @@
 			isa = PBXGroup;
 			children = (
 				FA3753541B9B793E00BE7150 /* LoginController.swift */,
-				FA4094C71BA9D32200667582 /* MenuController.swift */,
+				FA4094C71BA9D32200667582 /* AuthViewController.swift */,
 				FA79D3841BFCF86F00FFED9E /* LeftViewController.swift */,
 				FA79D3861BFCF88E00FFED9E /* MainViewController.swift */,
-				669342D31BFD220D0027D460 /* SideMenuController.swift */,
+				66BF7AFE1C01FC0500565DED /* OptionsPopoverController.swift */,
+				66BF7B001C01FC6100565DED /* DatePickerPopoverController.swift */,
+				66BF7B021C02067200565DED /* SideMenuController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -393,23 +399,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA79D3891BFCF8BD00FFED9E /* SlideMenuController.swift in Sources */,
+				66BF7B031C02067200565DED /* SideMenuController.swift in Sources */,
 				66614ACB1BA9C86A00D68C05 /* ConversationsController.swift in Sources */,
 				FAA0BBF31B9474F900A36590 /* AppDelegate.swift in Sources */,
 				FA8A2E701BA4A1980084A49B /* CoreDataController.swift in Sources */,
 				FA79D3871BFCF88E00FFED9E /* MainViewController.swift in Sources */,
-				669342D41BFD220D0027D460 /* SideMenuController.swift in Sources */,
+				66BF7B011C01FC6100565DED /* DatePickerPopoverController.swift in Sources */,
 				FA8A2E751BA4A5050084A49B /* Task.swift in Sources */,
 				FAA0BBF61B9474F900A36590 /* Logave.xcdatamodeld in Sources */,
 				FA2706191B9C60690079894E /* StringExtensions.swift in Sources */,
 				662A36CA1BA8D64100B91A09 /* DetailedOrderViewController.swift in Sources */,
 				66EECA0F1BAA35C9005EDAAE /* SettingsViewController.swift in Sources */,
 				FA8A2E791BA4A7A50084A49B /* JsonParserHelper.swift in Sources */,
-				FA4094C81BA9D32200667582 /* MenuController.swift in Sources */,
+				FA4094C81BA9D32200667582 /* AuthViewController.swift in Sources */,
 				FA8A2E771BA4A5250084A49B /* Message.swift in Sources */,
 				FA3753551B9B793E00BE7150 /* LoginController.swift in Sources */,
 				664D8B121BA8887B00384E7C /* OrdersViewController.swift in Sources */,
 				FA8A2E731BA4A4E80084A49B /* User.swift in Sources */,
 				66AB9A411BAA0CBE00298EB9 /* MapController.swift in Sources */,
+				66BF7AFF1C01FC0500565DED /* OptionsPopoverController.swift in Sources */,
 				666555091BA8699F009D0197 /* MessagingController.swift in Sources */,
 				FA79D3851BFCF86F00FFED9E /* LeftViewController.swift in Sources */,
 			);

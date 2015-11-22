@@ -41,7 +41,6 @@ class OrdersViewController:UITableViewController{
         CoreDataController.setKey(key)
         if tasks.count > 0 {
             CoreDataController.setTasks(self.tasks)
-            print(self.tasks.count)
             _ = NSString(data:data, encoding:NSUTF8StringEncoding) as! String
             self.tableView.reloadData()
         } else {
@@ -70,7 +69,6 @@ class OrdersViewController:UITableViewController{
         
         let pather:String = urlPath + CoreDataController.getUser().key + "&date=2015-09-05"
         
-        //print(pather)
         self.data = NSMutableData()
         let url: NSURL = NSURL(string: pather)!
         let request: NSURLRequest = NSURLRequest(URL: url)

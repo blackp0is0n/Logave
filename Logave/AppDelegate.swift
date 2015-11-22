@@ -34,11 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {//Доделать Пол
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
             let mainViewController = storyboard.instantiateViewControllerWithIdentifier("mapController") as! UINavigationController
-            let leftViewController = storyboard.instantiateViewControllerWithIdentifier("settingsView") as! SideMenuController
+            let leftViewController = storyboard.instantiateViewControllerWithIdentifier("menuController") as! SideMenuController
             
             let messagesController = storyboard.instantiateViewControllerWithIdentifier("messagingView") as! UITableViewController
-            let settingsController = storyboard.instantiateViewControllerWithIdentifier("Settings") as! SettingsViewController
-            
+            let settingsController = storyboard.instantiateViewControllerWithIdentifier("settingsView") as! SettingsViewController
             
             slideMenuController = SlideMenuController(mainViewController:mainViewController, leftMenuViewController: leftViewController)
             leftViewController.slidecontroller = slideMenuController
@@ -51,8 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {//Доделать Пол
             self.window?.makeKeyAndVisible()
         } else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            
-            let mainViewController = storyboard.instantiateViewControllerWithIdentifier("MenuController")
+            let mainViewController = storyboard.instantiateViewControllerWithIdentifier("AuthController")
             self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
             self.window?.rootViewController = mainViewController
             self.window?.makeKeyAndVisible()

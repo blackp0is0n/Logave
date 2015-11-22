@@ -75,7 +75,7 @@ class LoginController:UITableViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let mainViewController = storyboard.instantiateViewControllerWithIdentifier("mapController")
-        let leftViewController = storyboard.instantiateViewControllerWithIdentifier("settingsView")
+        let leftViewController = storyboard.instantiateViewControllerWithIdentifier("menuController")
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
