@@ -59,20 +59,38 @@ class JsonParserHelper{
                     let myDate = index["date"] as? String
                     let dateFormatter = NSDateFormatter()
                     dateFormatter.dateFormat = "yyyy-MM-dd"
-                    let date = dateFormatter.dateFromString(myDate!)
-                    task.date = date
-                    tasksArray.append(task)
-                    
+                    task.date = dateFormatter.dateFromString(myDate!)
+                    tasksArray.append(task)                    
                 }
-            } else {
-                if let _ = serverData["task"] as? String{
-                    //print(noTasks)
-                }
-                
             }
         }
         return tasksArray
     }
+    
+    static func getMessages(data: NSData) ->[Message]{
+        let decodedJson = (try! NSJSONSerialization.JSONObjectWithData(data, options: [])) as! Dictionary<String, AnyObject>
+        var messagesArray:[Message] = [Message]()
+        if let serverData = decodedJson["data"] as? NSDictionary{
+            if let messages = serverData["data"] as? NSArray {
+                for index in messages{
+                    let message = Message()
+                    
+                    message.id = (index["id"] as! NSString).integerValue
+                    message.name = index["name"] as! String
+                    message.sname = index["sname"] as! String
+                    message.topic = index["topic"] as! String
+                    message.message = index["message"] as! String
+                    
+                    let dateFormatter = NSDateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+                    message.date = dateFormatter.dateFromString(index["date"] as! String)!
+                    messagesArray.append(message)
+                }
+            }
+        }
+        return messagesArray
+    }
+    
     static func getKey(data:NSData)->String{
         let decodedJson = (try! NSJSONSerialization.JSONObjectWithData(data, options: [])) as! Dictionary<String, AnyObject>
         if let jsonData = decodedJson["data"] as? NSDictionary{
@@ -83,10 +101,6 @@ class JsonParserHelper{
         return ""
     }
     
-    static func getMessages(data: NSData) ->[Message]{
-        //let decodedJson = (try! NSJSONSerialization.JSONObjectWithData(data, options: [])) as! Dictionary<String, AnyObject>
-        
-        return []
-    }
+
     
 }
