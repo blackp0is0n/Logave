@@ -66,7 +66,7 @@ class LoginController:UITableViewController {
             authCompleted()
             //performSegueWithIdentifier("authCompleted", sender: self)
         } else {
-            showAlert("Error", message: "Re-Check Your Credentials")
+            //showAlert("Error", message: "Re-Check Your Credentials")
         }
         
     }
